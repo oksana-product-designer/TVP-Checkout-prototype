@@ -1,0 +1,92 @@
+:root {
+  /* Color — DESIGN.md 2.1 */
+  --color-brand-primary: #0059ac;
+  --color-brand-pressed: #003f7d;
+  --color-accent-primary: #f48120;
+  --color-accent-hover: #dc6910;
+  --color-accent-pressed: #c45a00;
+  --color-accent-subtle: rgb(244 129 32 / 10%);
+  --color-text-primary: #222222;
+  --color-text-secondary: rgb(34 34 34 / 75%);
+  --color-text-on-dark: #ffffff;
+  --color-text-link: #0059ac;
+  --color-text-danger: #cd3739;
+  --color-text-success: #1e7b3a;
+  --color-text-disabled: rgb(34 34 34 / 40%);
+  --color-icon-disabled: rgb(34 34 34 / 40%);
+  --color-surface-page: #f4f6f7;
+  --color-surface-card: #ffffff;
+  --color-surface-badge: rgb(253 189 34 / 10%);
+  --color-surface-danger-subtle: rgb(205 55 57 / 10%);
+  --color-surface-success-subtle: rgb(30 123 58 / 10%);
+  --color-border-default: #8a8a8a;
+  --color-border-strong: rgb(34 34 34 / 75%);
+  --color-border-divider: #dbdbdb;
+  --color-border-danger: #cd3739;
+  --color-border-success: #1e7b3a;
+  --color-icon-primary: #222222;
+  --color-icon-secondary: rgb(34 34 34 / 75%);
+  --color-icon-on-dark: #ffffff;
+
+  /* Typography — DESIGN.md 2.2 */
+  --font-family: "Source Sans 3", "Source Sans Pro", sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  --font-size-display: 40px;
+  --line-height-display: 48px;
+  --letter-spacing-display: -0.02em;
+
+  --font-size-amount: 32px;
+  --line-height-amount: 32px;
+  --letter-spacing-amount: -0.02em;
+
+  --font-size-heading-large: 24px;
+  --line-height-heading-large: 32px;
+  --letter-spacing-heading-large: -0.02em;
+
+  --font-size-heading: 20px;
+  --line-height-heading: 24px;
+  --letter-spacing-heading: -0.02em;
+
+  --font-size-body: 16px;
+  --line-height-body: 24px;
+  --letter-spacing-body: -0.02em;
+
+  --font-size-button: 16px;
+  --line-height-button: 16px;
+  --letter-spacing-button: -0.02em;
+
+  --font-size-label: 14px;
+  --line-height-label: 16px;
+  --letter-spacing-label: 0.01em;
+
+  --font-size-caption: 14px;
+  --line-height-caption: 20px;
+  --letter-spacing-caption: 0.01em;
+
+  /* Spacing, shape, elevation — DESIGN.md 2.3 */
+  --space-4: 4px;
+  --space-8: 8px;
+  --space-12: 12px;
+  --space-16: 16px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-card-padding: 32px;
+  --space-field-gap: 16px;
+  --space-section-gap: 24px;
+  --space-label-to-input: 8px;
+  --space-section-header-to-content: 16px;
+  --radius-4: 4px;
+  --radius-full: 999px;
+  --size-control: 40px;
+  --size-link-button: 24px;
+  --stroke-width: 1px;
+  --shadow-lg: 0 16px 32px rgb(0 0 0 / 8%);
+  --shadow-sm: 0 4px 8px rgb(0 0 0 / 5%);
+  --focus-ring-width: 2px;
+  --size-icon: 16px;
+  --size-icon-assurance: 20px;
+}

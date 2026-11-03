@@ -1,0 +1,17 @@
+[
+  {
+    "id": "uganda",
+    "label": "Uganda",
+    "sectionTitle": "Details for Visa application to Uganda",
+    "price": 229,
+    "visaTypes": [
+      { "id": "tourist", "label": "Tourist visa" }
+    ],
+    "entries": [
+      { "id": "single", "label": "Single entry" }
+    ],
+    "validityPeriods": [
+      { "id": "3-months", "label": "3 months" }
+    ]
+  }
+]

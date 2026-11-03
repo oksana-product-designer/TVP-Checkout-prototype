@@ -1,0 +1,22 @@
+[
+  {
+    "id": "lost-stolen",
+    "label": "Passport replace lost or stolen passport",
+    "price": 259
+  },
+  {
+    "id": "name-change",
+    "label": "Passport name change",
+    "price": 189
+  },
+  {
+    "id": "damaged",
+    "label": "Passport replace damaged passport",
+    "price": 199
+  },
+  {
+    "id": "renewal",
+    "label": "Passport renewal",
+    "price": 259
+  }
+]

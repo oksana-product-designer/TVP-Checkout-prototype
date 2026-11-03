@@ -1,0 +1,4 @@
+[
+  { "id": "standard", "label": "Standard", "price": 0 },
+  { "id": "expedited", "label": "Expedited", "price": 30 }
+]

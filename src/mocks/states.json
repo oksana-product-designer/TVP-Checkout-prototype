@@ -1,0 +1,7 @@
+[
+  { "id": "CA", "label": "California" },
+  { "id": "NY", "label": "New York" },
+  { "id": "TX", "label": "Texas" },
+  { "id": "FL", "label": "Florida" },
+  { "id": "WA", "label": "Washington" }
+]
