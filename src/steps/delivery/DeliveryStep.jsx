@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from '../../components/atoms/Button.jsx'
 import { InputField } from '../../components/atoms/InputField.jsx'
 import { TextLink } from '../../components/atoms/TextLink.jsx'
@@ -12,6 +12,18 @@ import { useOrder } from '../../state/useOrder.js'
 import { deliveryErrors, formatPhone, formatZip, validateField, validateFullName } from '../../state/validation.js'
 import './DeliveryStep.css'
 
+function stateIdsForCity(cityName) {
+  const query = String(cityName || '').trim().toLowerCase()
+  if (!query) return []
+  const ids = []
+  cities.forEach((item) => {
+    if (item.city.toLowerCase() !== query) return
+    if (!states.some((state) => state.id === item.state)) return
+    if (!ids.includes(item.state)) ids.push(item.state)
+  })
+  return ids
+}
+
 export function DeliveryStep({ attempted = false }) {
   const { order, setOrder } = useOrder()
   const delivery = order.delivery
@@ -24,6 +36,13 @@ export function DeliveryStep({ attempted = false }) {
   const nameMessage = validateFullName(address.fullName)
   const nameError = nameMessage && (attempted || address.fullName) ? nameMessage : ''
   const showLine = lineOpen || Boolean(street2.trim())
+  const suggestedStateIds = stateIdsForCity(address.city)
+  const stateOptions = suggestedStateIds.length
+    ? [
+        ...states.filter((item) => suggestedStateIds.includes(item.id)),
+        ...states.filter((item) => !suggestedStateIds.includes(item.id)),
+      ]
+    : states
 
   function patchDelivery(patch) {
     setOrder((current) => ({
@@ -46,6 +65,21 @@ export function DeliveryStep({ attempted = false }) {
       },
     }))
   }
+
+  useEffect(() => {
+    const suggested = stateIdsForCity(address.city)
+    let nextState = null
+    if (suggested.length === 1 && address.state !== suggested[0]) nextState = suggested[0]
+    else if (suggested.length > 1 && address.state && !suggested.includes(address.state)) nextState = ''
+    if (nextState === null) return
+    setOrder((current) => ({
+      ...current,
+      delivery: {
+        ...current.delivery,
+        address: { ...current.delivery.address, state: nextState },
+      },
+    }))
+  }, [address.city, address.state, setOrder])
 
   return (
     <>
@@ -135,18 +169,14 @@ export function DeliveryStep({ attempted = false }) {
               options={cities}
               errorMessage={errors.city || ''}
               onChange={(event) => patchAddress({ city: event.target.value })}
-              onSelectOption={(option) => {
-                const patch = { city: option.city }
-                if (states.some((item) => item.id === option.state)) patch.state = option.state
-                patchAddress(patch)
-              }}
+              onSelectOption={(option) => patchAddress({ city: option.city })}
             />
             <InputField
               type="Select"
               label="State"
               required
               value={address.state}
-              options={states}
+              options={stateOptions}
               placeholder="Select"
               errorMessage={errors.state || ''}
               onChange={(event) => patchAddress({ state: event.target.value })}
