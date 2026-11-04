@@ -1,0 +1,10 @@
+.chevron-toggle {
+  display: inline-flex;
+  width: var(--size-icon);
+  height: var(--size-icon);
+  color: var(--color-icon-primary);
+}
+
+.chevron-toggle .icon {
+  display: block;
+}

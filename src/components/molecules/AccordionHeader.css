@@ -1,0 +1,38 @@
+.accordion-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--color-icon-primary);
+  text-align: left;
+  cursor: pointer;
+}
+
+.accordion-header:focus {
+  outline: none;
+}
+
+.accordion-header:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-brand-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-4);
+}
+
+.accordion-header__title {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-heading-large);
+  line-height: var(--line-height-heading-large);
+  letter-spacing: var(--letter-spacing-heading-large);
+  color: var(--color-text-primary);
+}
+
+.accordion-header__badge {
+  flex-shrink: 0;
+}

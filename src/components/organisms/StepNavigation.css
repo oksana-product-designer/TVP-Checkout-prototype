@@ -1,0 +1,28 @@
+.step-navigation {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-16);
+  width: 100%;
+}
+
+.step-navigation:has(.button--secondary) {
+  justify-content: space-between;
+}
+
+@media (max-width: 1023px) {
+  .step-navigation .button--control-size {
+    min-height: 44px;
+  }
+}
+
+@media (max-width: 639px) {
+  .step-navigation {
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+
+  .step-navigation .button {
+    width: 100%;
+  }
+}

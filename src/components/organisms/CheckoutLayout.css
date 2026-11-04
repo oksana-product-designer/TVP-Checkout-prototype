@@ -1,0 +1,151 @@
+.checkout-layout {
+  width: 1440px;
+  min-height: 100%;
+  margin: 0 auto;
+  background-color: var(--color-surface-card);
+}
+
+.checkout-layout__hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-24);
+  padding: var(--space-40) 156px 80px;
+  background-color: var(--color-surface-page);
+}
+
+.checkout-layout__title {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-display);
+  line-height: var(--line-height-display);
+  letter-spacing: var(--letter-spacing-display);
+  color: var(--color-text-primary);
+  text-align: center;
+}
+
+.checkout-layout__grid {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-24);
+  width: 1128px;
+  margin: -40px auto 0;
+  padding-bottom: var(--space-40);
+}
+
+.checkout-layout__main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-40);
+  width: 696px;
+}
+
+.checkout-layout__cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  width: 100%;
+}
+
+.checkout-layout__sidebar {
+  width: 408px;
+  flex-shrink: 0;
+}
+
+/* Below the designed 1440 canvas the shell stays fluid, then stacks. */
+@media (max-width: 1439px) {
+  .checkout-layout {
+    width: 100%;
+  }
+
+  .checkout-layout__hero {
+    padding-right: var(--space-40);
+    padding-left: var(--space-40);
+  }
+
+  .checkout-layout__grid {
+    width: auto;
+    margin-right: var(--space-40);
+    margin-left: var(--space-40);
+  }
+
+  .checkout-layout__main {
+    width: auto;
+    flex: 1 1 0;
+    min-width: 0;
+  }
+
+  .checkout-layout__sidebar {
+    width: auto;
+    flex: 0 1 408px;
+    min-width: 280px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .checkout-layout__hero {
+    padding-right: var(--space-24);
+    padding-left: var(--space-24);
+  }
+
+  .checkout-layout__grid {
+    flex-direction: column;
+    align-items: stretch;
+    margin-right: var(--space-24);
+    margin-left: var(--space-24);
+  }
+
+  .checkout-layout__main,
+  .checkout-layout__sidebar {
+    flex: none;
+    width: 100%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 639px) {
+  .checkout-layout__hero {
+    padding: var(--space-24) var(--space-16) var(--space-40);
+  }
+
+  .checkout-layout__title {
+    font-size: var(--font-size-heading-large);
+    line-height: var(--line-height-heading-large);
+    letter-spacing: var(--letter-spacing-heading-large);
+  }
+
+  .checkout-layout__grid {
+    margin-right: var(--space-16);
+    margin-left: var(--space-16);
+  }
+}
+
+/* Above 1440 the chrome is full width and the 696/408 rail grows until 1440. */
+@media (min-width: 1440px) {
+  .checkout-layout {
+    width: 100%;
+    --page-inset: max(156px, calc((100% - 1440px) / 2));
+  }
+
+  .checkout-layout__hero {
+    padding-right: var(--page-inset);
+    padding-left: var(--page-inset);
+  }
+
+  .checkout-layout__grid {
+    width: min(1440px, calc(100% - 312px));
+  }
+
+  .checkout-layout__main {
+    width: auto;
+    flex: 696 1 0;
+    min-width: 0;
+  }
+
+  .checkout-layout__sidebar {
+    width: auto;
+    flex: 408 1 0;
+    min-width: 0;
+  }
+}

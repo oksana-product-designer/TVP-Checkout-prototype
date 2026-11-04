@@ -1,17 +1,6002 @@
 [
   {
+    "id": "afghanistan",
+    "label": "Afghanistan",
+    "sectionTitle": "Details for Visa application to Afghanistan",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "aland-islands",
+    "label": "Åland Islands",
+    "sectionTitle": "Details for Visa application to Åland Islands",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "albania",
+    "label": "Albania",
+    "sectionTitle": "Details for Visa application to Albania",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "algeria",
+    "label": "Algeria",
+    "sectionTitle": "Details for Visa application to Algeria",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "american-samoa",
+    "label": "American Samoa",
+    "sectionTitle": "Details for Visa application to American Samoa",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "andorra",
+    "label": "Andorra",
+    "sectionTitle": "Details for Visa application to Andorra",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "angola",
+    "label": "Angola",
+    "sectionTitle": "Details for Visa application to Angola",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "anguilla",
+    "label": "Anguilla",
+    "sectionTitle": "Details for Visa application to Anguilla",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "antarctica",
+    "label": "Antarctica",
+    "sectionTitle": "Details for Visa application to Antarctica",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "antigua-and-barbuda",
+    "label": "Antigua & Barbuda",
+    "sectionTitle": "Details for Visa application to Antigua & Barbuda",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "argentina",
+    "label": "Argentina",
+    "sectionTitle": "Details for Visa application to Argentina",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "armenia",
+    "label": "Armenia",
+    "sectionTitle": "Details for Visa application to Armenia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "aruba",
+    "label": "Aruba",
+    "sectionTitle": "Details for Visa application to Aruba",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "australia",
+    "label": "Australia",
+    "sectionTitle": "Details for Visa application to Australia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "austria",
+    "label": "Austria",
+    "sectionTitle": "Details for Visa application to Austria",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "azerbaijan",
+    "label": "Azerbaijan",
+    "sectionTitle": "Details for Visa application to Azerbaijan",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "bahamas",
+    "label": "Bahamas",
+    "sectionTitle": "Details for Visa application to Bahamas",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "bahrain",
+    "label": "Bahrain",
+    "sectionTitle": "Details for Visa application to Bahrain",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "bangladesh",
+    "label": "Bangladesh",
+    "sectionTitle": "Details for Visa application to Bangladesh",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "barbados",
+    "label": "Barbados",
+    "sectionTitle": "Details for Visa application to Barbados",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "belarus",
+    "label": "Belarus",
+    "sectionTitle": "Details for Visa application to Belarus",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "belgium",
+    "label": "Belgium",
+    "sectionTitle": "Details for Visa application to Belgium",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "belize",
+    "label": "Belize",
+    "sectionTitle": "Details for Visa application to Belize",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "benin",
+    "label": "Benin",
+    "sectionTitle": "Details for Visa application to Benin",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "bermuda",
+    "label": "Bermuda",
+    "sectionTitle": "Details for Visa application to Bermuda",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "bhutan",
+    "label": "Bhutan",
+    "sectionTitle": "Details for Visa application to Bhutan",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "bolivia",
+    "label": "Bolivia",
+    "sectionTitle": "Details for Visa application to Bolivia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "bosnia-and-herzegovina",
+    "label": "Bosnia & Herzegovina",
+    "sectionTitle": "Details for Visa application to Bosnia & Herzegovina",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "botswana",
+    "label": "Botswana",
+    "sectionTitle": "Details for Visa application to Botswana",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "bouvet-island",
+    "label": "Bouvet Island",
+    "sectionTitle": "Details for Visa application to Bouvet Island",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "brazil",
+    "label": "Brazil",
+    "sectionTitle": "Details for Visa application to Brazil",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "british-indian-ocean-territory",
+    "label": "British Indian Ocean Territory",
+    "sectionTitle": "Details for Visa application to British Indian Ocean Territory",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "british-virgin-islands",
+    "label": "British Virgin Islands",
+    "sectionTitle": "Details for Visa application to British Virgin Islands",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "brunei",
+    "label": "Brunei",
+    "sectionTitle": "Details for Visa application to Brunei",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "bulgaria",
+    "label": "Bulgaria",
+    "sectionTitle": "Details for Visa application to Bulgaria",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "burkina-faso",
+    "label": "Burkina Faso",
+    "sectionTitle": "Details for Visa application to Burkina Faso",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "burundi",
+    "label": "Burundi",
+    "sectionTitle": "Details for Visa application to Burundi",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "cambodia",
+    "label": "Cambodia",
+    "sectionTitle": "Details for Visa application to Cambodia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "cameroon",
+    "label": "Cameroon",
+    "sectionTitle": "Details for Visa application to Cameroon",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "canada",
+    "label": "Canada",
+    "sectionTitle": "Details for Visa application to Canada",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "cape-verde",
+    "label": "Cape Verde",
+    "sectionTitle": "Details for Visa application to Cape Verde",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "caribbean-netherlands",
+    "label": "Caribbean Netherlands",
+    "sectionTitle": "Details for Visa application to Caribbean Netherlands",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "cayman-islands",
+    "label": "Cayman Islands",
+    "sectionTitle": "Details for Visa application to Cayman Islands",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "central-african-republic",
+    "label": "Central African Republic",
+    "sectionTitle": "Details for Visa application to Central African Republic",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "chad",
+    "label": "Chad",
+    "sectionTitle": "Details for Visa application to Chad",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "chile",
+    "label": "Chile",
+    "sectionTitle": "Details for Visa application to Chile",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "china",
+    "label": "China",
+    "sectionTitle": "Details for Visa application to China",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "christmas-island",
+    "label": "Christmas Island",
+    "sectionTitle": "Details for Visa application to Christmas Island",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "cocos-keeling-islands",
+    "label": "Cocos (Keeling) Islands",
+    "sectionTitle": "Details for Visa application to Cocos (Keeling) Islands",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "colombia",
+    "label": "Colombia",
+    "sectionTitle": "Details for Visa application to Colombia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "comoros",
+    "label": "Comoros",
+    "sectionTitle": "Details for Visa application to Comoros",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "congo-brazzaville",
+    "label": "Congo - Brazzaville",
+    "sectionTitle": "Details for Visa application to Congo - Brazzaville",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "congo-kinshasa",
+    "label": "Congo - Kinshasa",
+    "sectionTitle": "Details for Visa application to Congo - Kinshasa",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "cook-islands",
+    "label": "Cook Islands",
+    "sectionTitle": "Details for Visa application to Cook Islands",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "costa-rica",
+    "label": "Costa Rica",
+    "sectionTitle": "Details for Visa application to Costa Rica",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "cote-divoire",
+    "label": "Côte d’Ivoire",
+    "sectionTitle": "Details for Visa application to Côte d’Ivoire",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "croatia",
+    "label": "Croatia",
+    "sectionTitle": "Details for Visa application to Croatia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "cuba",
+    "label": "Cuba",
+    "sectionTitle": "Details for Visa application to Cuba",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "curacao",
+    "label": "Curaçao",
+    "sectionTitle": "Details for Visa application to Curaçao",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "cyprus",
+    "label": "Cyprus",
+    "sectionTitle": "Details for Visa application to Cyprus",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "czechia",
+    "label": "Czechia",
+    "sectionTitle": "Details for Visa application to Czechia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "denmark",
+    "label": "Denmark",
+    "sectionTitle": "Details for Visa application to Denmark",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "djibouti",
+    "label": "Djibouti",
+    "sectionTitle": "Details for Visa application to Djibouti",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "dominica",
+    "label": "Dominica",
+    "sectionTitle": "Details for Visa application to Dominica",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "dominican-republic",
+    "label": "Dominican Republic",
+    "sectionTitle": "Details for Visa application to Dominican Republic",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "ecuador",
+    "label": "Ecuador",
+    "sectionTitle": "Details for Visa application to Ecuador",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "egypt",
+    "label": "Egypt",
+    "sectionTitle": "Details for Visa application to Egypt",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "el-salvador",
+    "label": "El Salvador",
+    "sectionTitle": "Details for Visa application to El Salvador",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "equatorial-guinea",
+    "label": "Equatorial Guinea",
+    "sectionTitle": "Details for Visa application to Equatorial Guinea",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "eritrea",
+    "label": "Eritrea",
+    "sectionTitle": "Details for Visa application to Eritrea",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "estonia",
+    "label": "Estonia",
+    "sectionTitle": "Details for Visa application to Estonia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "eswatini",
+    "label": "Eswatini",
+    "sectionTitle": "Details for Visa application to Eswatini",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "ethiopia",
+    "label": "Ethiopia",
+    "sectionTitle": "Details for Visa application to Ethiopia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "falkland-islands",
+    "label": "Falkland Islands",
+    "sectionTitle": "Details for Visa application to Falkland Islands",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "faroe-islands",
+    "label": "Faroe Islands",
+    "sectionTitle": "Details for Visa application to Faroe Islands",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "fiji",
+    "label": "Fiji",
+    "sectionTitle": "Details for Visa application to Fiji",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "finland",
+    "label": "Finland",
+    "sectionTitle": "Details for Visa application to Finland",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "france",
+    "label": "France",
+    "sectionTitle": "Details for Visa application to France",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "french-guiana",
+    "label": "French Guiana",
+    "sectionTitle": "Details for Visa application to French Guiana",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "french-polynesia",
+    "label": "French Polynesia",
+    "sectionTitle": "Details for Visa application to French Polynesia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "french-southern-territories",
+    "label": "French Southern Territories",
+    "sectionTitle": "Details for Visa application to French Southern Territories",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "gabon",
+    "label": "Gabon",
+    "sectionTitle": "Details for Visa application to Gabon",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "gambia",
+    "label": "Gambia",
+    "sectionTitle": "Details for Visa application to Gambia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "georgia",
+    "label": "Georgia",
+    "sectionTitle": "Details for Visa application to Georgia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "germany",
+    "label": "Germany",
+    "sectionTitle": "Details for Visa application to Germany",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "ghana",
+    "label": "Ghana",
+    "sectionTitle": "Details for Visa application to Ghana",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "gibraltar",
+    "label": "Gibraltar",
+    "sectionTitle": "Details for Visa application to Gibraltar",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "greece",
+    "label": "Greece",
+    "sectionTitle": "Details for Visa application to Greece",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "greenland",
+    "label": "Greenland",
+    "sectionTitle": "Details for Visa application to Greenland",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "grenada",
+    "label": "Grenada",
+    "sectionTitle": "Details for Visa application to Grenada",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "guadeloupe",
+    "label": "Guadeloupe",
+    "sectionTitle": "Details for Visa application to Guadeloupe",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "guam",
+    "label": "Guam",
+    "sectionTitle": "Details for Visa application to Guam",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "guatemala",
+    "label": "Guatemala",
+    "sectionTitle": "Details for Visa application to Guatemala",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "guernsey",
+    "label": "Guernsey",
+    "sectionTitle": "Details for Visa application to Guernsey",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "guinea",
+    "label": "Guinea",
+    "sectionTitle": "Details for Visa application to Guinea",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "guinea-bissau",
+    "label": "Guinea-Bissau",
+    "sectionTitle": "Details for Visa application to Guinea-Bissau",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "guyana",
+    "label": "Guyana",
+    "sectionTitle": "Details for Visa application to Guyana",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "haiti",
+    "label": "Haiti",
+    "sectionTitle": "Details for Visa application to Haiti",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "heard-and-mcdonald-islands",
+    "label": "Heard & McDonald Islands",
+    "sectionTitle": "Details for Visa application to Heard & McDonald Islands",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "honduras",
+    "label": "Honduras",
+    "sectionTitle": "Details for Visa application to Honduras",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "hong-kong-sar-china",
+    "label": "Hong Kong SAR China",
+    "sectionTitle": "Details for Visa application to Hong Kong SAR China",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "hungary",
+    "label": "Hungary",
+    "sectionTitle": "Details for Visa application to Hungary",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "iceland",
+    "label": "Iceland",
+    "sectionTitle": "Details for Visa application to Iceland",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "india",
+    "label": "India",
+    "sectionTitle": "Details for Visa application to India",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "indonesia",
+    "label": "Indonesia",
+    "sectionTitle": "Details for Visa application to Indonesia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "iran",
+    "label": "Iran",
+    "sectionTitle": "Details for Visa application to Iran",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "iraq",
+    "label": "Iraq",
+    "sectionTitle": "Details for Visa application to Iraq",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "ireland",
+    "label": "Ireland",
+    "sectionTitle": "Details for Visa application to Ireland",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "isle-of-man",
+    "label": "Isle of Man",
+    "sectionTitle": "Details for Visa application to Isle of Man",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "israel",
+    "label": "Israel",
+    "sectionTitle": "Details for Visa application to Israel",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "italy",
+    "label": "Italy",
+    "sectionTitle": "Details for Visa application to Italy",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "jamaica",
+    "label": "Jamaica",
+    "sectionTitle": "Details for Visa application to Jamaica",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "japan",
+    "label": "Japan",
+    "sectionTitle": "Details for Visa application to Japan",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "jersey",
+    "label": "Jersey",
+    "sectionTitle": "Details for Visa application to Jersey",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "jordan",
+    "label": "Jordan",
+    "sectionTitle": "Details for Visa application to Jordan",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "kazakhstan",
+    "label": "Kazakhstan",
+    "sectionTitle": "Details for Visa application to Kazakhstan",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "kenya",
+    "label": "Kenya",
+    "sectionTitle": "Details for Visa application to Kenya",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "kiribati",
+    "label": "Kiribati",
+    "sectionTitle": "Details for Visa application to Kiribati",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "kosovo",
+    "label": "Kosovo",
+    "sectionTitle": "Details for Visa application to Kosovo",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "kuwait",
+    "label": "Kuwait",
+    "sectionTitle": "Details for Visa application to Kuwait",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "kyrgyzstan",
+    "label": "Kyrgyzstan",
+    "sectionTitle": "Details for Visa application to Kyrgyzstan",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "laos",
+    "label": "Laos",
+    "sectionTitle": "Details for Visa application to Laos",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "latvia",
+    "label": "Latvia",
+    "sectionTitle": "Details for Visa application to Latvia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "lebanon",
+    "label": "Lebanon",
+    "sectionTitle": "Details for Visa application to Lebanon",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "lesotho",
+    "label": "Lesotho",
+    "sectionTitle": "Details for Visa application to Lesotho",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "liberia",
+    "label": "Liberia",
+    "sectionTitle": "Details for Visa application to Liberia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "libya",
+    "label": "Libya",
+    "sectionTitle": "Details for Visa application to Libya",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "liechtenstein",
+    "label": "Liechtenstein",
+    "sectionTitle": "Details for Visa application to Liechtenstein",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "lithuania",
+    "label": "Lithuania",
+    "sectionTitle": "Details for Visa application to Lithuania",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "luxembourg",
+    "label": "Luxembourg",
+    "sectionTitle": "Details for Visa application to Luxembourg",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "macao-sar-china",
+    "label": "Macao SAR China",
+    "sectionTitle": "Details for Visa application to Macao SAR China",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "madagascar",
+    "label": "Madagascar",
+    "sectionTitle": "Details for Visa application to Madagascar",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "malawi",
+    "label": "Malawi",
+    "sectionTitle": "Details for Visa application to Malawi",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "malaysia",
+    "label": "Malaysia",
+    "sectionTitle": "Details for Visa application to Malaysia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "maldives",
+    "label": "Maldives",
+    "sectionTitle": "Details for Visa application to Maldives",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "mali",
+    "label": "Mali",
+    "sectionTitle": "Details for Visa application to Mali",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "malta",
+    "label": "Malta",
+    "sectionTitle": "Details for Visa application to Malta",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "marshall-islands",
+    "label": "Marshall Islands",
+    "sectionTitle": "Details for Visa application to Marshall Islands",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "martinique",
+    "label": "Martinique",
+    "sectionTitle": "Details for Visa application to Martinique",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "mauritania",
+    "label": "Mauritania",
+    "sectionTitle": "Details for Visa application to Mauritania",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "mauritius",
+    "label": "Mauritius",
+    "sectionTitle": "Details for Visa application to Mauritius",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "mayotte",
+    "label": "Mayotte",
+    "sectionTitle": "Details for Visa application to Mayotte",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "mexico",
+    "label": "Mexico",
+    "sectionTitle": "Details for Visa application to Mexico",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "micronesia",
+    "label": "Micronesia",
+    "sectionTitle": "Details for Visa application to Micronesia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "moldova",
+    "label": "Moldova",
+    "sectionTitle": "Details for Visa application to Moldova",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "monaco",
+    "label": "Monaco",
+    "sectionTitle": "Details for Visa application to Monaco",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "mongolia",
+    "label": "Mongolia",
+    "sectionTitle": "Details for Visa application to Mongolia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "montenegro",
+    "label": "Montenegro",
+    "sectionTitle": "Details for Visa application to Montenegro",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "montserrat",
+    "label": "Montserrat",
+    "sectionTitle": "Details for Visa application to Montserrat",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "morocco",
+    "label": "Morocco",
+    "sectionTitle": "Details for Visa application to Morocco",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "mozambique",
+    "label": "Mozambique",
+    "sectionTitle": "Details for Visa application to Mozambique",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "myanmar-burma",
+    "label": "Myanmar (Burma)",
+    "sectionTitle": "Details for Visa application to Myanmar (Burma)",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "namibia",
+    "label": "Namibia",
+    "sectionTitle": "Details for Visa application to Namibia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "nauru",
+    "label": "Nauru",
+    "sectionTitle": "Details for Visa application to Nauru",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "nepal",
+    "label": "Nepal",
+    "sectionTitle": "Details for Visa application to Nepal",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "netherlands",
+    "label": "Netherlands",
+    "sectionTitle": "Details for Visa application to Netherlands",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "new-caledonia",
+    "label": "New Caledonia",
+    "sectionTitle": "Details for Visa application to New Caledonia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "new-zealand",
+    "label": "New Zealand",
+    "sectionTitle": "Details for Visa application to New Zealand",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "nicaragua",
+    "label": "Nicaragua",
+    "sectionTitle": "Details for Visa application to Nicaragua",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "niger",
+    "label": "Niger",
+    "sectionTitle": "Details for Visa application to Niger",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "nigeria",
+    "label": "Nigeria",
+    "sectionTitle": "Details for Visa application to Nigeria",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "niue",
+    "label": "Niue",
+    "sectionTitle": "Details for Visa application to Niue",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "norfolk-island",
+    "label": "Norfolk Island",
+    "sectionTitle": "Details for Visa application to Norfolk Island",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "north-korea",
+    "label": "North Korea",
+    "sectionTitle": "Details for Visa application to North Korea",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "north-macedonia",
+    "label": "North Macedonia",
+    "sectionTitle": "Details for Visa application to North Macedonia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "northern-mariana-islands",
+    "label": "Northern Mariana Islands",
+    "sectionTitle": "Details for Visa application to Northern Mariana Islands",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "norway",
+    "label": "Norway",
+    "sectionTitle": "Details for Visa application to Norway",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "oman",
+    "label": "Oman",
+    "sectionTitle": "Details for Visa application to Oman",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "pakistan",
+    "label": "Pakistan",
+    "sectionTitle": "Details for Visa application to Pakistan",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "palau",
+    "label": "Palau",
+    "sectionTitle": "Details for Visa application to Palau",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "palestinian-territories",
+    "label": "Palestinian Territories",
+    "sectionTitle": "Details for Visa application to Palestinian Territories",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "panama",
+    "label": "Panama",
+    "sectionTitle": "Details for Visa application to Panama",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "papua-new-guinea",
+    "label": "Papua New Guinea",
+    "sectionTitle": "Details for Visa application to Papua New Guinea",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "paraguay",
+    "label": "Paraguay",
+    "sectionTitle": "Details for Visa application to Paraguay",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "peru",
+    "label": "Peru",
+    "sectionTitle": "Details for Visa application to Peru",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "philippines",
+    "label": "Philippines",
+    "sectionTitle": "Details for Visa application to Philippines",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "pitcairn-islands",
+    "label": "Pitcairn Islands",
+    "sectionTitle": "Details for Visa application to Pitcairn Islands",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "poland",
+    "label": "Poland",
+    "sectionTitle": "Details for Visa application to Poland",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "portugal",
+    "label": "Portugal",
+    "sectionTitle": "Details for Visa application to Portugal",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "puerto-rico",
+    "label": "Puerto Rico",
+    "sectionTitle": "Details for Visa application to Puerto Rico",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "qatar",
+    "label": "Qatar",
+    "sectionTitle": "Details for Visa application to Qatar",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "reunion",
+    "label": "Réunion",
+    "sectionTitle": "Details for Visa application to Réunion",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "romania",
+    "label": "Romania",
+    "sectionTitle": "Details for Visa application to Romania",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "russia",
+    "label": "Russia",
+    "sectionTitle": "Details for Visa application to Russia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "rwanda",
+    "label": "Rwanda",
+    "sectionTitle": "Details for Visa application to Rwanda",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "samoa",
+    "label": "Samoa",
+    "sectionTitle": "Details for Visa application to Samoa",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "san-marino",
+    "label": "San Marino",
+    "sectionTitle": "Details for Visa application to San Marino",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "sao-tome-and-principe",
+    "label": "São Tomé & Príncipe",
+    "sectionTitle": "Details for Visa application to São Tomé & Príncipe",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "saudi-arabia",
+    "label": "Saudi Arabia",
+    "sectionTitle": "Details for Visa application to Saudi Arabia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "senegal",
+    "label": "Senegal",
+    "sectionTitle": "Details for Visa application to Senegal",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "serbia",
+    "label": "Serbia",
+    "sectionTitle": "Details for Visa application to Serbia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "seychelles",
+    "label": "Seychelles",
+    "sectionTitle": "Details for Visa application to Seychelles",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "sierra-leone",
+    "label": "Sierra Leone",
+    "sectionTitle": "Details for Visa application to Sierra Leone",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "singapore",
+    "label": "Singapore",
+    "sectionTitle": "Details for Visa application to Singapore",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "sint-maarten",
+    "label": "Sint Maarten",
+    "sectionTitle": "Details for Visa application to Sint Maarten",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "slovakia",
+    "label": "Slovakia",
+    "sectionTitle": "Details for Visa application to Slovakia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "slovenia",
+    "label": "Slovenia",
+    "sectionTitle": "Details for Visa application to Slovenia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "solomon-islands",
+    "label": "Solomon Islands",
+    "sectionTitle": "Details for Visa application to Solomon Islands",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "somalia",
+    "label": "Somalia",
+    "sectionTitle": "Details for Visa application to Somalia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "south-africa",
+    "label": "South Africa",
+    "sectionTitle": "Details for Visa application to South Africa",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "south-georgia-and-south-sandwich-islands",
+    "label": "South Georgia & South Sandwich Islands",
+    "sectionTitle": "Details for Visa application to South Georgia & South Sandwich Islands",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "south-korea",
+    "label": "South Korea",
+    "sectionTitle": "Details for Visa application to South Korea",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "south-sudan",
+    "label": "South Sudan",
+    "sectionTitle": "Details for Visa application to South Sudan",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "spain",
+    "label": "Spain",
+    "sectionTitle": "Details for Visa application to Spain",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "sri-lanka",
+    "label": "Sri Lanka",
+    "sectionTitle": "Details for Visa application to Sri Lanka",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "st-barthelemy",
+    "label": "St. Barthélemy",
+    "sectionTitle": "Details for Visa application to St. Barthélemy",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "st-helena",
+    "label": "St. Helena",
+    "sectionTitle": "Details for Visa application to St. Helena",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "st-kitts-and-nevis",
+    "label": "St. Kitts & Nevis",
+    "sectionTitle": "Details for Visa application to St. Kitts & Nevis",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "st-lucia",
+    "label": "St. Lucia",
+    "sectionTitle": "Details for Visa application to St. Lucia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "st-martin",
+    "label": "St. Martin",
+    "sectionTitle": "Details for Visa application to St. Martin",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "st-pierre-and-miquelon",
+    "label": "St. Pierre & Miquelon",
+    "sectionTitle": "Details for Visa application to St. Pierre & Miquelon",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "st-vincent-and-grenadines",
+    "label": "St. Vincent & Grenadines",
+    "sectionTitle": "Details for Visa application to St. Vincent & Grenadines",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "sudan",
+    "label": "Sudan",
+    "sectionTitle": "Details for Visa application to Sudan",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "suriname",
+    "label": "Suriname",
+    "sectionTitle": "Details for Visa application to Suriname",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "svalbard-and-jan-mayen",
+    "label": "Svalbard & Jan Mayen",
+    "sectionTitle": "Details for Visa application to Svalbard & Jan Mayen",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "sweden",
+    "label": "Sweden",
+    "sectionTitle": "Details for Visa application to Sweden",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "switzerland",
+    "label": "Switzerland",
+    "sectionTitle": "Details for Visa application to Switzerland",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "syria",
+    "label": "Syria",
+    "sectionTitle": "Details for Visa application to Syria",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "taiwan",
+    "label": "Taiwan",
+    "sectionTitle": "Details for Visa application to Taiwan",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "tajikistan",
+    "label": "Tajikistan",
+    "sectionTitle": "Details for Visa application to Tajikistan",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "tanzania",
+    "label": "Tanzania",
+    "sectionTitle": "Details for Visa application to Tanzania",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "thailand",
+    "label": "Thailand",
+    "sectionTitle": "Details for Visa application to Thailand",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "timor-leste",
+    "label": "Timor-Leste",
+    "sectionTitle": "Details for Visa application to Timor-Leste",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "togo",
+    "label": "Togo",
+    "sectionTitle": "Details for Visa application to Togo",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "tokelau",
+    "label": "Tokelau",
+    "sectionTitle": "Details for Visa application to Tokelau",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "tonga",
+    "label": "Tonga",
+    "sectionTitle": "Details for Visa application to Tonga",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "trinidad-and-tobago",
+    "label": "Trinidad & Tobago",
+    "sectionTitle": "Details for Visa application to Trinidad & Tobago",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "tunisia",
+    "label": "Tunisia",
+    "sectionTitle": "Details for Visa application to Tunisia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "turkiye",
+    "label": "Türkiye",
+    "sectionTitle": "Details for Visa application to Türkiye",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "turkmenistan",
+    "label": "Turkmenistan",
+    "sectionTitle": "Details for Visa application to Turkmenistan",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "turks-and-caicos-islands",
+    "label": "Turks & Caicos Islands",
+    "sectionTitle": "Details for Visa application to Turks & Caicos Islands",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "tuvalu",
+    "label": "Tuvalu",
+    "sectionTitle": "Details for Visa application to Tuvalu",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "u-s-outlying-islands",
+    "label": "U.S. Outlying Islands",
+    "sectionTitle": "Details for Visa application to U.S. Outlying Islands",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "u-s-virgin-islands",
+    "label": "U.S. Virgin Islands",
+    "sectionTitle": "Details for Visa application to U.S. Virgin Islands",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
     "id": "uganda",
     "label": "Uganda",
     "sectionTitle": "Details for Visa application to Uganda",
     "price": 229,
     "visaTypes": [
-      { "id": "tourist", "label": "Tourist visa" }
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
     ],
     "entries": [
-      { "id": "single", "label": "Single entry" }
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
     ],
     "validityPeriods": [
-      { "id": "3-months", "label": "3 months" }
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "ukraine",
+    "label": "Ukraine",
+    "sectionTitle": "Details for Visa application to Ukraine",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "united-arab-emirates",
+    "label": "United Arab Emirates",
+    "sectionTitle": "Details for Visa application to United Arab Emirates",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "united-kingdom",
+    "label": "United Kingdom",
+    "sectionTitle": "Details for Visa application to United Kingdom",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "united-states",
+    "label": "United States",
+    "sectionTitle": "Details for Visa application to United States",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "uruguay",
+    "label": "Uruguay",
+    "sectionTitle": "Details for Visa application to Uruguay",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "uzbekistan",
+    "label": "Uzbekistan",
+    "sectionTitle": "Details for Visa application to Uzbekistan",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "vanuatu",
+    "label": "Vanuatu",
+    "sectionTitle": "Details for Visa application to Vanuatu",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "vatican-city",
+    "label": "Vatican City",
+    "sectionTitle": "Details for Visa application to Vatican City",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "venezuela",
+    "label": "Venezuela",
+    "sectionTitle": "Details for Visa application to Venezuela",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "vietnam",
+    "label": "Vietnam",
+    "sectionTitle": "Details for Visa application to Vietnam",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "wallis-and-futuna",
+    "label": "Wallis & Futuna",
+    "sectionTitle": "Details for Visa application to Wallis & Futuna",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "western-sahara",
+    "label": "Western Sahara",
+    "sectionTitle": "Details for Visa application to Western Sahara",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "yemen",
+    "label": "Yemen",
+    "sectionTitle": "Details for Visa application to Yemen",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "zambia",
+    "label": "Zambia",
+    "sectionTitle": "Details for Visa application to Zambia",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
+    ]
+  },
+  {
+    "id": "zimbabwe",
+    "label": "Zimbabwe",
+    "sectionTitle": "Details for Visa application to Zimbabwe",
+    "price": 229,
+    "visaTypes": [
+      {
+        "id": "tourist",
+        "label": "Tourist visa"
+      }
+    ],
+    "entries": [
+      {
+        "id": "single",
+        "label": "Single entry"
+      }
+    ],
+    "validityPeriods": [
+      {
+        "id": "3-months",
+        "label": "3 months"
+      }
     ]
   }
 ]

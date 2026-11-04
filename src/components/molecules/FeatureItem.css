@@ -1,0 +1,33 @@
+.feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+}
+
+.feature-item__tile {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-icon);
+  height: var(--size-icon);
+  flex-shrink: 0;
+  border-radius: var(--radius-4);
+  color: var(--color-brand-primary);
+}
+
+.feature-item__tile--page {
+  background-color: var(--color-surface-page);
+}
+
+.feature-item__tile--card {
+  background-color: var(--color-surface-card);
+}
+
+.feature-item__label {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-caption);
+  color: var(--color-text-primary);
+}

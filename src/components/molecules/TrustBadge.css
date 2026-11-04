@@ -1,0 +1,42 @@
+.trust-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  min-height: 48px;
+  padding: var(--space-8) var(--space-16) var(--space-8) var(--space-8);
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface-card);
+  box-shadow: var(--shadow-sm);
+}
+
+.trust-badge__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface-badge);
+  color: var(--color-icon-primary);
+  flex-shrink: 0;
+}
+
+.trust-badge__label {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+@media (max-width: 639px) {
+  .trust-badge {
+    max-width: 100%;
+  }
+
+  .trust-badge__label {
+    white-space: normal;
+  }
+}

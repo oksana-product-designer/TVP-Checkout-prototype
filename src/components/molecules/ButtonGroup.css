@@ -1,0 +1,6 @@
+.button-group {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-16);
+  width: 100%;
+}

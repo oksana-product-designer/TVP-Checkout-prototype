@@ -1,0 +1,185 @@
+.pricing-card--vertical {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 100%;
+}
+
+.pricing-card__banner-row {
+  display: flex;
+  height: 24px;
+  width: 100%;
+}
+
+.pricing-card__banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  border-radius: var(--radius-4) var(--radius-4) 0 0;
+  background-color: var(--color-accent-primary);
+  color: var(--color-text-on-dark);
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-label);
+  line-height: var(--line-height-label);
+  letter-spacing: var(--letter-spacing-label);
+}
+
+.pricing-card__body {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--space-16);
+  width: 100%;
+  padding: var(--space-16) var(--space-12);
+  border-radius: 0 0 var(--radius-4) var(--radius-4);
+  background-color: var(--color-surface-page);
+}
+
+.pricing-card--vertical.pricing-card--active .pricing-card__body {
+  background-color: var(--color-accent-subtle);
+  box-shadow: inset 0 0 0 var(--stroke-width) var(--color-accent-primary);
+}
+
+.pricing-card__name {
+  margin: 0;
+  width: 100%;
+  text-align: center;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-heading);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--letter-spacing-heading);
+  color: var(--color-text-secondary);
+}
+
+.pricing-card__price {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: var(--space-8);
+  margin: 0;
+}
+
+.pricing-card__amount {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-amount);
+  line-height: var(--line-height-amount);
+  letter-spacing: var(--letter-spacing-amount);
+  color: var(--color-text-primary);
+}
+
+.pricing-card__note {
+  font-family: var(--font-family);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-caption);
+  color: var(--color-text-secondary);
+}
+
+.pricing-card__select {
+  width: 100%;
+}
+
+.pricing-card__tagline {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
+  color: var(--color-text-primary);
+}
+
+.pricing-card__lead {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
+  letter-spacing: var(--letter-spacing-caption);
+  color: var(--color-text-secondary);
+}
+
+.pricing-card__features {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  width: 100%;
+}
+
+.pricing-card__more {
+  align-self: center;
+}
+
+.pricing-card__more--active {
+  color: var(--color-text-primary);
+}
+
+.pricing-card--horizontal {
+  display: flex;
+  align-items: center;
+  gap: var(--space-24);
+  width: 100%;
+  padding: var(--space-12);
+  border-radius: var(--radius-4);
+  background-color: var(--color-surface-page);
+}
+
+.pricing-card--horizontal.pricing-card--active {
+  background-color: var(--color-accent-subtle);
+  box-shadow: inset 0 0 0 var(--stroke-width) var(--color-accent-primary);
+}
+
+.pricing-card__intro {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-4);
+  width: 168px;
+  flex-shrink: 0;
+}
+
+.pricing-card__name--large {
+  text-align: left;
+  font-size: var(--font-size-heading-large);
+  line-height: var(--line-height-heading-large);
+  letter-spacing: var(--letter-spacing-heading-large);
+  color: var(--color-text-primary);
+}
+
+.pricing-card__tagline--body {
+  font-weight: var(--font-weight-regular);
+  color: var(--color-text-secondary);
+}
+
+.pricing-card--horizontal .pricing-card__price {
+  justify-content: flex-start;
+}
+
+.pricing-card--horizontal .pricing-card__select {
+  width: auto;
+  min-height: 32px;
+  padding: var(--space-8) var(--space-16);
+}
+
+.pricing-card__column {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  gap: var(--space-8);
+  min-width: 0;
+}
+
+.pricing-card--horizontal .pricing-card__features {
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: var(--space-8);
+}
+
+.pricing-card--horizontal .feature-item {
+  width: 200px;
+}

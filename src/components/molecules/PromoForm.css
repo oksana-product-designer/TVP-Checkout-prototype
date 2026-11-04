@@ -1,0 +1,14 @@
+.promo-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-16);
+  width: 100%;
+  margin: 0;
+}
+
+.promo-form__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-16);
+}

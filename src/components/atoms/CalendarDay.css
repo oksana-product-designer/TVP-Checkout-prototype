@@ -1,0 +1,58 @@
+.calendar-day {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-4);
+  background: transparent;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
+  color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+.calendar-day:focus {
+  outline: none;
+}
+
+.calendar-day:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-brand-primary);
+  outline-offset: 0;
+}
+
+.calendar-day--hover:hover,
+.calendar-day:hover:not(:disabled):not(.calendar-day--selected):not(.calendar-day--today):not(.calendar-day--outside):not(.calendar-day--disabled) {
+  background-color: var(--color-surface-page);
+}
+
+.calendar-day--today {
+  box-shadow: inset 0 0 0 var(--stroke-width) var(--color-brand-primary);
+  font-weight: var(--font-weight-semibold);
+}
+
+.calendar-day--selected {
+  background-color: var(--color-brand-primary);
+  color: var(--color-text-on-dark);
+  font-weight: var(--font-weight-semibold);
+}
+
+.calendar-day--disabled {
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+}
+
+.calendar-day--outside {
+  color: var(--color-text-secondary);
+  cursor: default;
+}
+
+.calendar-day:disabled {
+  cursor: not-allowed;
+}

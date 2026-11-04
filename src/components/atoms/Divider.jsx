@@ -1,5 +1,5 @@
 import './Divider.css'
 
-export function Divider() {
-  return null
+export function Divider({ className = '' }) {
+  return <hr className={['divider', className].filter(Boolean).join(' ')} />
 }

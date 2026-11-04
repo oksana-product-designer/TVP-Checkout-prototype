@@ -1,0 +1,70 @@
+.summary-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--color-text-secondary);
+  text-align: left;
+  font-family: var(--font-family);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
+}
+
+button.summary-row {
+  cursor: pointer;
+}
+
+.summary-row:focus {
+  outline: none;
+}
+
+.summary-row:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-brand-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-4);
+}
+
+.summary-row--level-2 {
+  padding-left: var(--space-12);
+}
+
+.summary-row--level-3 {
+  padding-left: var(--space-24);
+}
+
+.summary-row__chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-icon);
+  height: var(--line-height-body);
+  flex-shrink: 0;
+}
+
+.summary-row__label {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.summary-row__price {
+  flex-shrink: 0;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.summary-row--level-1 .summary-row__label,
+.summary-row--level-1 .summary-row__price,
+.summary-row--level-2 .summary-row__label,
+.summary-row--level-2 .summary-row__price,
+.summary-row--level-3 .summary-row__price {
+  font-weight: var(--font-weight-semibold);
+}
+
+.summary-row--level-3 .summary-row__label {
+  font-weight: var(--font-weight-regular);
+}

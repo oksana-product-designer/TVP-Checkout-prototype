@@ -1,0 +1,26 @@
+.total-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-16);
+  width: 100%;
+}
+
+.total-row__label {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
+  color: var(--color-text-primary);
+}
+
+.total-row__amount {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-amount);
+  line-height: var(--line-height-amount);
+  letter-spacing: var(--letter-spacing-amount);
+  color: var(--color-text-primary);
+  text-align: right;
+}

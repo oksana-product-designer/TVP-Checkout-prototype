@@ -1,0 +1,37 @@
+.text-link {
+  display: inline-flex;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: var(--radius-4);
+  background: transparent;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
+  color: var(--color-text-link);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.text-link:focus {
+  outline: none;
+}
+
+.text-link:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-brand-primary);
+  outline-offset: 2px;
+}
+
+.text-link:hover:not(:disabled),
+.text-link:active:not(:disabled) {
+  color: var(--color-brand-pressed);
+}
+
+.text-link:disabled {
+  color: var(--color-text-disabled);
+  cursor: not-allowed;
+  text-decoration: underline;
+}

@@ -1,0 +1,11 @@
+.form-row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-field-gap);
+  width: 100%;
+}
+
+.form-row > * {
+  flex: 1 1 0;
+  min-width: 0;
+}

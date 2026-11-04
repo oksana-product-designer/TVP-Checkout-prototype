@@ -1,0 +1,22 @@
+.assurance-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-8);
+}
+
+.assurance-item__icon {
+  display: inline-flex;
+  width: var(--size-icon-assurance);
+  height: var(--size-icon-assurance);
+  color: var(--color-icon-primary);
+  flex-shrink: 0;
+}
+
+.assurance-item__label {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
+  color: var(--color-text-primary);
+}

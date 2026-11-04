@@ -1,0 +1,43 @@
+.step-indicator {
+  position: relative;
+  width: 1128px;
+}
+
+.step-indicator__line {
+  position: absolute;
+  top: 12px;
+  left: 0;
+  right: 0;
+  height: var(--stroke-width);
+  background-color: var(--color-brand-primary);
+}
+
+.step-indicator__steps {
+  display: flex;
+  align-items: flex-start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.step-indicator__step {
+  flex: 1 1 0;
+  min-width: 0;
+}
+
+.step-indicator .step-marker {
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 1439px) {
+  .step-indicator {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1440px) {
+  .step-indicator {
+    width: 100%;
+  }
+}
