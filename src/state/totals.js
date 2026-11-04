@@ -3,6 +3,7 @@ import addons from '../mocks/addons.json'
 import passportServices from '../mocks/passport-services.json'
 import promoCodes from '../mocks/promo-codes.json'
 import packages from '../mocks/packages.json'
+import shippingMethods from '../mocks/shipping-methods.json'
 import visaServices from '../mocks/visa-services.json'
 
 const passportById = Object.fromEntries(passportServices.map((service) => [service.id, service]))
@@ -84,8 +85,33 @@ export function getPromoDiscount(order) {
   return getServiceSubtotal(order) * (promo.value / 100)
 }
 
+function shippingAmount(method, vipPackageId) {
+  if (vipPackageId === 'concierge' && method.id === 'fedex-2nd-day') return 0
+  if (vipPackageId === 'executive' && method.id === 'fedex-overnight') return 0
+  return method.price
+}
+
+export function getShippingLines(order) {
+  const delivery = order.delivery || {}
+  const choices = [
+    ['inboundShippingId', 'Inbound Shipping'],
+    ['returnShippingId', 'Return Shipping'],
+  ]
+
+  return choices.flatMap(([field, title]) => {
+    const method = shippingMethods.find((item) => item.id === delivery[field])
+    if (!method) return []
+    return [{
+      id: `shipping-${field}`,
+      label: `${title} (${method.label})`,
+      amount: shippingAmount(method, order.vipPackageId),
+    }]
+  })
+}
+
 export function getOrderTotal(order) {
-  return getServiceSubtotal(order) - getPromoDiscount(order) + (getPackageLine(order)?.amount || 0)
+  const shipping = getShippingLines(order).reduce((sum, line) => sum + line.amount, 0)
+  return getServiceSubtotal(order) - getPromoDiscount(order) + (getPackageLine(order)?.amount || 0) + shipping
 }
 
 export function findPromo(code) {

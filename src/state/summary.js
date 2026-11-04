@@ -1,4 +1,4 @@
-import { formatMoney, getPackageLine, getTravelerLines } from './totals.js'
+import { formatMoney, getPackageLine, getShippingLines, getTravelerLines } from './totals.js'
 
 export function getSummaryTree(order) {
   const rows = order.travelers.map((traveler, index) => {
@@ -35,6 +35,15 @@ export function getSummaryTree(order) {
       children: [],
     })
   }
+
+  getShippingLines(order).forEach((line) => {
+    rows.push({
+      id: line.id,
+      label: line.label,
+      price: formatMoney(line.amount),
+      children: [],
+    })
+  })
 
   return rows
 }

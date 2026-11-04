@@ -1,4 +1,6 @@
 import packages from '../mocks/packages.json'
+import shippingMethods from '../mocks/shipping-methods.json'
+import states from '../mocks/states.json'
 import { visaIdsOf } from './initialOrder.js'
 
 const EMAIL = /^[^\s@]+@[^\s@]+$/
@@ -13,6 +15,25 @@ const MESSAGES = {
   phone: 'Enter a phone number in the format (000) 000-00-00',
   passportServiceIds: 'Select a passport service',
   visaServiceIds: 'Select a visa service',
+}
+
+const ZIP = /^\d{5}(?:-\d{4})?$/
+const LATIN_WORD = /^[A-Za-z]+$/
+
+export function validateFullName(value) {
+  const text = String(value || '').trim()
+  if (!text) return 'Enter your full name'
+  const words = text.split(/\s+/)
+  if (words.length < 2 || words.some((word) => !LATIN_WORD.test(word))) {
+    return 'Enter a first and last name using letters only'
+  }
+  return null
+}
+
+export function formatZip(value) {
+  const digits = String(value || '').replace(/\D/g, '').slice(0, 9)
+  if (digits.length <= 5) return digits
+  return `${digits.slice(0, 5)}-${digits.slice(5)}`
 }
 
 export function formatPhone(value) {
@@ -152,6 +173,29 @@ export function validateField(field, value) {
   return null
 }
 
+export function deliveryErrors(order) {
+  const delivery = order.delivery || {}
+  const address = delivery.address || {}
+  const errors = {}
+
+  if (!shippingMethods.some((item) => item.id === delivery.inboundShippingId)) {
+    errors.inboundShippingId = 'Select an inbound shipping method'
+  }
+  if (!shippingMethods.some((item) => item.id === delivery.returnShippingId)) {
+    errors.returnShippingId = 'Select a return shipping method'
+  }
+  const nameMessage = validateFullName(address.fullName)
+  if (nameMessage) errors.fullName = nameMessage
+  const phoneMessage = validateField('phone', address.phone)
+  if (phoneMessage) errors.phone = phoneMessage
+  if (!String(address.street || '').trim()) errors.street = 'Enter your street address'
+  if (!String(address.city || '').trim()) errors.city = 'Enter your city'
+  if (!states.some((item) => item.id === address.state)) errors.state = 'Select a state'
+  if (!ZIP.test(String(address.zip || '').trim())) errors.zip = 'Enter a valid ZIP code'
+
+  return errors
+}
+
 export function isTravelerValid(traveler) {
   return TRAVELER_FIELDS.every((field) => {
     const value = field === 'visaServiceIds' ? visaIdsOf(traveler) : traveler[field]
@@ -172,6 +216,8 @@ export function isStepValid(order, step = 1) {
   }
 
   if (step === 3) return packages.some((item) => item.id === order.vipPackageId)
+
+  if (step === 4) return Object.keys(deliveryErrors(order)).length === 0
 
   return false
 }

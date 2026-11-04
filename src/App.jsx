@@ -7,6 +7,7 @@ import { getSummaryTree } from './state/summary.js'
 import { findPromo, formatDiscount, formatMoney, getOrderTotal, getPromoDiscount } from './state/totals.js'
 import { useOrder } from './state/useOrder.js'
 import { isStepValid } from './state/validation.js'
+import { DeliveryStep } from './steps/delivery/DeliveryStep.jsx'
 import { ServiceStep } from './steps/service/ServiceStep.jsx'
 import { TravelersStep } from './steps/travelers/TravelersStep.jsx'
 import { VipStep } from './steps/vip/VipStep.jsx'
@@ -15,6 +16,7 @@ const STEP_TITLES = {
   1: 'Kick off your order',
   2: 'Trip and service details',
   3: 'Choose service package',
+  4: 'Delivery details',
 }
 
 function renderServiceLines(lines, closedGroups, onToggle) {
@@ -67,7 +69,7 @@ function App() {
       setRevealToken((current) => current + 1)
       return
     }
-    if (step < 3) leaveStep(step + 1)
+    if (step < 4) leaveStep(step + 1)
   }
 
   function handleBack() {
@@ -147,6 +149,7 @@ function App() {
       {step === 1 ? <TravelersStep attempted={attempted} /> : null}
       {step === 2 ? <ServiceStep attempted={attempted} revealToken={revealToken} /> : null}
       {step === 3 ? <VipStep /> : null}
+      {step === 4 ? <DeliveryStep attempted={attempted} /> : null}
     </CheckoutLayout>
   )
 }

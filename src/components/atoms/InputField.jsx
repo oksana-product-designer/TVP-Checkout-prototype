@@ -26,6 +26,7 @@ function FieldControl({
   onQueryChange,
   activeDescendant,
   inputRef,
+  suggesting = false,
 }) {
   if (type === 'Select' || type === 'Multi-select') {
     const selected = Array.isArray(chips) ? chips : []
@@ -121,8 +122,14 @@ function FieldControl({
       placeholder={placeholder}
       disabled={disabled}
       required={required}
+      autoComplete={suggesting ? 'off' : undefined}
       aria-invalid={invalid || undefined}
       aria-describedby={describedBy}
+      role={suggesting ? 'combobox' : undefined}
+      aria-autocomplete={suggesting ? 'list' : undefined}
+      aria-expanded={suggesting ? expanded : undefined}
+      aria-controls={suggesting ? controls : undefined}
+      aria-activedescendant={suggesting ? activeDescendant : undefined}
       onChange={onChange}
       onBlur={onBlur}
       onFocus={onFocus}
@@ -154,6 +161,7 @@ export function InputField({
   onClick,
   onRemoveChip,
   onToggleOption,
+  onSelectOption,
   ...rest
 }) {
   const generatedId = useId()
@@ -168,6 +176,7 @@ export function InputField({
   const optionList = options || []
   const isMulti = type === 'Multi-select'
   const isList = type === 'Select' || isMulti
+  const suggests = type === 'Text' && optionList.length > 0
   const helperId = `${inputId}-helper`
   const errorId = `${inputId}-error`
   const successId = `${inputId}-success`
@@ -203,9 +212,17 @@ export function InputField({
   }, [open])
 
   const filterText = (isMulti || filtering ? query : '').trim().toLowerCase()
-  const visibleOptions = filterText
-    ? optionList.filter((option) => option.label.toLowerCase().includes(filterText))
-    : optionList
+  const suggestionQuery = suggests ? String(value).trim().toLowerCase() : ''
+  const visibleOptions = isList
+    ? filterText
+      ? optionList.filter((option) => option.label.toLowerCase().includes(filterText))
+      : optionList
+    : suggests && suggestionQuery
+      ? optionList
+          .filter((option) => (option.city || option.label).toLowerCase().startsWith(suggestionQuery))
+          .sort((left, right) => left.label.localeCompare(right.label))
+          .slice(0, 8)
+      : []
   const selectedOption = optionList.find((option) => optionIdOf(option) === value)
   const queryValue = isMulti || filtering ? query : selectedOption?.label || ''
 
@@ -227,6 +244,12 @@ export function InputField({
 
   function chooseOption(option) {
     if (!option) return
+    if (suggests) {
+      if (onSelectOption) onSelectOption(option)
+      else onChange?.({ target: { value: option.city || option.label } })
+      closeList()
+      return
+    }
     if (isMulti) {
       onToggleOption?.(option)
       setQuery('')
@@ -267,7 +290,7 @@ export function InputField({
   }
 
   function onListKeyDown(event) {
-    if (!isList || disabled) return
+    if (!(isList || suggests) || disabled) return
     const count = visibleOptions.length
 
     if (event.key === 'ArrowDown') {
@@ -283,7 +306,7 @@ export function InputField({
     } else if (event.key === 'Escape') {
       event.preventDefault()
       closeList()
-    } else if (event.key === 'Enter' && open) {
+    } else if (event.key === 'Enter' && open && visibleOptions[activeIndex]) {
       event.preventDefault()
       chooseOption(visibleOptions[activeIndex])
     }
@@ -307,7 +330,7 @@ export function InputField({
     .join(' ')
 
   return (
-    <div className={classes} ref={rootRef} onKeyDown={isList ? onListKeyDown : undefined} {...rest}>
+    <div className={classes} ref={rootRef} onKeyDown={isList || suggests ? onListKeyDown : undefined} {...rest}>
       <div className="input-field__label-row">
         <label className="input-field__label-group" htmlFor={inputId}>
           <span className="input-field__label">{label}</span>
@@ -345,12 +368,37 @@ export function InputField({
           required={required}
           describedBy={describedBy || undefined}
           invalid={hasError}
-          onChange={onChange}
-          onBlur={onBlur}
-          onFocus={isList ? onQueryFocus : onFocus}
+          onChange={
+            suggests
+              ? (event) => {
+                  onChange?.(event)
+                  setOpen(true)
+                  setActiveIndex(0)
+                }
+              : onChange
+          }
+          onBlur={
+            suggests
+              ? (event) => {
+                  setOpen(false)
+                  onBlur?.(event)
+                }
+              : onBlur
+          }
+          onFocus={
+            isList
+              ? onQueryFocus
+              : (event) => {
+                  if (suggests && String(value).trim()) {
+                    setOpen(true)
+                    setActiveIndex(0)
+                  }
+                  onFocus?.(event)
+                }
+          }
           onClick={onClick}
-          expanded={isList ? open : undefined}
-          controls={isList ? listId : undefined}
+          expanded={isList || suggests ? open && (isList || visibleOptions.length > 0) : undefined}
+          controls={isList || suggests ? listId : undefined}
           options={options}
           chips={chips}
           onRemoveChip={onRemoveChip}
@@ -362,11 +410,12 @@ export function InputField({
               : undefined
           }
           inputRef={inputRef}
+          suggesting={suggests}
         />
         {hasSuccess ? (
           <Icon name="check" className="input-field__success-icon" />
         ) : null}
-        {isList && open && !disabled ? (
+        {(isList || suggests) && open && !disabled && (isList || visibleOptions.length > 0) ? (
           <ul
             id={listId}
             className="input-field__listbox"
