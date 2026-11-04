@@ -1,4 +1,6 @@
 [
-  { "id": "standard", "label": "Standard", "price": 0 },
-  { "id": "expedited", "label": "Expedited", "price": 30 }
+  { "id": "2-days", "label": "2 Days" },
+  { "id": "1-week", "label": "1 Weeks" },
+  { "id": "2-weeks", "label": "2 Weeks" },
+  { "id": "4-weeks", "label": "4 Weeks" }
 ]

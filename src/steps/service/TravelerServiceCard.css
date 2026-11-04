@@ -1,0 +1,10 @@
+.traveler-service-card,
+.traveler-service-card__sections {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.traveler-service-card__rule {
+  padding: var(--space-24) 0;
+}

@@ -1,0 +1,16 @@
+.date-field {
+  position: relative;
+  min-width: 0;
+}
+
+.date-field--open {
+  z-index: 3;
+}
+
+.date-field__popover {
+  position: absolute;
+  top: calc(
+    var(--line-height-label) + var(--space-label-to-input) + var(--size-control) + var(--space-4)
+  );
+  left: 0;
+}
