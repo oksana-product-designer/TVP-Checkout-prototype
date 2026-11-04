@@ -21,7 +21,7 @@ export function StepNavigation({
       <Button
         type="Primary"
         label={nextLabel}
-        showTrailingIcon={nextLabel === 'Next step'}
+        showTrailingIcon
         trailingIcon="arrow-right"
         ariaDisabled={!nextEnabled}
         onClick={onNext}

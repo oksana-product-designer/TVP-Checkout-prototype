@@ -8,6 +8,8 @@ import { findPromo, formatDiscount, formatMoney, getOrderTotal, getPromoDiscount
 import { useOrder } from './state/useOrder.js'
 import { isStepValid } from './state/validation.js'
 import { DeliveryStep } from './steps/delivery/DeliveryStep.jsx'
+import { PaymentStep } from './steps/payment/PaymentStep.jsx'
+import { paymentActionLabel } from './steps/payment/paymentMethods.js'
 import { ServiceStep } from './steps/service/ServiceStep.jsx'
 import { TravelersStep } from './steps/travelers/TravelersStep.jsx'
 import { VipStep } from './steps/vip/VipStep.jsx'
@@ -17,6 +19,7 @@ const STEP_TITLES = {
   2: 'Trip and service details',
   3: 'Choose service package',
   4: 'Delivery details',
+  5: 'Payment method',
 }
 
 function renderServiceLines(lines, closedGroups, onToggle) {
@@ -69,7 +72,7 @@ function App() {
       setRevealToken((current) => current + 1)
       return
     }
-    if (step < 4) leaveStep(step + 1)
+    if (step < 5) leaveStep(step + 1)
   }
 
   function handleBack() {
@@ -99,6 +102,7 @@ function App() {
       title={STEP_TITLES[step] || STEP_TITLES[2]}
       currentStep={step}
       nextEnabled={isStepValid(order, step)}
+      nextLabel={step === 5 ? paymentActionLabel(order.payment.method) : 'Next step'}
       onBack={step > 1 ? handleBack : undefined}
       onPrevious={handleBack}
       onNext={handleNext}
@@ -150,6 +154,7 @@ function App() {
       {step === 2 ? <ServiceStep attempted={attempted} revealToken={revealToken} /> : null}
       {step === 3 ? <VipStep /> : null}
       {step === 4 ? <DeliveryStep attempted={attempted} /> : null}
+      {step === 5 ? <PaymentStep attempted={attempted} /> : null}
     </CheckoutLayout>
   )
 }

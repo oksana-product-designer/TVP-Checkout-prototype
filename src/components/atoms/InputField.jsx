@@ -17,6 +17,7 @@ function FieldControl({
   onBlur,
   onFocus,
   onClick,
+  autoComplete,
   options,
   chips,
   onRemoveChip,
@@ -122,7 +123,7 @@ function FieldControl({
       placeholder={placeholder}
       disabled={disabled}
       required={required}
-      autoComplete={suggesting ? 'off' : undefined}
+      autoComplete={suggesting ? 'off' : autoComplete}
       aria-invalid={invalid || undefined}
       aria-describedby={describedBy}
       role={suggesting ? 'combobox' : undefined}
@@ -162,6 +163,8 @@ export function InputField({
   onRemoveChip,
   onToggleOption,
   onSelectOption,
+  trailingIcon,
+  autoComplete,
   ...rest
 }) {
   const generatedId = useId()
@@ -397,6 +400,7 @@ export function InputField({
                 }
           }
           onClick={onClick}
+          autoComplete={autoComplete}
           expanded={isList || suggests ? open && (isList || visibleOptions.length > 0) : undefined}
           controls={isList || suggests ? listId : undefined}
           options={options}
@@ -412,6 +416,9 @@ export function InputField({
           inputRef={inputRef}
           suggesting={suggests}
         />
+        {!isList && !hasSuccess && trailingIcon ? (
+          <Icon name={trailingIcon} className="input-field__trailing-icon" />
+        ) : null}
         {hasSuccess ? (
           <Icon name="check" className="input-field__success-icon" />
         ) : null}

@@ -1,0 +1,32 @@
+.payment-step__methods .form-section__content,
+.payment-step__details .form-section__content {
+  margin-top: 0;
+}
+
+.payment-step__details .form-section__divider {
+  padding-top: 0;
+  padding-bottom: var(--space-16);
+}
+
+.payment-step__notice {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-12);
+}
+
+.payment-step__logo {
+  display: block;
+  width: 96px;
+  height: 24px;
+}
+
+.payment-step__copy {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
+  color: var(--color-text-primary);
+}

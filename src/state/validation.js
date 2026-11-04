@@ -219,5 +219,68 @@ export function isStepValid(order, step = 1) {
 
   if (step === 4) return Object.keys(deliveryErrors(order)).length === 0
 
+  if (step === 5) return Object.keys(paymentErrors(order)).length === 0
+
   return false
+}
+
+const EXPIRATION = /^(0[1-9]|1[0-2])\/(\d{2})$/
+const CVV = /^\d{3}$/
+
+function passesLuhn(digits) {
+  let sum = 0
+  let doubleDigit = false
+  for (let index = digits.length - 1; index >= 0; index -= 1) {
+    let digit = Number(digits[index])
+    if (doubleDigit) {
+      digit *= 2
+      if (digit > 9) digit -= 9
+    }
+    sum += digit
+    doubleDigit = !doubleDigit
+  }
+  return sum % 10 === 0
+}
+
+export function formatCardNumber(value) {
+  const digits = String(value || '').replace(/\D/g, '').slice(0, 16)
+  return digits.replace(/(.{4})/g, '$1 ').trim()
+}
+
+export function formatExpiration(value) {
+  const digits = String(value || '').replace(/\D/g, '').slice(0, 4)
+  if (digits.length < 3) return digits
+  return `${digits.slice(0, 2)}/${digits.slice(2)}`
+}
+
+export function formatCvv(value) {
+  return String(value || '').replace(/\D/g, '').slice(0, 3)
+}
+
+function expirationError(value) {
+  const match = EXPIRATION.exec(String(value || ''))
+  if (!match) return 'Enter a date in the format MM/YY'
+  const month = Number(match[1])
+  const year = 2000 + Number(match[2])
+  const now = new Date()
+  const entered = year * 12 + month
+  const current = now.getFullYear() * 12 + now.getMonth() + 1
+  if (entered < current) return 'Enter a valid expiration date'
+  return ''
+}
+
+export function paymentErrors(order) {
+  const payment = order.payment || {}
+  if (payment.method !== 'card') return {}
+  const errors = {}
+  const digits = String(payment.cardNumber || '').replace(/\D/g, '')
+  if (digits.length !== 16 || !passesLuhn(digits)) {
+    errors.cardNumber = 'Enter a valid card number'
+  }
+  const expirationMessage = expirationError(payment.expiration)
+  if (expirationMessage) errors.expiration = expirationMessage
+  if (!CVV.test(String(payment.cvv || ''))) {
+    errors.cvv = 'Enter a 3-digit CVV'
+  }
+  return errors
 }

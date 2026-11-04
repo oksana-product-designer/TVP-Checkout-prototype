@@ -58,13 +58,13 @@ button.summary-row {
 }
 
 .summary-row--level-1 .summary-row__label,
-.summary-row--level-1 .summary-row__price,
-.summary-row--level-2 .summary-row__label,
-.summary-row--level-2 .summary-row__price,
-.summary-row--level-3 .summary-row__price {
+.summary-row--level-1 .summary-row__price {
   font-weight: var(--font-weight-semibold);
 }
 
-.summary-row--level-3 .summary-row__label {
+.summary-row--level-2 .summary-row__label,
+.summary-row--level-2 .summary-row__price,
+.summary-row--level-3 .summary-row__label,
+.summary-row--level-3 .summary-row__price {
   font-weight: var(--font-weight-regular);
 }
