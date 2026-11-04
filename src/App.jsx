@@ -5,10 +5,12 @@ import { SummaryGroup } from './components/organisms/SummaryGroup.jsx'
 import { SummarySidebar } from './components/organisms/SummarySidebar.jsx'
 import { getSummaryTree } from './state/summary.js'
 import { findPromo, formatDiscount, formatMoney, getOrderTotal, getPromoDiscount } from './state/totals.js'
+import { initialOrder } from './state/initialOrder.js'
 import { useOrder } from './state/useOrder.js'
 import { isStepValid } from './state/validation.js'
 import { DeliveryStep } from './steps/delivery/DeliveryStep.jsx'
 import { PaymentStep } from './steps/payment/PaymentStep.jsx'
+import { OrderPlaced } from './steps/placed/OrderPlaced.jsx'
 import { paymentActionLabel } from './steps/payment/paymentMethods.js'
 import { ServiceStep } from './steps/service/ServiceStep.jsx'
 import { TravelersStep } from './steps/travelers/TravelersStep.jsx'
@@ -20,6 +22,7 @@ const STEP_TITLES = {
   3: 'Choose service package',
   4: 'Delivery details',
   5: 'Payment method',
+  placed: 'Your order has been placed',
 }
 
 function renderServiceLines(lines, closedGroups, onToggle) {
@@ -73,6 +76,16 @@ function App() {
       return
     }
     if (step < 5) leaveStep(step + 1)
+    else if (step === 5) leaveStep('placed')
+  }
+
+  function handleHome() {
+    setOrder(structuredClone(initialOrder))
+    setAttempted(false)
+    setRevealToken(0)
+    setPromoView('link')
+    setClosedGroups({})
+    setStep(1)
   }
 
   function handleBack() {
@@ -99,14 +112,17 @@ function App() {
 
   return (
     <CheckoutLayout
+      className={step === 'placed' ? 'checkout-layout--placed' : ''}
       title={STEP_TITLES[step] || STEP_TITLES[2]}
       currentStep={step}
+      showBackLink={step !== 'placed'}
+      showNavigation={step !== 'placed'}
       nextEnabled={isStepValid(order, step)}
       nextLabel={step === 5 ? paymentActionLabel(order.payment.method) : 'Next step'}
       onBack={step > 1 ? handleBack : undefined}
       onPrevious={handleBack}
       onNext={handleNext}
-      sidebar={
+      sidebar={step === 'placed' ? null : (
         <SummarySidebar
           total={formatMoney(getOrderTotal(order))}
           promoView={view}
@@ -148,13 +164,14 @@ function App() {
             ),
           )}
         </SummarySidebar>
-      }
+      )}
     >
       {step === 1 ? <TravelersStep attempted={attempted} /> : null}
       {step === 2 ? <ServiceStep attempted={attempted} revealToken={revealToken} /> : null}
       {step === 3 ? <VipStep /> : null}
       {step === 4 ? <DeliveryStep attempted={attempted} /> : null}
       {step === 5 ? <PaymentStep attempted={attempted} /> : null}
+      {step === 'placed' ? <OrderPlaced onHome={handleHome} /> : null}
     </CheckoutLayout>
   )
 }

@@ -14,6 +14,7 @@ export function CheckoutLayout({
   nextLabel = 'Next step',
   onPrevious,
   onNext,
+  showNavigation = true,
   sidebar,
   children,
   className = '',
@@ -30,13 +31,15 @@ export function CheckoutLayout({
       <div className="checkout-layout__grid">
         <div className="checkout-layout__main">
           {children ? <div className="checkout-layout__cards">{children}</div> : null}
-          <StepNavigation
-            first={first}
-            nextEnabled={nextEnabled}
-            nextLabel={nextLabel}
-            onPrevious={onPrevious}
-            onNext={onNext}
-          />
+          {showNavigation ? (
+            <StepNavigation
+              first={first}
+              nextEnabled={nextEnabled}
+              nextLabel={nextLabel}
+              onPrevious={onPrevious}
+              onNext={onNext}
+            />
+          ) : null}
         </div>
         {aside ? <div className="checkout-layout__sidebar">{aside}</div> : null}
       </div>
