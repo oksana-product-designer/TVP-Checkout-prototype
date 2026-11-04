@@ -17,6 +17,11 @@
   top: 20px;
 }
 
+.header__step-bar:not(:has(.header__back)) {
+  display: flex;
+  justify-content: center;
+}
+
 @media (max-width: 1439px) {
   .header__step-bar {
     display: grid;

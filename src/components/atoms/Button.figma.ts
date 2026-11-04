@@ -11,6 +11,10 @@ const type = instance.getEnum('Type', {
   Link: 'Link',
   'Link accent': 'Link accent',
 })
+const size = instance.getEnum('Size', {
+  Default: 'Default',
+  Small: 'Small',
+})
 const state = instance.getEnum('State', {
   Default: 'Default',
   Hover: 'Hover',
@@ -39,6 +43,7 @@ export default {
   example: figma.code`
     <Button
       type="${type}"
+      size="${size}"
       label="${label}"
       ${disabled ? 'disabled' : ''}
       ${showLeadingIcon ? 'showLeadingIcon' : ''}

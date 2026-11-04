@@ -5,18 +5,92 @@ import { SummaryGroup } from './components/organisms/SummaryGroup.jsx'
 import { SummarySidebar } from './components/organisms/SummarySidebar.jsx'
 import { getSummaryTree } from './state/summary.js'
 import { findPromo, formatDiscount, formatMoney, getOrderTotal, getPromoDiscount } from './state/totals.js'
+import { initialOrder } from './state/initialOrder.js'
 import { useOrder } from './state/useOrder.js'
 import { isStepValid } from './state/validation.js'
+import { DeliveryStep } from './steps/delivery/DeliveryStep.jsx'
+import { PaymentStep } from './steps/payment/PaymentStep.jsx'
+import { OrderPlaced } from './steps/placed/OrderPlaced.jsx'
+import { paymentActionLabel } from './steps/payment/paymentMethods.js'
+import { ServiceStep } from './steps/service/ServiceStep.jsx'
 import { TravelersStep } from './steps/travelers/TravelersStep.jsx'
+import { VipStep } from './steps/vip/VipStep.jsx'
+
+const STEP_TITLES = {
+  1: 'Kick off your order',
+  2: 'Trip and service details',
+  3: 'Choose service package',
+  4: 'Delivery details',
+  5: 'Payment method',
+  placed: 'Your order has been placed',
+}
+
+function renderServiceLines(lines, closedGroups, onToggle) {
+  return lines.map((line) => (
+    line.children?.length ? (
+      <SummaryGroup
+        key={line.id}
+        level="2"
+        label={line.label}
+        price={line.price}
+        open={!closedGroups[line.id]}
+        onToggle={() => onToggle(line.id)}
+      >
+        {line.children.map((child) => (
+          <SummaryRow key={child.id} level="3" label={child.label} price={child.price} />
+        ))}
+      </SummaryGroup>
+    ) : (
+      <SummaryRow key={line.id} level="2" label={line.label} price={line.price} />
+    )
+  ))
+}
 
 function App() {
   const { order, setOrder } = useOrder()
+  const [step, setStep] = useState(1)
   const [attempted, setAttempted] = useState(false)
+  const [revealToken, setRevealToken] = useState(0)
   const [promoView, setPromoView] = useState('link')
   const [closedGroups, setClosedGroups] = useState({})
   const summary = getSummaryTree(order)
   const promo = order.promo.appliedCode ? findPromo(order.promo.appliedCode) : null
   const view = promo ? 'applied' : promoView
+
+  function toggleGroup(id) {
+    setClosedGroups((current) => ({
+      ...current,
+      [id]: !current[id],
+    }))
+  }
+
+  function leaveStep(nextStep) {
+    setStep(nextStep)
+    setAttempted(false)
+  }
+
+  function handleNext() {
+    if (!isStepValid(order, step)) {
+      setAttempted(true)
+      setRevealToken((current) => current + 1)
+      return
+    }
+    if (step < 5) leaveStep(step + 1)
+    else if (step === 5) leaveStep('placed')
+  }
+
+  function handleHome() {
+    setOrder(structuredClone(initialOrder))
+    setAttempted(false)
+    setRevealToken(0)
+    setPromoView('link')
+    setClosedGroups({})
+    setStep(1)
+  }
+
+  function handleBack() {
+    if (step > 1) leaveStep(step - 1)
+  }
 
   function applyPromo(code) {
     const match = findPromo(code)
@@ -38,11 +112,17 @@ function App() {
 
   return (
     <CheckoutLayout
-      title="Kick off your order"
-      currentStep={1}
-      nextEnabled={isStepValid(order, 1)}
-      onNext={() => setAttempted(true)}
-      sidebar={
+      className={step === 'placed' ? 'checkout-layout--placed' : ''}
+      title={STEP_TITLES[step] || STEP_TITLES[2]}
+      currentStep={step}
+      showBackLink={step !== 'placed'}
+      showNavigation={step !== 'placed'}
+      nextEnabled={isStepValid(order, step)}
+      nextLabel={step === 5 ? paymentActionLabel(order.payment.method) : 'Next step'}
+      onBack={step > 1 ? handleBack : undefined}
+      onPrevious={handleBack}
+      onNext={handleNext}
+      sidebar={step === 'placed' ? null : (
         <SummarySidebar
           total={formatMoney(getOrderTotal(order))}
           promoView={view}
@@ -75,25 +155,23 @@ function App() {
                 label={group.label}
                 price={group.price}
                 open={!closedGroups[group.id]}
-                onToggle={() => {
-                  setClosedGroups((current) => ({
-                    ...current,
-                    [group.id]: !current[group.id],
-                  }))
-                }}
+                onToggle={() => toggleGroup(group.id)}
               >
-                {group.children.map((child) => (
-                  <SummaryRow key={child.id} level="2" label={child.label} price={child.price} />
-                ))}
+                {renderServiceLines(group.children, closedGroups, toggleGroup)}
               </SummaryGroup>
             ) : (
               <SummaryRow key={group.id} level="1" label={group.label} price={group.price} />
             ),
           )}
         </SummarySidebar>
-      }
+      )}
     >
-      <TravelersStep attempted={attempted} />
+      {step === 1 ? <TravelersStep attempted={attempted} /> : null}
+      {step === 2 ? <ServiceStep attempted={attempted} revealToken={revealToken} /> : null}
+      {step === 3 ? <VipStep /> : null}
+      {step === 4 ? <DeliveryStep attempted={attempted} /> : null}
+      {step === 5 ? <PaymentStep attempted={attempted} /> : null}
+      {step === 'placed' ? <OrderPlaced onHome={handleHome} /> : null}
     </CheckoutLayout>
   )
 }

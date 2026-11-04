@@ -53,6 +53,16 @@
   flex-shrink: 0;
 }
 
+.checkout-layout--placed .checkout-layout__grid {
+  justify-content: center;
+  align-items: center;
+}
+
+.checkout-layout--placed .checkout-layout__main {
+  width: min(696px, 100%);
+  flex: none;
+}
+
 /* Below the designed 1440 canvas the shell stays fluid, then stacks. */
 @media (max-width: 1439px) {
   .checkout-layout {

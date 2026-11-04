@@ -1,0 +1,10 @@
+.delivery-step__extra {
+  position: relative;
+  width: 100%;
+}
+
+.delivery-step__remove {
+  position: absolute;
+  top: 0;
+  right: 0;
+}

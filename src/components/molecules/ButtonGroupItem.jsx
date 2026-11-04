@@ -32,6 +32,7 @@ export function ButtonGroupItem({
       role="radio"
       className={classes}
       aria-checked={selected}
+      aria-label={content === 'Logo' ? label : undefined}
       disabled={disabled}
       name={name}
       value={value}

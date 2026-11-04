@@ -1,0 +1,45 @@
+.order-placed {
+  align-items: center;
+}
+
+.order-placed__art {
+  display: block;
+  width: 184px;
+  height: 136px;
+}
+
+.order-placed__copy {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-12);
+  width: 100%;
+  min-width: 0;
+  text-align: center;
+}
+
+.order-placed__thanks {
+  margin: 0;
+  max-width: 100%;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-semibold);
+  font-size: var(--font-size-heading);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--letter-spacing-heading);
+  color: var(--color-text-primary);
+}
+
+.order-placed__line {
+  margin: 0;
+  max-width: 100%;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
+  color: var(--color-text-secondary);
+}
+
+.order-placed__follow-up {
+  width: min(480px, 100%);
+}
