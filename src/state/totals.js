@@ -2,19 +2,26 @@ import { visaIdsOf } from './initialOrder.js'
 import addons from '../mocks/addons.json'
 import passportServices from '../mocks/passport-services.json'
 import promoCodes from '../mocks/promo-codes.json'
+import packages from '../mocks/packages.json'
 import visaServices from '../mocks/visa-services.json'
 
 const passportById = Object.fromEntries(passportServices.map((service) => [service.id, service]))
 const visaById = Object.fromEntries(visaServices.map((service) => [service.id, service]))
 const passportCard = addons.find((item) => item.id === 'passport-card')
 
+function formatAmount(amount) {
+  return Math.abs(amount).toLocaleString('en-US', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  })
+}
+
 export function formatMoney(amount) {
-  const negative = amount < 0
-  return `${negative ? '-' : ''}$${Math.abs(amount).toFixed(2)}`
+  return `${amount < 0 ? '-' : ''}$${formatAmount(amount)}`
 }
 
 export function formatDiscount(amount) {
-  return `-$${Math.abs(amount).toFixed(2)}`
+  return `-$${formatAmount(amount)}`
 }
 
 export function getTravelerLines(traveler, order) {
@@ -59,6 +66,17 @@ export function getServiceSubtotal(order) {
   }, 0)
 }
 
+export function getPackageLine(order) {
+  const pkg = packages.find((item) => item.id === order.vipPackageId)
+  if (!pkg || pkg.price <= 0) return null
+  const count = order.travelers.length
+  return {
+    id: `vip-${pkg.id}`,
+    label: `${pkg.name} x ${count} ${count === 1 ? 'traveler' : 'travelers'}`,
+    amount: pkg.price * count,
+  }
+}
+
 export function getPromoDiscount(order) {
   if (!order.promo.appliedCode) return 0
   const promo = promoCodes.find((item) => item.code === order.promo.appliedCode)
@@ -67,7 +85,7 @@ export function getPromoDiscount(order) {
 }
 
 export function getOrderTotal(order) {
-  return getServiceSubtotal(order) - getPromoDiscount(order)
+  return getServiceSubtotal(order) - getPromoDiscount(order) + (getPackageLine(order)?.amount || 0)
 }
 
 export function findPromo(code) {

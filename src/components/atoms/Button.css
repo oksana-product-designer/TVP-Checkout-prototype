@@ -37,6 +37,11 @@
   padding: var(--space-12) var(--space-16);
 }
 
+.button--small-size {
+  min-height: var(--size-control-small);
+  padding: var(--space-8) var(--space-16);
+}
+
 .button--link-size {
   min-height: var(--size-link-button);
   padding: var(--space-4) 0;

@@ -11,6 +11,7 @@ const TYPE_CLASS = {
 
 export function Button({
   type = 'Primary',
+  size = 'Default',
   label,
   leadingIcon,
   trailingIcon,
@@ -24,10 +25,15 @@ export function Button({
   ...rest
 }) {
   const isLink = type === 'Link' || type === 'Link accent' || type === 'Link danger'
+  const sizeClass = isLink
+    ? 'button--link-size'
+    : size === 'Small'
+      ? 'button--small-size'
+      : 'button--control-size'
   const classes = [
     'button',
     TYPE_CLASS[type] || TYPE_CLASS.Primary,
-    isLink ? 'button--link-size' : 'button--control-size',
+    sizeClass,
     className,
   ]
     .filter(Boolean)

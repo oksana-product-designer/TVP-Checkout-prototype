@@ -1,3 +1,4 @@
+import packages from '../mocks/packages.json'
 import { visaIdsOf } from './initialOrder.js'
 
 const EMAIL = /^[^\s@]+@[^\s@]+$/
@@ -169,6 +170,8 @@ export function isStepValid(order, step = 1) {
     if (validateTravelDate(order.trip?.travelDate)) return false
     return order.travelers.every((traveler) => travelerServiceErrorCount(order, traveler) === 0)
   }
+
+  if (step === 3) return packages.some((item) => item.id === order.vipPackageId)
 
   return false
 }

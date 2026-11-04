@@ -162,8 +162,6 @@
 
 .pricing-card--horizontal .pricing-card__select {
   width: auto;
-  min-height: 32px;
-  padding: var(--space-8) var(--space-16);
 }
 
 .pricing-card__column {

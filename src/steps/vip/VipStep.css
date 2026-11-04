@@ -1,0 +1,29 @@
+.vip-step__choices {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-16);
+  width: 100%;
+}
+
+.vip-step__packages {
+  display: flex;
+  align-items: stretch;
+  gap: var(--space-16);
+  width: 100%;
+}
+
+.vip-step__packages--open {
+  align-items: flex-start;
+}
+
+.vip-step__packages .pricing-card--vertical {
+  flex: 1 1 0;
+  width: auto;
+  min-width: 0;
+  height: auto;
+  align-self: stretch;
+}
+
+.vip-step__packages--open .pricing-card--vertical {
+  align-self: flex-start;
+}

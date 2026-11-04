@@ -67,7 +67,7 @@ function App() {
       setRevealToken((current) => current + 1)
       return
     }
-    leaveStep(step + 1)
+    if (step < 3) leaveStep(step + 1)
   }
 
   function handleBack() {

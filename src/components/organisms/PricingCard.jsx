@@ -17,8 +17,11 @@ export function PricingCard({
   bannerLabel,
   features = [],
   moreCount = 0,
+  moreLabel,
+  moreExpanded = false,
   onSelect,
   onMore,
+  selectProps,
   className = '',
 }) {
   const tile = active ? 'card' : 'page'
@@ -35,10 +38,12 @@ export function PricingCard({
     <Button
       className="pricing-card__select"
       type="Secondary"
+      size="Small"
       label={active ? 'Selected' : 'Select'}
       showLeadingIcon={active}
       leadingIcon="check"
       onClick={onSelect}
+      {...selectProps}
     />
   )
 
@@ -47,10 +52,11 @@ export function PricingCard({
       {features.map((feature) => (
         <FeatureItem key={feature} label={feature} tile={orientation === 'Horizontal' ? 'none' : tile} />
       ))}
-      {moreCount > 0 ? (
+      {moreLabel || moreCount > 0 ? (
         <TextLink
           className={active ? 'pricing-card__more pricing-card__more--active' : 'pricing-card__more'}
-          label={`${moreCount} more`}
+          label={moreLabel || `${moreCount} more`}
+          aria-expanded={moreLabel ? moreExpanded : undefined}
           onClick={onMore}
         />
       ) : null}

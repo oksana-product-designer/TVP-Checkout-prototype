@@ -1,7 +1,7 @@
-import { formatMoney, getTravelerLines } from './totals.js'
+import { formatMoney, getPackageLine, getTravelerLines } from './totals.js'
 
 export function getSummaryTree(order) {
-  return order.travelers.map((traveler, index) => {
+  const rows = order.travelers.map((traveler, index) => {
     const lines = getTravelerLines(traveler, order)
     const amount = lines.reduce((sum, line) => sum + line.amount, 0)
     const first = traveler.firstName.trim()
@@ -25,4 +25,16 @@ export function getSummaryTree(order) {
       })),
     }
   })
+
+  const vip = getPackageLine(order)
+  if (vip) {
+    rows.push({
+      id: vip.id,
+      label: vip.label,
+      price: formatMoney(vip.amount),
+      children: [],
+    })
+  }
+
+  return rows
 }

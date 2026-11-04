@@ -49,7 +49,7 @@ Suggested CSS variables: style name with `/` replaced by `-`, for example `--col
 
 ### 2.3 Spacing, shape, elevation
 - Spacing (px): 4, 8, 12, 16, 24, 32, 40. Card padding 32. Field gap 16. Section gap 24. Label to input 8. Section header to content 16.
-- Radius 4 (cards, inputs, buttons); 999 (badges, pills, step circles). Controls 40 high; link buttons 24. Strokes 1px.
+- Radius 4 (cards, inputs, buttons); 999 (badges, pills, step circles). Controls 40 high; small controls 32; link buttons 24. Strokes 1px.
 - `shadow/lg` = 0/16/32 black 8% (cards). `shadow/sm` = 0/4/8 black 5% (trust badge).
 - Focus: 2px `brand/primary` ring outside the control (checkbox: around a 24x24 area).
 - Icons: lucide-style 16px, 2px stroke, round caps: arrow-left, arrow-right, plus, chevron-up and down, info, check, tag, x, calendar, circle-alert, credit-card. Custom: verified-shield, money-back (20px), award. Logos: TVP, PayPal, PayPal Credit, Google Pay (96x24).
@@ -63,7 +63,7 @@ Suggested CSS variables: style name with `/` replaced by `-`, for example `--col
 ## 4. Components (Figma `Components` page)
 | Component | Variants | Props and notes |
 |---|---|---|
-| **Button** | Type: Primary, Secondary, Link, Link accent. State: Default, Hover, Pressed, Focus, Disabled | Label, optional leading and trailing icons. Primary and Secondary 40 high, padding 12/16, gap 8. Primary `accent/primary` with white text (hover and pressed darker, disabled `border/divider` fill). Secondary white with `border/default`. Link types 24 high |
+| **Button** | Type: Primary, Secondary, Link, Link accent. Size: Default, Small. State: Default, Hover, Pressed, Focus, Disabled | Label, optional leading and trailing icons. Default Primary and Secondary are 40 high, padding 12/16, gap 8. Small is Primary and Secondary only, 32 high, padding 8/16, same gap and colors. Primary `accent/primary` with white text (hover and pressed darker, disabled `border/divider` fill). Secondary white with `border/default`. Link types stay 24 high and have no Small variant |
 | **Text link** | State: Default, Hover, Pressed, Focus, Disabled | Label. `body/link`, `text/link`, darker on hover and pressed |
 | **Input field** | Type: Text, Select, Date. State: Default, Hover, Focus, Filled, Error, Disabled, Success | Label, Required, Info icon, Value, Helper text and Show helper text, Error message, Success message |
 | **Checkbox** | Checked: False, True. State: Default, Hover, Focus, Disabled, Error. Description: False, True | Label, Show label, Error message, Description text, Show title, Title, Title required, Title info icon. 16px box in a 24px focus area; checked fill `brand/primary`; description sits 16 below the row |
@@ -88,7 +88,7 @@ Suggested CSS variables: style name with `/` replaced by `-`, for example `--col
 | **Pricing card** | Orientation: Vertical (200 wide), Horizontal (632 wide). State: Inactive, Active | Name, Tagline, Price, Price note, Lead, Show price, Show lead, Show banner, Banner label; slot `Features`; exposed Select button |
 | **Header**, **Step indicator**, **Step navigation** | Navigation: Step First or Other, Next Enabled or Disabled | Header: top bar, back link, indicator. Navigation 696 wide: "Previous step" (Secondary) left, "Next step" (Primary, arrow) right; First hides Previous |
 
-**Pricing card detail.** Vertical: 24 banner row on top (empty spacer, or an orange strip with the label), body padding 16/12 with radius 0/0/4/4. Order: name (`heading`, centered, secondary), price and "per traveler" on one line, full-width Select button, tagline (`body/strong`), lead (`caption`), features slot (4 apart), "N more" link. Inactive: `surface/page` fill, no border. Active: `accent/subtle`, 1px orange border, button "Selected" with check. Horizontal (Free row): 168 intro column (name in `heading/large`, tagline, optional price, hug-width Select button 32 high) and features in two columns. Feature item: 16px tile with 12px check icon (`brand/primary`) and a `caption` label.
+**Pricing card detail.** Vertical: 24 banner row on top (empty spacer, or an orange strip with the label), body padding 16/12 with radius 0/0/4/4. Order: name (`heading`, centered, secondary), price and "per traveler" on one line, full-width Select button (Button size Small), tagline (`body/strong`), lead (`caption`), features slot (4 apart), "N more" link. Inactive: `surface/page` fill, no border. Active: `accent/subtle`, 1px orange border, button "Selected" with check. Horizontal (Free row): 168 intro column (name in `heading/large`, tagline, optional price, hug-width Select button, Button size Small) and features in two columns. Feature item: 16px tile with 12px check icon (`brand/primary`) and a `caption` label.
 
 ## 5. Screens and states
 Each step has a default screen plus filled (valid) and error screens, all on the page anatomy above.
