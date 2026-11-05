@@ -37,9 +37,9 @@
   line-height: var(--line-height-label);
 }
 
-.input-field__info {
-  color: var(--color-icon-secondary);
-  flex-shrink: 0;
+.input-field:has(.popover:hover),
+.input-field:has(.popover:focus-within) {
+  z-index: 4;
 }
 
 .input-field__box {

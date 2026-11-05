@@ -16,6 +16,7 @@
   --color-icon-disabled: rgb(34 34 34 / 40%);
   --color-surface-page: #f4f6f7;
   --color-surface-card: #ffffff;
+  --color-surface-popover: rgb(0 0 0 / 80%);
   --color-surface-badge: rgb(253 189 34 / 10%);
   --color-surface-danger-subtle: rgb(205 55 57 / 10%);
   --color-surface-success-subtle: rgb(30 123 58 / 10%);

@@ -1,6 +1,7 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import { Icon } from '../../assets/icons/Icons.jsx'
 import { Chip } from './Chip.jsx'
+import { Popover } from './Popover.jsx'
 import './InputField.css'
 
 function FieldControl({
@@ -143,6 +144,7 @@ export function InputField({
   label,
   required = false,
   infoIcon = false,
+  infoText = '',
   value = '',
   placeholder,
   helperText,
@@ -182,7 +184,7 @@ export function InputField({
   const suggests = type === 'Text' && optionList.length > 0
   const helperId = `${inputId}-helper`
   const errorId = `${inputId}-error`
-  const successId = `${inputId}-success`
+  const infoId = `${inputId}-info`
 
   const hasError = Boolean(errorMessage)
   const hasSuccess = Boolean(success || successMessage) && !hasError && !disabled
@@ -343,7 +345,7 @@ export function InputField({
             </span>
           ) : null}
         </label>
-        {infoIcon ? <Icon name="info" className="input-field__info" /> : null}
+        {infoIcon ? <Popover label={`About ${label}`} text={infoText} id={infoId} /> : null}
       </div>
 
       <div
