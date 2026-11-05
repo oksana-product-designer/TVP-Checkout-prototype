@@ -20,8 +20,8 @@ export function PaymentStep({ attempted = false }) {
   const method = PAYMENT_METHODS.find((item) => item.id === payment.method) || PAYMENT_METHODS[0]
   const found = paymentErrors(order)
   const errors = {
-    cardNumber: fieldError(attempted, payment.cardNumber, found.cardNumber),
-    expiration: fieldError(attempted, payment.expiration, found.expiration),
+    cardNumber: attempted ? found.cardNumber || '' : '',
+    expiration: attempted ? found.expiration || '' : '',
     cvv: fieldError(attempted, payment.cvv, found.cvv),
   }
 

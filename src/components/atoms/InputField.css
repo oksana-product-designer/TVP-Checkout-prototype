@@ -37,8 +37,7 @@
   line-height: var(--line-height-label);
 }
 
-.input-field:has(.popover:hover),
-.input-field:has(.popover:focus-within) {
+.input-field:has(.popover--open) {
   z-index: 4;
 }
 

@@ -185,6 +185,7 @@ export function InputField({
   const helperId = `${inputId}-helper`
   const errorId = `${inputId}-error`
   const infoId = `${inputId}-info`
+  const successId = `${inputId}-success`
 
   const hasError = Boolean(errorMessage)
   const hasSuccess = Boolean(success || successMessage) && !hasError && !disabled

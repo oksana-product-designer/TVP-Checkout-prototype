@@ -26,7 +26,7 @@ Keep it as simple as possible. No extra libraries unless I ask.
 - **Install:** `npm install`
 - **Dev server:** `npm run dev` (opens at http://localhost:5173)
 - **Build:** `npm run build`
-- **Test:** none for now. Do not add a test framework unless I ask.
+- **Test:** `npm test` (Vitest and React Testing Library).
 - **Lint:** `npm run lint`
 
 Before saying a task is done, run `npm run lint` and `npm run build` and fix any errors.

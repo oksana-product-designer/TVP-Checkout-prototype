@@ -1,4 +1,5 @@
 .popover {
+  position: relative;
   display: inline-flex;
 }
 
@@ -30,9 +31,10 @@
   position: absolute;
   right: 0;
   bottom: calc(100% + var(--space-8));
-  left: 0;
   z-index: 4;
   display: none;
+  width: max-content;
+  max-width: 36ch;
   margin: 0;
   padding: var(--space-12);
   border-radius: var(--radius-4);
@@ -47,7 +49,6 @@
   text-transform: none;
 }
 
-.popover:hover .popover__panel,
-.popover:focus-within .popover__panel {
+.popover--open .popover__panel {
   display: block;
 }
