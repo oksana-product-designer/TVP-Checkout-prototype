@@ -196,8 +196,9 @@ export function deliveryErrors(order) {
   return errors
 }
 
-export function isTravelerValid(traveler) {
+export function isTravelerValid(traveler, { contact = true } = {}) {
   return TRAVELER_FIELDS.every((field) => {
+    if (!contact && (field === 'email' || field === 'phone')) return true
     const value = field === 'visaServiceIds' ? visaIdsOf(traveler) : traveler[field]
     return !validateField(field, value)
   })
@@ -206,7 +207,7 @@ export function isTravelerValid(traveler) {
 export function isStepValid(order, step = 1) {
   if (step === 1) {
     if (order.corporate.hasAccount && order.corporate.status !== 'valid') return false
-    return order.travelers.every(isTravelerValid)
+    return order.travelers.every((traveler, index) => isTravelerValid(traveler, { contact: index === 0 }))
   }
 
   if (step === 2) {

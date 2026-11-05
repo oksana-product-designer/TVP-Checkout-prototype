@@ -86,29 +86,35 @@ export function TravelerDetailsSection({
           onChange={(event) => onChange('stateOfResidence', event.target.value)}
         />
       </FormRow>
-      <FormRow>
-        <InputField
-          label="Email address"
-          required
-          infoIcon
-          value={traveler.email}
-          errorMessage={fieldError(showErrors, traveler, 'email')}
-          onChange={(event) => onChange('email', event.target.value)}
-        />
-        <InputField
-          label="Phone number"
-          required
-          infoIcon
-          value={traveler.phone}
-          errorMessage={fieldError(showErrors, traveler, 'phone')}
-          onChange={(event) => onChange('phone', formatPhone(event.target.value))}
-        />
-      </FormRow>
-      <Checkbox
-        label="I consent to receive SMS updates about my order status"
-        checked={traveler.smsConsent}
-        onChange={(event) => onChange('smsConsent', event.target.checked)}
-      />
+      {index === 0 ? (
+        <>
+          <FormRow>
+            <InputField
+              label="Email address"
+              required
+              infoIcon
+              infoText="We send your order confirmation, receipt, and status updates to this address. We also use it to reach you if we need anything to complete your order."
+              value={traveler.email}
+              errorMessage={fieldError(showErrors, traveler, 'email')}
+              onChange={(event) => onChange('email', event.target.value)}
+            />
+            <InputField
+              label="Phone number"
+              required
+              infoIcon
+              infoText="We use your phone number to reach you quickly if there is a problem with your documents or your delivery. We send text updates only if you tick the SMS box below."
+              value={traveler.phone}
+              errorMessage={fieldError(showErrors, traveler, 'phone')}
+              onChange={(event) => onChange('phone', formatPhone(event.target.value))}
+            />
+          </FormRow>
+          <Checkbox
+            label="I consent to receive SMS updates about my order status"
+            checked={traveler.smsConsent}
+            onChange={(event) => onChange('smsConsent', event.target.checked)}
+          />
+        </>
+      ) : null}
       <InputField
         type="Multi-select"
         label="Passport Services"

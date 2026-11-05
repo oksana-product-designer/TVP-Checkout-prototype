@@ -25,6 +25,7 @@ Suggested CSS variables: style name with `/` replaced by `-`, for example `--col
 | `text/danger`, `text/success` | `#CD3739`, `#1E7B3A` | Errors and asterisks; discounts, success, "(free)" |
 | `text/disabled`, `icon/disabled` | `#222222` at 40% | Disabled text and icons |
 | `surface/page`, `surface/card` | `#F4F6F7`, `#FFFFFF` | Hero, hover fills, unselected pricing cards, disabled fields; cards and inputs |
+| `surface/popover` | black at 80% | Popover fill; text is `text/on-dark` |
 | `surface/badge` | `#FDBD22` at 10% | Trust badge icon circle |
 | `surface/danger-subtle`, `surface/success-subtle` | `#CD3739`, `#1E7B3A` at 10% | Error and success badge fills |
 | `border/default` | `#8A8A8A` | Control borders (3.45:1 on white) |
@@ -56,7 +57,7 @@ Suggested CSS variables: style name with `/` replaced by `-`, for example `--col
 
 ## 3. Shared patterns
 - **Field states** (Text, Select, Date): Default `border/default`; Hover `border/strong`; Focus 2px blue ring; Filled `border/strong` and primary text; Error `border/danger` with red message below; Success `border/success` with check icon and green message; Disabled `border/divider`, `surface/page` fill, 40% text.
-- **Field anatomy:** label above in `label/caps`, red asterisk if required, optional info icon at the far right of the label row. Select has a chevron, Date a calendar icon. Widths: 308 in two-column rows, 200 in three-column rows, 632 full. Messages are sentence case, `caption`, 8 under the box.
+- **Field anatomy:** label above in `label/caps`, red asterisk if required, optional info icon at the far right of the label row. Hover or focus on an info icon that has text opens a Popover above the field. Select has a chevron, Date a calendar icon. Widths: 308 in two-column rows, 200 in three-column rows, 632 full. Messages are sentence case, `caption`, 8 under the box.
 - **Single choice:** unselected = `border/default`; selected = 1px `accent/primary` border, `accent/subtle` fill where there is room, plus a check and the word "Selected".
 - **Status badge:** pill with icon and label. Error: red on `surface/danger-subtle` ("5 errors"). Success: green on `surface/success-subtle` ("Complete").
 
@@ -65,7 +66,8 @@ Suggested CSS variables: style name with `/` replaced by `-`, for example `--col
 |---|---|---|
 | **Button** | Type: Primary, Secondary, Link, Link accent, Link danger. Size: Default, Small. State: Default, Hover, Pressed, Focus, Disabled | Label, optional leading and trailing icons. Default Primary and Secondary are 40 high, padding 12/16, gap 8. Small is Primary and Secondary only, 32 high, padding 8/16, same gap and colors. Primary `accent/primary` with white text (hover and pressed darker, disabled `border/divider` fill). Secondary white with `border/default`. Link types stay 24 high and have no Small variant. Link danger is `text/danger` with an underline on hover; it is not in the Figma set and is used for Remove |
 | **Text link** | State: Default, Hover, Pressed, Focus, Disabled | Label. `body/link`, `text/link`, darker on hover and pressed |
-| **Input field** | Type: Text, Select, Date. State: Default, Hover, Focus, Filled, Error, Disabled, Success | Label, Required, Info icon, Value, Helper text and Show helper text, Error message, Success message |
+| **Input field** | Type: Text, Select, Date. State: Default, Hover, Focus, Filled, Error, Disabled, Success | Label, Required, Info icon, Value, Helper text and Show helper text, Error message, Success message. Info icon with text uses Popover |
+| **Popover** | none | Text. An info trigger; the panel opens above the nearest positioned parent on hover and focus, spanning that parent, 8 above it. Fill `surface/popover`, text `text/on-dark`, `caption`, padding 12, radius 4, `shadow/lg`. Not in the Figma set |
 | **Checkbox** | Checked: False, True. State: Default, Hover, Focus, Disabled, Error. Description: False, True | Label, Show label, Error message, Description text, Show title, Title, Title required, Title info icon. 16px box in a 24px focus area; checked fill `brand/primary`; description sits 16 below the row |
 | **Button group item** | Selected: False, True. State: Default, Hover, Pressed, Focus, Disabled. Content: Text, Logo | Label and icons, or a swappable Logo (96px logo, 16 side padding). 40 high. Selected: orange border and text, hover fill `accent/subtle` |
 | **Button group** | none | Slot `Options`; items share the width, 16 gap |
@@ -96,7 +98,7 @@ Suggested CSS variables: style name with `/` replaced by `-`, for example `--col
 
 ## 5. Screens and states
 Each step has a default screen plus filled (valid) and error screens, all on the page anatomy above.
-- **Step 1:** corporate-account card (Button group, learn-more link; Yes adds the Account number field and Validate button) and "Traveller's details" card (rows First/Last, Nationality/State, Email/Phone with info icons, SMS checkbox, two full-width selects). Screens: No account, Yes empty, Yes error, Yes filled, All filled, All errors.
+- **Step 1:** corporate-account card (Button group, learn-more link; Yes adds the Account number field and Validate button) and "Traveller's details" card (rows First/Last, Nationality/State; Email, Phone, and the SMS checkbox only on the first traveller; two full-width selects). Screens: No account, Yes empty, Yes error, Yes filled, All filled, All errors.
 - **Step 2:** Trip dates card with Date fields (Calendar opens 4 under the focused field). Single traveller: one card, sections separated by dividers; each passport section has Number of pages and Processing speed in a row, then a full-width checkbox with title "Additional Options" and a description. Multiple travellers: one Card per traveller with an Accordion header first; closed cards show only the header (96 high); badge shows "N errors" or "Complete". Screens: single Default, Filled, Errors, Date picker open; multiple Default, Filled, Errors, each with Traveller 1 open, Traveller 2 open, All collapsed.
 - **Step 3:** one Card titled "Choose a package, or continue with the free services." with three vertical Pricing cards (VIP Lite, VIP Concierge with "Most popular" banner, Executive Club; 16 gap, equal height) and the horizontal Free card. Screens: Default (Free Active), Concierge selected (adds a "VIP Concierge x 2 travelers" summary row).
 - **Step 4:** page title "Delivery details". "Shipping methods" card (two required selects in a row) and "Delivery address" card. Screens: Default, Filled, Errors. See Delivery detail above.
