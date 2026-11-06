@@ -5,7 +5,7 @@ Figma file: https://www.figma.com/design/4cN2sjeRxYOB0Tfjh6gRKr/TVP (key `4cN2sj
 Use the exact component names below in code. Never hardcode colors, sizes, or spacing: use the tokens. If this file and Figma disagree, Figma wins. **[placeholder]** = sample copy or data.
 
 ## 1. Page anatomy (same on every step)
-- **Top bar:** 48 high, `brand/primary`. TVP logo (119x36) at x=156. Centered white text "Talk to real experts 24/7 @ 1-833-TVP-VISA (887-8472)", "real" and "24/7 @" bold.
+- **Top bar:** 48 high, `accent/primary`. TVP logo (119x36) at x=156. Centered white text "Talk to real experts 24/7 @ 1-833-TVP-VISA (887-8472)", "real" and "24/7 @" bold.
 - **Step bar:** 88 high, transparent. "Go back" link (arrow + text, brand blue) at x=40. Step indicator 1128 wide from x=156: 1px blue line through the marker centers, equal-width steps, 24px marker above the label. Completed = blue circle with check; Current = blue circle with number, bold label; Upcoming = white circle, gray border, number.
 - **Hero:** `surface/page` background. Trust badge pill (366x48) "Trusted by over 1 million customers for 20 years", then the page title (`display`), centered.
 - **Grid:** side margins 156. Main column **696**, gutter **24**, sidebar **408** (total 1128). Main column: cards stacked with 16 gaps, then 40 below, the Previous/Next bar.
@@ -17,8 +17,8 @@ Suggested CSS variables: style name with `/` replaced by `-`, for example `--col
 ### 2.1 Color
 | Token | Value | Use |
 |---|---|---|
-| `brand/primary`, `brand/pressed` | `#0059AC`, `#003F7D` | Top bar, current step, links, focus ring, checked checkbox, feature check icons |
-| `accent/primary`, `accent/hover`, `accent/pressed` | `#F48120`, `#DC6910`, `#C45A00` | Primary button, selected option border and text, "Most popular" banner, "Add traveller" link |
+| `brand/primary`, `brand/pressed` | `#0059AC`, `#003F7D` | Current step, links, focus ring, checked checkbox, feature check icons |
+| `accent/primary`, `accent/hover`, `accent/pressed` | `#F48120`, `#DC6910`, `#C45A00` | Top bar, primary button, selected option border and text, "Most popular" banner, "Add traveller" link |
 | `accent/subtle` | `#F48120` at 10% | Fill of a selected option or pricing card |
 | `text/primary`, `text/secondary` | `#222222`, `#222222` at 75% | Body text; labels and descriptions |
 | `text/on-dark`, `text/link` | `#FFFFFF`, `#0059AC` | Text on blue or orange; links |
@@ -114,7 +114,7 @@ Node IDs use `114:229` in the API and `node-id=114-229` in URLs.
 - **Step 5:** by Card `188:18249`, PayPal `193:6904`, PayPal Credit `193:8086`, Google Pay `193:8420`
 
 ## 7. Accessibility and known gaps
-- White text on `accent/primary` is about 2.6:1 and fails WCAG AA (primary button, "Add traveller", selected border). Orange stays the brand accent by decision; consider a darker orange for text and controls. `accent/pressed` with white is about 4.6:1.
+- White text on `accent/primary` is about 2.6:1 and fails WCAG AA (top bar, primary button, "Add traveller", selected border). Orange stays the brand accent by decision; consider a darker orange for text and controls. `accent/pressed` with white is about 4.6:1.
 - `border/default` meets 3:1 for control boundaries; `border/divider` is for dividers and disabled controls only. Selection never relies on color alone.
 - Link buttons are 24 high to meet the minimum target size.
 - Gaps: Step 1 and 2 screens show an old 6-step stepper (use 5 steps); Payment screens are still titled "Delivery details" and "Delivery address"; typos "State of residense" and "No I'don't". Delivery Figma uses the lowercase label "phone number" and the error "Enter a valid phone number"; use "Phone number" and the Step 1 format message. The second address line, its Remove control, city suggestions, and the shipping summary rows are not on the Delivery screens. Not designed: mobile and tablet, loading and error states, order confirmation, card error and filled states, the "Add traveller" flow.
