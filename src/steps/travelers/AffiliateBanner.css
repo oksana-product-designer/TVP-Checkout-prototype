@@ -1,0 +1,21 @@
+.affiliate-banner {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--space-24);
+}
+
+.affiliate-banner__logo {
+  flex-shrink: 0;
+  height: var(--size-control);
+  width: auto;
+}
+
+.affiliate-banner__description {
+  margin: 0;
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
+  color: var(--color-text-primary);
+}

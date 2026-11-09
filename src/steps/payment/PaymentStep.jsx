@@ -7,6 +7,7 @@ import { paymentErrors } from '../../state/validation.js'
 import { CardPaymentFields } from './CardPaymentFields.jsx'
 import { PAYMENT_METHODS } from './paymentMethods.js'
 import { WalletPaymentPanel } from './WalletPaymentPanel.jsx'
+import { PromoSection } from './PromoSection.jsx'
 import './PaymentStep.css'
 
 function fieldError(attempted, value, message) {
@@ -33,46 +34,49 @@ export function PaymentStep({ attempted = false }) {
   }
 
   return (
-    <Card>
-      <FormSection className="payment-step__methods" showHeader={false}>
-        <ButtonGroup
-          label="Payment method"
-          name="payment-method"
-          value={method.id}
-          onChange={(value) => patchPayment({ method: value })}
-        >
-          {PAYMENT_METHODS.map((item) => (
-            <ButtonGroupItem
-              key={item.id}
-              value={item.id}
-              label={item.label}
-              content={item.logo ? 'Logo' : 'Text'}
-              showLeadingIcon={!item.logo}
-              leadingIcon={item.logo ? undefined : 'credit-card'}
-              logo={item.logo ? <img src={item.logo} alt="" /> : undefined}
+    <>
+      <PromoSection />
+      <Card>
+        <FormSection className="payment-step__methods" showHeader={false}>
+          <ButtonGroup
+            label="Payment method"
+            name="payment-method"
+            value={method.id}
+            onChange={(value) => patchPayment({ method: value })}
+          >
+            {PAYMENT_METHODS.map((item) => (
+              <ButtonGroupItem
+                key={item.id}
+                value={item.id}
+                label={item.label}
+                content={item.logo ? 'Logo' : 'Text'}
+                showLeadingIcon={!item.logo}
+                leadingIcon={item.logo ? undefined : 'credit-card'}
+                logo={item.logo ? <img src={item.logo} alt="" /> : undefined}
+              />
+            ))}
+          </ButtonGroup>
+        </FormSection>
+        <FormSection className="payment-step__details" showHeader={false} showDivider>
+          {method.id === 'card' ? (
+            <CardPaymentFields
+              cardNumber={payment.cardNumber}
+              expiration={payment.expiration}
+              cvv={payment.cvv}
+              errors={errors}
+              onCardNumber={(cardNumber) => patchPayment({ cardNumber })}
+              onExpiration={(expiration) => patchPayment({ expiration })}
+              onCvv={(cvv) => patchPayment({ cvv })}
             />
-          ))}
-        </ButtonGroup>
-      </FormSection>
-      <FormSection className="payment-step__details" showHeader={false} showDivider>
-        {method.id === 'card' ? (
-          <CardPaymentFields
-            cardNumber={payment.cardNumber}
-            expiration={payment.expiration}
-            cvv={payment.cvv}
-            errors={errors}
-            onCardNumber={(cardNumber) => patchPayment({ cardNumber })}
-            onExpiration={(expiration) => patchPayment({ expiration })}
-            onCvv={(cvv) => patchPayment({ cvv })}
-          />
-        ) : (
-          <WalletPaymentPanel
-            logo={method.logo}
-            explanation={method.explanation}
-            legal={method.legal}
-          />
-        )}
-      </FormSection>
-    </Card>
+          ) : (
+            <WalletPaymentPanel
+              logo={method.logo}
+              explanation={method.explanation}
+              legal={method.legal}
+            />
+          )}
+        </FormSection>
+      </Card>
+    </>
   )
 }

@@ -2,14 +2,19 @@ import { Step } from '../molecules/Step.jsx'
 import './StepIndicator.css'
 
 const CHECKOUT_STEPS = [
-  'Travelers',
+  'Trip and applicants',
   'Service',
   'VIP Service',
   'Delivery',
   'Payment',
 ]
 
-export function StepIndicator({ currentStep = 1, className = '' }) {
+export function StepIndicator({
+  currentStep = 1,
+  reachedStep = 1,
+  onStepSelect,
+  className = '',
+}) {
   const placed = currentStep === 'placed'
 
   return (
@@ -19,12 +24,18 @@ export function StepIndicator({ currentStep = 1, className = '' }) {
         {CHECKOUT_STEPS.map((label, index) => {
           const number = index + 1
           let state = 'Upcoming'
-          if (placed || number < currentStep) state = 'Completed'
+          if (placed || (number !== currentStep && number <= reachedStep)) state = 'Completed'
           else if (number === currentStep) state = 'Current'
+          const selectable = !placed && number <= reachedStep && typeof onStepSelect === 'function'
 
           return (
             <li key={label} className="step-indicator__step" aria-current={state === 'Current' ? 'step' : undefined}>
-              <Step state={state} number={String(number)} label={label} />
+              <Step
+                state={state}
+                number={String(number)}
+                label={label}
+                onSelect={selectable ? () => onStepSelect(number) : undefined}
+              />
             </li>
           )
         })}

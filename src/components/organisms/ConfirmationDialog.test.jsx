@@ -14,7 +14,7 @@ function DialogHarness() {
       </button>
       <ConfirmationDialog
         open={open}
-        title="Remove this traveller?"
+        title="Remove this Applicant?"
         message="Their details will be deleted."
         onCancel={() => setOpen(false)}
         onConfirm={() => setOpen(false)}
@@ -32,7 +32,7 @@ describe('ConfirmationDialog', () => {
     await user.click(trigger)
 
     const cancel = screen.getByRole('button', { name: 'Cancel' })
-    const confirm = screen.getByRole('button', { name: 'Remove traveller' })
+    const confirm = screen.getByRole('button', { name: 'Remove Applicant' })
     expect(cancel).toHaveFocus()
 
     await user.tab()

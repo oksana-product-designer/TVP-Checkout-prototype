@@ -1,5 +1,6 @@
 import { useEffect, useId, useRef, useState } from 'react'
 import { Icon } from '../../assets/icons/Icons.jsx'
+import { Badge } from './Badge.jsx'
 import { Chip } from './Chip.jsx'
 import { Popover } from './Popover.jsx'
 import './InputField.css'
@@ -460,6 +461,15 @@ export function InputField({
                     >
                       {selected ? <Icon name="check" /> : <span className="input-field__option-mark" aria-hidden="true" />}
                       {option.label}
+                      {(option.badges || (option.badge ? [{ label: option.badge, tone: 'brand' }] : [])).map((badge) => (
+                        <Badge
+                          key={badge.label}
+                          type="Success"
+                          label={badge.label}
+                          showIcon={false}
+                          className={badge.tone === 'success' ? 'input-field__option-badge--success' : 'input-field__option-badge'}
+                        />
+                      ))}
                     </button>
                   </li>
                 )

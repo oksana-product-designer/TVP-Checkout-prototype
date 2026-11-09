@@ -12,15 +12,7 @@
   height: var(--size-icon);
   flex-shrink: 0;
   border-radius: var(--radius-4);
-  color: var(--color-brand-primary);
-}
-
-.feature-item__tile--page {
-  background-color: var(--color-surface-page);
-}
-
-.feature-item__tile--card {
-  background-color: var(--color-surface-card);
+  color: var(--color-icon-primary);
 }
 
 .feature-item__label {

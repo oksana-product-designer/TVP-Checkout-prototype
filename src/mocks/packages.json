@@ -1,32 +1,18 @@
 [
   {
-    "id": "free",
-    "name": "Free",
-    "tagline": "Self-service",
+    "id": "lite",
+    "name": "VIP Lite",
+    "tagline": "Basic travel protection",
     "price": 0,
-    "priceNote": "per traveler",
-    "orientation": "horizontal",
+    "compareAt": 99,
+    "orientation": "vertical",
     "banner": null,
     "lead": null,
     "features": [
       "Document pre-check",
       "Form-fill",
       "Passport photo service",
-      "Resubmissions"
-    ],
-    "fullFeatures": [],
-    "moreCount": 0
-  },
-  {
-    "id": "lite",
-    "name": "VIP Lite",
-    "tagline": "Basic travel protection",
-    "price": 99,
-    "priceNote": "per traveler",
-    "orientation": "vertical",
-    "banner": null,
-    "lead": "Includes Free, plus",
-    "features": [
+      "Resubmissions",
       "VIP offices and authorized locations",
       "Acceptance agent appointment (DS-11)"
     ],
@@ -38,7 +24,6 @@
     "name": "VIP Concierge",
     "tagline": "Personalized assistance",
     "price": 770,
-    "priceNote": "per traveler",
     "orientation": "vertical",
     "banner": "Most popular",
     "lead": "Includes VIP Lite, plus",
@@ -70,7 +55,6 @@
     "name": "Executive Club",
     "tagline": "White-glove service",
     "price": 499,
-    "priceNote": "per traveler",
     "orientation": "vertical",
     "banner": null,
     "lead": "Includes VIP Concierge, plus",

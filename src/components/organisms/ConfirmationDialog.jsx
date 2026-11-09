@@ -12,7 +12,7 @@ export function ConfirmationDialog({
   title,
   message,
   cancelLabel = 'Cancel',
-  confirmLabel = 'Remove traveller',
+  confirmLabel = 'Remove Applicant',
   onCancel,
   onConfirm,
 }) {

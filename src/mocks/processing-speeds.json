@@ -1,6 +1,6 @@
 [
-  { "id": "2-days", "label": "2 Days" },
-  { "id": "1-week", "label": "1 Weeks" },
-  { "id": "2-weeks", "label": "2 Weeks" },
-  { "id": "4-weeks", "label": "4 Weeks" }
+  { "id": "2-days", "label": "2 Days", "days": 2, "badge": "Fastest" },
+  { "id": "1-week", "label": "1 Weeks", "days": 7 },
+  { "id": "2-weeks", "label": "2 Weeks", "days": 14 },
+  { "id": "4-weeks", "label": "4 Weeks", "days": 28, "badge": "Cheapest" }
 ]

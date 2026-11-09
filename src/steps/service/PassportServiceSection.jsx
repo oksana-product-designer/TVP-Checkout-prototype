@@ -4,7 +4,8 @@ import { FormRow } from '../../components/molecules/FormRow.jsx'
 import { FormSection } from '../../components/organisms/FormSection.jsx'
 import addons from '../../mocks/addons.json'
 import passportPages from '../../mocks/passport-pages.json'
-import processingSpeeds from '../../mocks/processing-speeds.json'
+import { getSpeedOptions } from '../../state/processingSpeeds.js'
+import { useOrder } from '../../state/useOrder.js'
 import { passportFieldError } from '../../state/validation.js'
 import './PassportServiceSection.css'
 
@@ -14,14 +15,17 @@ export function PassportServiceSection({
   title,
   service,
   showDivider = false,
+  showHeader = true,
   showErrors = false,
   onChange,
 }) {
+  const { order } = useOrder()
+  const speedOptions = getSpeedOptions(order.trip.passportBackDate)
   const pagesError = showErrors ? passportFieldError(service, 'pages') : null
   const speedError = showErrors ? passportFieldError(service, 'processingSpeed') : null
 
   return (
-    <FormSection title={title} showDivider={showDivider}>
+    <FormSection title={title} showDivider={showDivider} showHeader={showHeader}>
       <FormRow>
         <InputField
           type="Select"
@@ -37,7 +41,7 @@ export function PassportServiceSection({
           label="Processing speed"
           required
           value={service.processingSpeed}
-          options={processingSpeeds}
+          options={speedOptions}
           errorMessage={speedError || ''}
           onChange={(event) => onChange({ processingSpeed: event.target.value })}
         />

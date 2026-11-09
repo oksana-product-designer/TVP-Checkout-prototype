@@ -30,6 +30,26 @@
   color: var(--color-text-primary);
 }
 
+button.step {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+button.step:focus {
+  outline: none;
+}
+
+button.step:focus-visible {
+  outline: var(--focus-ring-width) solid var(--color-brand-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-4);
+}
+
 @media (max-width: 639px) {
   .step:not(.step--current) .step__label {
     position: absolute;

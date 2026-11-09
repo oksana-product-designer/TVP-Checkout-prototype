@@ -28,7 +28,3 @@
 .step-marker__number {
   display: inline-block;
 }
-
-.step-marker__check {
-  color: var(--color-icon-on-dark);
-}

@@ -17,11 +17,13 @@ function validTravelerOrder() {
         lastName: 'Lovelace',
         stateOfResidence: 'CA',
         email: 'ada@example.com',
-        phone: '(555) 010-01-99',
-        passportServiceIds: ['renewal'],
-        visaServiceIds: ['afghanistan'],
+        phone: '(555) 010 01 99',
       },
     ],
+    trip: {
+      ...initialOrder.trip,
+      passportBackDate: '01/01/2099',
+    },
   }
 }
 

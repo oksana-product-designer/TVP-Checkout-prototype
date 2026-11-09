@@ -28,6 +28,10 @@
   width: 100%;
 }
 
+.order-summary__rows .summary-row--section-start {
+  margin-top: var(--space-4);
+}
+
 @media (max-width: 639px) {
   .order-summary {
     padding: var(--space-16);

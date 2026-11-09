@@ -5,6 +5,29 @@
   width: 100%;
 }
 
+.service-block__kind {
+  margin-bottom: var(--space-24);
+}
+
+.service-block {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.traveler-service-card__add,
+.service-block__remove {
+  align-self: flex-start;
+}
+
+.traveler-service-card__add {
+  margin-top: var(--space-24);
+}
+
+.service-block__remove {
+  margin-top: var(--space-16);
+}
+
 .traveler-service-card__rule {
   padding: var(--space-24) 0;
 }

@@ -248,6 +248,16 @@
   flex-shrink: 0;
 }
 
+.badge.input-field__option-badge--success {
+  padding: var(--space-4) var(--space-8);
+}
+
+.badge.input-field__option-badge {
+  padding: var(--space-4) var(--space-8);
+  background-color: var(--color-surface-brand-subtle);
+  color: var(--color-brand-primary);
+}
+
 .input-field__helper,
 .input-field__error,
 .input-field__success {
