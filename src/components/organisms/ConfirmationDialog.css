@@ -50,6 +50,14 @@
   color: var(--color-text-secondary);
 }
 
+@media (max-width: 639px) {
+  .confirmation-dialog__panel {
+    width: calc(100% - var(--space-32));
+    max-width: 480px;
+    padding: var(--space-24);
+  }
+}
+
 .confirmation-dialog__actions {
   display: flex;
   justify-content: flex-end;

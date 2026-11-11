@@ -93,3 +93,9 @@
   --size-icon: 16px;
   --size-icon-assurance: 20px;
 }
+
+@media (max-width: 639px) {
+  :root {
+    --space-card-padding: 16px;
+  }
+}

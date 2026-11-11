@@ -53,15 +53,16 @@
 
 @media (max-width: 639px) {
   .top-bar {
-    grid-template-columns: 1fr;
-    justify-items: center;
-    gap: var(--space-8);
+    display: block;
     padding: var(--space-12) var(--space-16);
   }
 
-  .top-bar__logo,
+  .top-bar__logo {
+    display: none;
+  }
+
   .top-bar__support {
-    grid-column: 1;
+    grid-column: auto;
   }
 }
 

@@ -5,7 +5,7 @@ Instructions for the coding agent working on the TVP checkout prototype. Keep th
 ## Project
 A desktop checkout wizard for Travel Visa Pro (TVP): customers order passport and visa services for one or more Applicants, optionally add a VIP package, enter delivery details, and pay. This repo is a working front-end prototype with mocked data, not a production backend.
 
-Steps: 1 Trip and applicants, 2 Service, 3 VIP Service, 4 Delivery, 5 Payment. A persistent order summary sits next to the form.
+Steps: 1 Trip and applicants, 2 Service, 3 VIP Service, 4 Delivery, 5 Payment. A persistent order summary sits next to the form on desktop. At 639px and below, `MobileTotalBar` replaces that sidebar and the step buttons.
 
 ## Read these first
 - `docs/prd.md`: what to build, the flow, requirements per step, validation and behavior rules, open questions.
@@ -36,7 +36,7 @@ Before saying a task is done, run `npm run lint` and `npm run build` and fix any
 docs/            prd.md, design.md
 src/
   styles/        tokens.css (design tokens), global.css (font, reset)
-  components/    atoms, molecules, organisms (same names as in Figma)
+  components/    atoms, molecules, organisms (same names as in Figma). Mobile adds `MobileTotalBar`
   steps/         one folder per step (travelers, service, vip, delivery, payment)
   state/         order context, validation functions, totals
   mocks/         JSON data: services, packages, shipping methods, states, promo codes
@@ -51,7 +51,7 @@ src/
 6. **Single source of truth:** keep one order object. Derive the order summary and totals from it. Do not store totals separately.
 7. **Mock data only.** No real network calls or payment providers. Suggested mock rules: corporate account `123456789` is valid, promo `test0` gives 10% off.
 8. **Accessibility:** native elements where possible, labels tied to inputs, errors linked with `aria-describedby`, visible focus, package choice as a radio group, the Applicant accordion as proper expandable regions, keyboard operable everywhere.
-9. **Desktop only (1440px).** Do not build mobile layouts unless I ask.
+9. **Breakpoints.** Desktop is 1024px and up. Mobile (`max-width: 639px`) is the sticky total bar layout in `DESIGN.md`. Tablet (640–1023px) is not designed; leave it as it is. Do not add breakpoints other than 1439, 1023, and 639.
 10. **Scope:** build only what was asked. Do not add libraries, restructure folders, or change unrelated files without asking first.
 11. **Placeholders:** copy, prices, dates, and amounts in the docs marked as placeholder are sample data. Keep them in the mock files so they are easy to replace.
 

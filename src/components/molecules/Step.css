@@ -51,7 +51,7 @@ button.step:focus-visible {
 }
 
 @media (max-width: 639px) {
-  .step:not(.step--current) .step__label {
+  .step__label {
     position: absolute;
     width: 1px;
     height: 1px;

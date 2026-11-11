@@ -119,4 +119,20 @@ Node IDs use `114:229` in the API and `node-id=114-229` in URLs.
 - White text on `accent/primary` is about 2.6:1 and fails WCAG AA (top bar, primary button, "Add Applicant", selected border). Orange stays the brand accent by decision; consider a darker orange for text and controls. `accent/pressed` with white is about 4.6:1.
 - `border/default` meets 3:1 for control boundaries; `border/divider` is for dividers and disabled controls only. Selection never relies on color alone.
 - Link buttons are 24 high to meet the minimum target size.
-- Gaps: Step 1 and 2 screens show an old 6-step stepper (use 5 steps); Payment screens are still titled "Delivery details" and "Delivery address"; typos "State of residense" and "No I'don't". Delivery Figma uses the lowercase label "phone number" and the error "Enter a valid phone number"; use "Phone number" and the Step 1 format message. The note link and field, its Remove control, city suggestions, and the shipping summary rows are not on the Delivery screens. Not designed: mobile and tablet, loading and error states, order confirmation, card error and filled states, the "Add Applicant" flow.
+- Gaps: Step 1 and 2 screens show an old 6-step stepper (use 5 steps); Payment screens are still titled "Delivery details" and "Delivery address"; typos "State of residense" and "No I'don't". Delivery Figma uses the lowercase label "phone number" and the error "Enter a valid phone number"; use "Phone number" and the Step 1 format message. The note link and field, its Remove control, city suggestions, and the shipping summary rows are not on the Delivery screens. Not designed: tablet, loading and error states, order confirmation, card error and filled states, the "Add Applicant" flow.
+
+## 8. Mobile (≤639px)
+Desktop (1024px and up) is unchanged. Tablet (640–1023px) is not designed. These rules apply only at `max-width: 639px`. Figma section `360:22310`, "Mobile flow – sticky total bar".
+
+- **Top bar:** the logo is hidden. The support line is centered, wraps to two lines, and the bar is padded 12px 16px.
+- **Step bar:** titles are hidden, and there is no bottom padding. The numbered markers stay, and the titles remain available to screen readers.
+- **Page title:** 16px between the title and the main column. The hero gray still runs 40px behind the top of that column.
+- **Cards:** padding is 16px, from `--space-card-padding`. This includes the affiliate banner, Discount code, and Order placed cards.
+- **Form rows** stack full width with a 16px gap. The corporate Account number and Validate pair, the promo code and Apply pair, and a Button group of two options stay on one row.
+- **Affiliate banner:** logo above the description, left aligned, 24px apart.
+- **VIP packages** stack in one column, full width, each at its own height. "N more" still expands the lists.
+- **Payment methods** are a 2×2 grid with a 16px gap, on the payment step only.
+- **Confirmation dialog:** width `calc(100% - 32px)`, max 480px, padding 24px, top offset 360px.
+- **Popover** stays right-aligned to its icon and is kept 16px inside the screen edges. The calendar and select menus match their field width and open 4px below the field.
+- **Sticky total bar** (`MobileTotalBar`) replaces Step navigation and the summary sidebar on steps 1–5. Order placed has no bar. It keeps the Go back link, which returns to Payment. Desktop order placed has no Go back link. It is fixed to the bottom, white, with a 1px divider and no shadow. The left control shows the order total (heading style) and "View order summary" (chevron up), or "Hide order summary" (chevron down) while the sheet is open. The right control is the same Primary action as Step navigation, including `aria-disabled` when the step is invalid. There is no Previous button.
+- **Order summary sheet:** a 50% black scrim, with the bar still visible above it. The sheet sits on the bar, full width, 4px top radius, and scrolls if it is taller than the viewport minus the bar minus 48px. It contains a drag handle, the existing Order summary without card padding or shadow (applicant groups start expanded), and a Close link. The two assurance lines are not in the sheet. It closes on Close, the scrim, Escape, or the bar control, and when the viewport grows past 639px.

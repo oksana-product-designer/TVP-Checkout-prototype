@@ -4,7 +4,7 @@
   align-items: flex-start;
   gap: var(--space-16);
   width: 100%;
-  padding: var(--space-32);
+  padding: var(--space-card-padding);
   border-radius: var(--radius-4);
   background-color: var(--color-surface-card);
   box-shadow: var(--shadow-lg);
@@ -33,7 +33,10 @@
 }
 
 @media (max-width: 639px) {
-  .order-summary {
-    padding: var(--space-16);
+  .order-summary.order-summary--embedded {
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+    box-shadow: none;
   }
 }

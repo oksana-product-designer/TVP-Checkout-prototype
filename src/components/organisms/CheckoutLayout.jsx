@@ -18,6 +18,7 @@ export function CheckoutLayout({
   onNext,
   showNavigation = true,
   sidebar,
+  mobileBar = null,
   children,
   className = '',
 }) {
@@ -51,6 +52,7 @@ export function CheckoutLayout({
         </div>
         {aside ? <div className="checkout-layout__sidebar">{aside}</div> : null}
       </div>
+      {mobileBar}
     </div>
   )
 }

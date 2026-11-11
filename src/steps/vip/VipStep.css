@@ -27,3 +27,27 @@
 .vip-step__packages--open .pricing-card--vertical {
   align-self: flex-start;
 }
+
+@media (max-width: 639px) {
+  .vip-step__packages,
+  .vip-step__packages--open {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .vip-step__packages .pricing-card--vertical,
+  .vip-step__packages--open .pricing-card--vertical {
+    flex: none;
+    width: 100%;
+    height: auto;
+    align-self: auto;
+  }
+
+  .vip-step__packages .pricing-card__banner-row:not(:has(.pricing-card__banner)) {
+    display: none;
+  }
+
+  .vip-step__packages .pricing-card:not(:has(.pricing-card__banner)) .pricing-card__body {
+    border-radius: var(--radius-4);
+  }
+}
