@@ -1,5 +1,7 @@
 import { visaIdsOf } from './initialOrder.js'
+import { deliveryRequired } from './validation.js'
 import addons from '../mocks/addons.json'
+import corporateAccounts from '../mocks/corporate-accounts.json'
 import passportServices from '../mocks/passport-services.json'
 import promoCodes from '../mocks/promo-codes.json'
 import packages from '../mocks/packages.json'
@@ -69,12 +71,11 @@ export function getServiceSubtotal(order) {
 
 export function getPackageLine(order) {
   const pkg = packages.find((item) => item.id === order.vipPackageId)
-  if (!pkg || pkg.price <= 0) return null
-  const count = order.travelers.length
+  if (!pkg) return null
   return {
     id: `vip-${pkg.id}`,
-    label: `${pkg.name} x ${count} ${count === 1 ? 'traveler' : 'travelers'}`,
-    amount: pkg.price * count,
+    label: pkg.name,
+    amount: pkg.price,
   }
 }
 
@@ -92,6 +93,7 @@ function shippingAmount(method, vipPackageId) {
 }
 
 export function getShippingLines(order) {
+  if (!deliveryRequired(order)) return []
   const delivery = order.delivery || {}
   const choices = [
     ['inboundShippingId', 'Inbound Shipping'],
@@ -109,9 +111,28 @@ export function getShippingLines(order) {
   })
 }
 
-export function getOrderTotal(order) {
+function getOrderSubtotal(order) {
   const shipping = getShippingLines(order).reduce((sum, line) => sum + line.amount, 0)
-  return getServiceSubtotal(order) - getPromoDiscount(order) + (getPackageLine(order)?.amount || 0) + shipping
+  return getServiceSubtotal(order) + (getPackageLine(order)?.amount || 0) + shipping
+}
+
+export function getValidCorporateAccount(order) {
+  if (!order.corporate?.hasAccount || order.corporate.status !== 'valid') return null
+  const account = corporateAccounts.find((item) => item.accountNumber === order.corporate.accountNumber)
+  return account?.valid ? account : null
+}
+
+export function getCorporateDiscountPercent(order) {
+  return getValidCorporateAccount(order)?.discountPercent || 0
+}
+
+// Applies to the whole order: services, VIP package and shipping, before the promo code.
+export function getCorporateDiscount(order) {
+  return getOrderSubtotal(order) * (getCorporateDiscountPercent(order) / 100)
+}
+
+export function getOrderTotal(order) {
+  return getOrderSubtotal(order) - getPromoDiscount(order) - getCorporateDiscount(order)
 }
 
 export function findPromo(code) {

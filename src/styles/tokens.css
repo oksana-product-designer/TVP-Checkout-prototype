@@ -20,6 +20,7 @@
   --color-surface-badge: rgb(253 189 34 / 10%);
   --color-surface-danger-subtle: rgb(205 55 57 / 10%);
   --color-surface-success-subtle: rgb(30 123 58 / 10%);
+  --color-surface-brand-subtle: rgb(0 89 172 / 10%);
   --color-border-default: #8a8a8a;
   --color-border-strong: rgb(34 34 34 / 75%);
   --color-border-divider: #dbdbdb;
@@ -91,4 +92,10 @@
   --focus-ring-width: 2px;
   --size-icon: 16px;
   --size-icon-assurance: 20px;
+}
+
+@media (max-width: 639px) {
+  :root {
+    --space-card-padding: 16px;
+  }
 }

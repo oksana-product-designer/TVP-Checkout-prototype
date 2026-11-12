@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from '../../components/atoms/Button.jsx'
 import { InputField } from '../../components/atoms/InputField.jsx'
 import { TextLink } from '../../components/atoms/TextLink.jsx'
@@ -8,22 +8,30 @@ import { FormSection } from '../../components/organisms/FormSection.jsx'
 import cities from '../../mocks/cities.json'
 import shippingMethods from '../../mocks/shipping-methods.json'
 import states from '../../mocks/states.json'
+import { prefillDelivery } from '../../state/deliveryPrefill.js'
 import { useOrder } from '../../state/useOrder.js'
-import { deliveryErrors, formatPhone, formatZip, validateField, validateFullName } from '../../state/validation.js'
+import { addressRequired, deliveryErrors, deliveryRequired, deliverySkippedMessage, formatPhone, formatZip, validateField, validateFullName } from '../../state/validation.js'
 import './DeliveryStep.css'
 
 export function DeliveryStep({ attempted = false }) {
   const { order, setOrder } = useOrder()
   const delivery = order.delivery
   const address = delivery.address
-  const street2 = String(address.street2 || '')
-  const [lineOpen, setLineOpen] = useState(() => Boolean(street2.trim()))
+  const note = String(delivery.note || '')
+  const [noteOpen, setNoteOpen] = useState(() => Boolean(note.trim()))
+  const addressActive = addressRequired(delivery)
   const errors = attempted ? deliveryErrors(order) : {}
   const phoneMessage = validateField('phone', address.phone)
-  const phoneError = phoneMessage && (attempted || address.phone) ? phoneMessage : ''
+  const phoneError = addressActive && phoneMessage && (attempted || address.phone) ? phoneMessage : ''
   const nameMessage = validateFullName(address.fullName)
-  const nameError = nameMessage && (attempted || address.fullName) ? nameMessage : ''
-  const showLine = lineOpen || Boolean(street2.trim())
+  const nameError = addressActive && nameMessage && (attempted || address.fullName) ? nameMessage : ''
+  const showNote = noteOpen || Boolean(note.trim())
+  const required = deliveryRequired(order)
+
+  useEffect(() => {
+    if (!required) return
+    setOrder(prefillDelivery)
+  }, [required, order.corporate.status, order.corporate.accountNumber, order.corporate.hasAccount, setOrder])
 
   function patchDelivery(patch) {
     setOrder((current) => ({
@@ -32,9 +40,9 @@ export function DeliveryStep({ attempted = false }) {
     }))
   }
 
-  function removeExtraLine() {
-    setLineOpen(false)
-    patchAddress({ street2: '' })
+  function removeNote() {
+    setNoteOpen(false)
+    patchDelivery({ note: '' })
   }
 
   function patchAddress(patch) {
@@ -45,6 +53,14 @@ export function DeliveryStep({ attempted = false }) {
         address: { ...current.delivery.address, ...patch },
       },
     }))
+  }
+
+  if (!required) {
+    return (
+      <Card>
+        <p className="delivery-step__empty">{deliverySkippedMessage(order)}</p>
+      </Card>
+    )
   }
 
   return (
@@ -80,6 +96,7 @@ export function DeliveryStep({ attempted = false }) {
           <FormRow>
             <InputField
               label="Full name"
+              disabled={!addressActive}
               required
               value={address.fullName}
               errorMessage={nameError}
@@ -87,6 +104,7 @@ export function DeliveryStep({ attempted = false }) {
             />
             <InputField
               label="Phone number"
+              disabled={!addressActive}
               required
               value={address.phone}
               errorMessage={phoneError}
@@ -95,41 +113,22 @@ export function DeliveryStep({ attempted = false }) {
           </FormRow>
           <InputField
             label="Company"
+            disabled={!addressActive}
             value={address.company}
             onChange={(event) => patchAddress({ company: event.target.value })}
           />
           <InputField
             label="Street address"
+            disabled={!addressActive}
             required
             value={address.street}
             errorMessage={errors.street || ''}
             onChange={(event) => patchAddress({ street: event.target.value })}
           />
-          {showLine ? (
-            <div className="delivery-step__extra">
-              <InputField
-                label="Address line 2"
-                value={address.street2}
-                onChange={(event) => patchAddress({ street2: event.target.value })}
-              />
-              <Button
-                type="Link danger"
-                label="Remove"
-                showLeadingIcon
-                leadingIcon="x"
-                className="delivery-step__remove"
-                onClick={removeExtraLine}
-              />
-            </div>
-          ) : (
-            <TextLink
-              label="Add an additional line for address"
-              onClick={() => setLineOpen(true)}
-            />
-          )}
           <FormRow>
             <InputField
               label="City"
+              disabled={!addressActive}
               required
               value={address.city}
               options={cities}
@@ -144,6 +143,7 @@ export function DeliveryStep({ attempted = false }) {
             <InputField
               type="Select"
               label="State"
+              disabled={!addressActive}
               required
               value={address.state}
               options={states}
@@ -156,12 +156,35 @@ export function DeliveryStep({ attempted = false }) {
             <InputField label="Country" required value="United States" disabled />
             <InputField
               label="Zip code"
+              disabled={!addressActive}
               required
               value={address.zip}
               errorMessage={errors.zip || ''}
               onChange={(event) => patchAddress({ zip: formatZip(event.target.value) })}
             />
           </FormRow>
+          {showNote ? (
+            <div className="delivery-step__extra">
+              <InputField
+                label="Note to the order"
+                value={note}
+                onChange={(event) => patchDelivery({ note: event.target.value })}
+              />
+              <Button
+                type="Link danger"
+                label="Remove"
+                showLeadingIcon
+                leadingIcon="x"
+                className="delivery-step__remove"
+                onClick={removeNote}
+              />
+            </div>
+          ) : (
+            <TextLink
+              label="Add a note to the order"
+              onClick={() => setNoteOpen(true)}
+            />
+          )}
         </FormSection>
       </Card>
     </>

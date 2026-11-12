@@ -116,7 +116,7 @@
 
 @media (max-width: 639px) {
   .checkout-layout__hero {
-    padding: var(--space-24) var(--space-16) var(--space-40);
+    padding: var(--space-24) var(--space-16) calc(var(--space-40) + var(--space-16));
   }
 
   .checkout-layout__title {
@@ -128,6 +128,15 @@
   .checkout-layout__grid {
     margin-right: var(--space-16);
     margin-left: var(--space-16);
+  }
+
+  .checkout-layout--with-mobile-bar .checkout-layout__grid {
+    padding-bottom: calc(
+      var(--space-40) + var(
+        --mobile-total-bar-height,
+        calc(var(--space-12) + var(--line-height-heading) + var(--space-4) + var(--size-link-button) + var(--space-12) + 20px)
+      )
+    );
   }
 }
 

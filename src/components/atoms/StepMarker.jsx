@@ -1,4 +1,3 @@
-import { Icon } from '../../assets/icons/Icons.jsx'
 import './StepMarker.css'
 
 export function StepMarker({ state = 'Current', number = '1', className = '' }) {
@@ -12,11 +11,7 @@ export function StepMarker({ state = 'Current', number = '1', className = '' }) 
 
   return (
     <span className={classes} aria-hidden="true">
-      {state === 'Completed' ? (
-        <Icon name="check" className="step-marker__check" />
-      ) : (
-        <span className="step-marker__number">{number}</span>
-      )}
+      <span className="step-marker__number">{number}</span>
     </span>
   )
 }

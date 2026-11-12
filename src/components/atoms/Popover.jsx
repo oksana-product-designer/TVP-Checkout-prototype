@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState } from 'react'
 import { Icon } from '../../assets/icons/Icons.jsx'
 import './Popover.css'
 
 export function Popover({ label, text = '', id, className = '' }) {
   const rootRef = useRef(null)
+  const panelRef = useRef(null)
   const [open, setOpen] = useState(false)
   const [dismissed, setDismissed] = useState(false)
   const visible = Boolean(text) && open && !dismissed
@@ -19,6 +20,35 @@ export function Popover({ label, text = '', id, className = '' }) {
 
     document.addEventListener('keydown', onKeyDown)
     return () => document.removeEventListener('keydown', onKeyDown)
+  }, [visible])
+
+  useLayoutEffect(() => {
+    const panel = panelRef.current
+    if (!visible || !panel || typeof window.matchMedia !== 'function') return undefined
+    const media = window.matchMedia('(max-width: 639px)')
+    const edge = Number.parseFloat(
+      getComputedStyle(document.documentElement).getPropertyValue('--space-16'),
+    ) || 16
+
+    function place() {
+      panel.style.maxWidth = ''
+      panel.style.transform = ''
+      if (!media.matches) return
+      panel.style.maxWidth = `calc(100vw - ${edge * 2}px)`
+      const rect = panel.getBoundingClientRect()
+      const shift = Math.max(0, edge - rect.left)
+      if (shift) panel.style.transform = `translateX(${shift}px)`
+    }
+
+    place()
+    media.addEventListener('change', place)
+    window.addEventListener('resize', place)
+    return () => {
+      media.removeEventListener('change', place)
+      window.removeEventListener('resize', place)
+      panel.style.maxWidth = ''
+      panel.style.transform = ''
+    }
   }, [visible])
 
   function show() {
@@ -51,7 +81,7 @@ export function Popover({ label, text = '', id, className = '' }) {
         <Icon name="info" className="popover__icon" />
       </button>
       {text ? (
-        <span id={id} role="tooltip" className="popover__panel">
+        <span ref={panelRef} id={id} role="tooltip" className="popover__panel">
           {text}
         </span>
       ) : null}

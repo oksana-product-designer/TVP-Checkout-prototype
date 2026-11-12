@@ -3,8 +3,11 @@ import { Card } from '../../components/organisms/Card.jsx'
 import { ConfirmationDialog } from '../../components/organisms/ConfirmationDialog.jsx'
 import { CorporateAccount } from '../../components/organisms/CorporateAccount.jsx'
 import corporateAccounts from '../../mocks/corporate-accounts.json'
-import { createTraveler, emptyServices, visaIdsOf } from '../../state/initialOrder.js'
+import { createTraveler, emptyServices } from '../../state/initialOrder.js'
+import { isSpeedAvailable } from '../../state/processingSpeeds.js'
 import { useOrder } from '../../state/useOrder.js'
+import { TripDatesCard } from '../service/TripDatesCard.jsx'
+import { AffiliateBanner } from './AffiliateBanner.jsx'
 import { TravelerDetailsSection } from './TravelerDetailsSection.jsx'
 import './TravelersStep.css'
 
@@ -21,43 +24,32 @@ export function TravelersStep({ attempted = false }) {
   const [pendingRemoveId, setPendingRemoveId] = useState(null)
   const pendingIndex = order.travelers.findIndex((traveler) => traveler.id === pendingRemoveId)
 
-  function patchTraveler(id, patch) {
+  function patchTrip(field, value) {
     setOrder((current) => {
-      const travelers = current.travelers.map((traveler) =>
-        traveler.id === id ? { ...traveler, ...patch } : traveler,
+      if (field !== 'passportBackDate') return { ...current, trip: { ...current.trip, [field]: value } }
+      // A chosen speed that can no longer meet the new date is cleared so it is picked again.
+      const keepSpeed = (row) => (
+        row.processingSpeed && !isSpeedAvailable(row.processingSpeed, value)
+          ? { ...row, processingSpeed: '' }
+          : row
       )
-      const servicesByTraveler = { ...current.servicesByTraveler }
-      const currentServices = servicesByTraveler[id] || emptyServices()
-      let services = currentServices
-
-      if (patch.passportServiceIds) {
-        const passportList = Array.isArray(currentServices.passport) ? currentServices.passport : []
-        services = {
-          ...services,
-          passport: patch.passportServiceIds.map((serviceId) => {
-            const existing = passportList.find((item) => item.serviceId === serviceId)
-            return existing || { serviceId, pages: '', processingSpeed: '', passportCard: false }
-          }),
-        }
-      }
-
-      if (patch.visaServiceIds) {
-        const visaList = Array.isArray(currentServices.visa) ? currentServices.visa : []
-        services = {
-          ...services,
-          visa: patch.visaServiceIds.map((serviceId) => {
-            const existing = visaList.find((item) => item.serviceId === serviceId)
-            return existing || { serviceId, visaType: '', entries: '', validityPeriod: '' }
-          }),
-        }
-      }
-
-      if (patch.passportServiceIds || patch.visaServiceIds) {
-        servicesByTraveler[id] = services
-      }
-
-      return { ...current, travelers, servicesByTraveler }
+      const servicesByTraveler = Object.fromEntries(
+        Object.entries(current.servicesByTraveler).map(([id, services]) => [
+          id,
+          { ...services, passport: services.passport.map(keepSpeed), visa: services.visa.map(keepSpeed) },
+        ]),
+      )
+      return { ...current, trip: { ...current.trip, [field]: value }, servicesByTraveler }
     })
+  }
+
+  function patchTraveler(id, patch) {
+    setOrder((current) => ({
+      ...current,
+      travelers: current.travelers.map((traveler) => (
+        traveler.id === id ? { ...traveler, ...patch } : traveler
+      )),
+    }))
   }
 
   function addTraveler() {
@@ -87,26 +79,9 @@ export function TravelersStep({ attempted = false }) {
     setPendingRemoveId(null)
   }
 
-  function togglePassport(id, option) {
-    toggleIds(id, 'passportServiceIds', option.id)
-  }
-
-  function toggleVisa(id, option) {
-    toggleIds(id, 'visaServiceIds', option.id)
-  }
-
-  function toggleIds(id, key, optionId) {
-    const traveler = order.travelers.find((item) => item.id === id)
-    if (!traveler) return
-    const currentIds = key === 'visaServiceIds' ? visaIdsOf(traveler) : traveler[key] || []
-    const nextIds = currentIds.includes(optionId)
-      ? currentIds.filter((serviceId) => serviceId !== optionId)
-      : [...currentIds, optionId]
-    patchTraveler(id, { [key]: nextIds })
-  }
-
   return (
     <>
+      <AffiliateBanner />
       <Card>
         <CorporateAccount
           hasAccount={order.corporate.hasAccount}
@@ -125,6 +100,13 @@ export function TravelersStep({ attempted = false }) {
               corporate: { ...current.corporate, accountNumber, status: 'idle' },
             }))
           }}
+          learnMore={order.corporate.learnMore}
+          onLearnMoreChange={(learnMore) => {
+            setOrder((current) => ({
+              ...current,
+              corporate: { ...current.corporate, learnMore },
+            }))
+          }}
           onValidate={(accountNumber) => {
             const match = corporateAccounts.find((account) => account.accountNumber === accountNumber)
             setOrder((current) => ({
@@ -137,6 +119,12 @@ export function TravelersStep({ attempted = false }) {
           }}
         />
       </Card>
+      <TripDatesCard
+        passportBackDate={order.trip.passportBackDate}
+        travelDate={order.trip.travelDate}
+        showErrors={attempted}
+        onChange={patchTrip}
+      />
       <Card>
         <div className="travelers-step__sections">
         {order.travelers.map((traveler, index) => (
@@ -147,8 +135,6 @@ export function TravelersStep({ attempted = false }) {
             count={order.travelers.length}
             showErrors={attempted}
             onChange={(field, value) => patchTraveler(traveler.id, { [field]: value })}
-            onTogglePassport={(option) => togglePassport(traveler.id, option)}
-            onToggleVisa={(option) => toggleVisa(traveler.id, option)}
             onAdd={addTraveler}
             onRemove={() => setPendingRemoveId(traveler.id)}
           />
@@ -157,7 +143,7 @@ export function TravelersStep({ attempted = false }) {
       </Card>
       <ConfirmationDialog
         open={pendingRemoveId !== null}
-        title={`Remove Traveller ${pendingIndex + 1}?`}
+        title={`Remove Applicant ${pendingIndex + 1}?`}
         message="Their details and the services selected for them will be deleted. This cannot be undone."
         onCancel={() => setPendingRemoveId(null)}
         onConfirm={() => removeTraveler(pendingRemoveId)}

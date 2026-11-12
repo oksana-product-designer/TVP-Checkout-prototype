@@ -98,7 +98,7 @@ export function TripDatesCard({
         <FormRow>
           <DateField
             id="passport-back-date"
-            label="Date you need the passport back"
+            label="Date you need the documents back"
             required
             value={passportBackDate}
             errorMessage={passportError || ''}

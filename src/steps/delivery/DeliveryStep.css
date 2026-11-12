@@ -1,3 +1,8 @@
+.delivery-step__empty {
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
 .delivery-step__extra {
   position: relative;
   width: 100%;

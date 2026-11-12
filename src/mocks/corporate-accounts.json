@@ -1,6 +1,16 @@
 [
   {
     "accountNumber": "123456789",
-    "valid": true
+    "valid": true,
+    "discountPercent": 20,
+    "delivery": {
+      "fullName": "Alex Morgan",
+      "phone": "(415) 555 01 23",
+      "company": "Acme Corporate Travel",
+      "street": "100 Market Street",
+      "city": "San Francisco",
+      "state": "CA",
+      "zip": "94105"
+    }
   }
 ]

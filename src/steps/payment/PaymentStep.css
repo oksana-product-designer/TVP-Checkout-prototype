@@ -1,3 +1,10 @@
+@media (max-width: 639px) {
+  .payment-step__methods .button-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .payment-step__methods .form-section__content,
 .payment-step__details .form-section__content {
   margin-top: 0;

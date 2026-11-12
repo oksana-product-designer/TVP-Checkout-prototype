@@ -63,6 +63,16 @@
   margin: 0;
 }
 
+.pricing-card__compare {
+  font-family: var(--font-family);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
+  color: var(--color-text-secondary);
+  text-decoration: line-through;
+}
+
 .pricing-card__amount {
   font-family: var(--font-family);
   font-weight: var(--font-weight-regular);
@@ -82,6 +92,13 @@
 
 .pricing-card__select {
   width: 100%;
+}
+
+/* Selected: Secondary button outlined in the accent color, black label and check */
+.pricing-card--active .pricing-card__select,
+.pricing-card--active .pricing-card__select:hover:not(:disabled):not([aria-disabled='true']),
+.pricing-card--active .pricing-card__select:active:not(:disabled):not([aria-disabled='true']) {
+  box-shadow: inset 0 0 0 var(--stroke-width) var(--color-accent-primary);
 }
 
 .pricing-card__tagline {

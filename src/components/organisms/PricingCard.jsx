@@ -9,7 +9,8 @@ export function PricingCard({
   name,
   tagline,
   price,
-  priceNote = 'per traveler',
+  comparePrice = '',
+  priceNote = '',
   showPrice = true,
   lead,
   showLead = true,
@@ -24,7 +25,6 @@ export function PricingCard({
   selectProps,
   className = '',
 }) {
-  const tile = active ? 'card' : 'page'
   const classes = [
     'pricing-card',
     orientation === 'Horizontal' ? 'pricing-card--horizontal' : 'pricing-card--vertical',
@@ -50,7 +50,7 @@ export function PricingCard({
   const featureList = (
     <div className="pricing-card__features">
       {features.map((feature) => (
-        <FeatureItem key={feature} label={feature} tile={orientation === 'Horizontal' ? 'none' : tile} />
+        <FeatureItem key={feature} label={feature} />
       ))}
       {moreLabel || moreCount > 0 ? (
         <TextLink
@@ -71,8 +71,9 @@ export function PricingCard({
           {tagline ? <p className="pricing-card__tagline pricing-card__tagline--body">{tagline}</p> : null}
           {showPrice ? (
             <p className="pricing-card__price">
+              {comparePrice ? <span className="pricing-card__compare">{comparePrice}</span> : null}
               <span className="pricing-card__amount">{price}</span>
-              <span className="pricing-card__note">{priceNote}</span>
+              {priceNote ? <span className="pricing-card__note">{priceNote}</span> : null}
             </p>
           ) : null}
           {selectButton}
@@ -96,8 +97,9 @@ export function PricingCard({
         <h3 className="pricing-card__name">{name}</h3>
         {showPrice ? (
           <p className="pricing-card__price">
+            {comparePrice ? <span className="pricing-card__compare">{comparePrice}</span> : null}
             <span className="pricing-card__amount">{price}</span>
-            <span className="pricing-card__note">{priceNote}</span>
+            {priceNote ? <span className="pricing-card__note">{priceNote}</span> : null}
           </p>
         ) : null}
         {selectButton}

@@ -7,7 +7,9 @@ export function Header({
   showTopBar = true,
   showBackLink = true,
   currentStep = 1,
+  reachedStep = 1,
   onBack,
+  onStepSelect,
   className = '',
 }) {
   return (
@@ -24,7 +26,11 @@ export function Header({
             onClick={onBack}
           />
         ) : null}
-        <StepIndicator currentStep={currentStep} />
+        <StepIndicator
+          currentStep={currentStep}
+          reachedStep={reachedStep}
+          onStepSelect={onStepSelect}
+        />
       </div>
     </div>
   )

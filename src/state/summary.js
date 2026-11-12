@@ -1,4 +1,4 @@
-import { formatMoney, getPackageLine, getShippingLines, getTravelerLines } from './totals.js'
+import { formatDiscount, formatMoney, getCorporateDiscount, getCorporateDiscountPercent, getPackageLine, getPromoDiscount, findPromo, getShippingLines, getTravelerLines } from './totals.js'
 
 export function getSummaryTree(order) {
   const rows = order.travelers.map((traveler, index) => {
@@ -11,7 +11,8 @@ export function getSummaryTree(order) {
 
     return {
       id: traveler.id,
-      label: name ? `Traveller ${number}: ${name}` : `Traveller ${number}`,
+      kind: 'applicant',
+      label: name ? `Applicant ${number}: ${name}` : `Applicant ${number}`,
       price: formatMoney(amount),
       children: lines.map((line) => ({
         id: `${traveler.id}-${line.id}`,
@@ -30,6 +31,7 @@ export function getSummaryTree(order) {
   if (vip) {
     rows.push({
       id: vip.id,
+      kind: 'order',
       label: vip.label,
       price: formatMoney(vip.amount),
       children: [],
@@ -39,11 +41,34 @@ export function getSummaryTree(order) {
   getShippingLines(order).forEach((line) => {
     rows.push({
       id: line.id,
+      kind: 'order',
       label: line.label,
       price: formatMoney(line.amount),
       children: [],
     })
   })
+
+  const corporateDiscount = getCorporateDiscount(order)
+  if (corporateDiscount > 0) {
+    rows.push({
+      id: 'corporate-discount',
+      kind: 'discount',
+      label: `Corporate account (${getCorporateDiscountPercent(order)}% off)`,
+      price: formatDiscount(corporateDiscount),
+      children: [],
+    })
+  }
+
+  const promo = order.promo.appliedCode ? findPromo(order.promo.appliedCode) : null
+  if (promo) {
+    rows.push({
+      id: 'promo-discount',
+      kind: 'discount',
+      label: promo.label,
+      price: formatDiscount(getPromoDiscount(order)),
+      children: [],
+    })
+  }
 
   return rows
 }

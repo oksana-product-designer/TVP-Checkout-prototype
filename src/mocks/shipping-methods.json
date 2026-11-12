@@ -1,4 +1,5 @@
 [
   { "id": "fedex-2nd-day", "label": "FedEx 2nd Day", "price": 20 },
-  { "id": "fedex-overnight", "label": "FedEx Overnight", "price": 39 }
+  { "id": "fedex-overnight", "label": "FedEx Overnight", "price": 39 },
+  { "id": "on-my-own", "label": "On my own", "price": 0 }
 ]

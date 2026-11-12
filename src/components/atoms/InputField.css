@@ -248,6 +248,49 @@
   flex-shrink: 0;
 }
 
+.input-field__option-price {
+  margin-left: auto;
+  flex-shrink: 0;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-primary);
+  white-space: nowrap;
+}
+
+.input-field__option-main {
+  display: flex;
+  flex: 1 1 auto;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-8);
+  min-width: 0;
+}
+
+.input-field__option:has(.input-field__option-price) {
+  flex-wrap: nowrap;
+}
+
+.input-field__option:has(.input-field__option-price) .input-field__option-label {
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.input-field__option-badges {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-8);
+  flex-shrink: 0;
+}
+
+.badge.input-field__option-badge--success {
+  padding: var(--space-4) var(--space-8);
+}
+
+.badge.input-field__option-badge {
+  padding: var(--space-4) var(--space-8);
+  background-color: var(--color-surface-brand-subtle);
+  color: var(--color-brand-primary);
+}
+
 .input-field__helper,
 .input-field__error,
 .input-field__success {

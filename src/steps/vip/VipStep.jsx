@@ -1,21 +1,38 @@
 import { useState } from 'react'
+import { Checkbox } from '../../components/atoms/Checkbox.jsx'
 import { Card } from '../../components/organisms/Card.jsx'
 import { FormSection } from '../../components/organisms/FormSection.jsx'
 import { PricingCard } from '../../components/organisms/PricingCard.jsx'
 import packages from '../../mocks/packages.json'
+import { additionalServiceList, isAdditionalServiceChecked } from '../../state/additionalServices.js'
 import { useOrder } from '../../state/useOrder.js'
 import './VipStep.css'
 
-const paidPackages = packages.filter((item) => item.orientation === 'vertical')
-const freePackage = packages.find((item) => item.id === 'free')
-const packageOrder = [...paidPackages, freePackage]
+const packageOrder = packages.filter((item) => item.orientation === 'vertical')
 
 export function VipStep() {
   const { order, setOrder } = useOrder()
   const [expanded, setExpanded] = useState(false)
+  const selectedId = packageOrder.some((item) => item.id === order.vipPackageId)
+    ? order.vipPackageId
+    : ''
+  const servicesLocked = Boolean(selectedId)
 
   function selectPackage(id) {
-    setOrder((current) => ({ ...current, vipPackageId: id }))
+    setOrder((current) => ({
+      ...current,
+      vipPackageId: current.vipPackageId === id ? '' : id,
+    }))
+  }
+
+  function toggleAdditionalService(id, checked) {
+    setOrder((current) => ({
+      ...current,
+      additionalServices: {
+        ...current.additionalServices,
+        [id]: checked,
+      },
+    }))
   }
 
   function toggleExpanded() {
@@ -28,7 +45,7 @@ export function VipStep() {
     if (event.target.getAttribute('role') !== 'radio') return
     event.preventDefault()
     const ids = packageOrder.map((item) => item.id)
-    const index = Math.max(0, ids.indexOf(order.vipPackageId))
+    const index = Math.max(0, ids.indexOf(selectedId))
     const delta = key === 'ArrowRight' || key === 'ArrowDown' ? 1 : -1
     const nextId = ids[(index + delta + ids.length) % ids.length]
     selectPackage(nextId)
@@ -39,38 +56,46 @@ export function VipStep() {
 
   return (
     <Card>
-      <FormSection title="Choose a package, or continue with the free services.">
+      <FormSection title="Choose a package.">
         <div
           className="vip-step__choices"
           role="radiogroup"
-          aria-label="Choose a package, or continue with the free services."
+          aria-label="Choose a package."
           onKeyDown={onPackageKeyDown}
         >
           <div className={expanded ? 'vip-step__packages vip-step__packages--open' : 'vip-step__packages'}>
-            {paidPackages.map((item) => (
+            {packageOrder.map((item) => (
               <PackageChoice
                 key={item.id}
                 item={item}
-                active={order.vipPackageId === item.id}
+                active={selectedId === item.id}
+                tabbable={selectedId ? selectedId === item.id : item.id === packageOrder[0]?.id}
                 expanded={expanded}
                 onSelect={() => selectPackage(item.id)}
                 onMore={toggleExpanded}
               />
             ))}
           </div>
-          <PackageChoice
-            item={freePackage}
-            active={order.vipPackageId === freePackage.id}
-            expanded={false}
-            onSelect={() => selectPackage(freePackage.id)}
-          />
         </div>
+      </FormSection>
+      <FormSection title="Additional services" showDivider>
+        <fieldset className="vip-step__additional" disabled={servicesLocked}>
+          {additionalServiceList.map((service) => (
+            <Checkbox
+              key={service.id}
+              label={service.label}
+              checked={isAdditionalServiceChecked(order, service.id)}
+              disabled={servicesLocked}
+              onChange={(event) => toggleAdditionalService(service.id, event.target.checked)}
+            />
+          ))}
+        </fieldset>
       </FormSection>
     </Card>
   )
 }
 
-function PackageChoice({ item, active, expanded, onSelect, onMore }) {
+function PackageChoice({ item, active, tabbable, expanded, onSelect, onMore }) {
   const hiddenCount = Math.max(0, item.fullFeatures.length - item.features.length)
   const open = expanded && hiddenCount > 0
   return (
@@ -80,8 +105,8 @@ function PackageChoice({ item, active, expanded, onSelect, onMore }) {
       name={item.name}
       tagline={item.tagline}
       price={`$${item.price}`}
-      priceNote={item.priceNote}
-      showPrice={item.price > 0}
+      comparePrice={item.compareAt != null ? `$${item.compareAt}` : ''}
+      showPrice
       lead={item.lead || ''}
       showLead={Boolean(item.lead)}
       showBanner={Boolean(item.banner)}
@@ -96,7 +121,7 @@ function PackageChoice({ item, active, expanded, onSelect, onMore }) {
         id: `vip-package-${item.id}`,
         role: 'radio',
         'aria-checked': active,
-        tabIndex: active ? 0 : -1,
+        tabIndex: tabbable ? 0 : -1,
       }}
     />
   )

@@ -4,17 +4,13 @@ import { InputField } from '../../components/atoms/InputField.jsx'
 import { FormRow } from '../../components/molecules/FormRow.jsx'
 import { FormSection } from '../../components/organisms/FormSection.jsx'
 import nationalities from '../../mocks/nationalities.json'
-import passportServices from '../../mocks/passport-services.json'
 import states from '../../mocks/states.json'
-import visaServices from '../../mocks/visa-services.json'
-import { visaIdsOf } from '../../state/initialOrder.js'
 import { formatPhone, validateField } from '../../state/validation.js'
 import './TravelerDetailsSection.css'
 
 function fieldError(showErrors, traveler, field) {
   if (!showErrors) return ''
-  const value = field === 'visaServiceIds' ? visaIdsOf(traveler) : traveler[field]
-  return validateField(field, value) || ''
+  return validateField(field, traveler[field]) || ''
 }
 
 export function TravelerDetailsSection({
@@ -23,20 +19,9 @@ export function TravelerDetailsSection({
   count,
   showErrors,
   onChange,
-  onTogglePassport,
-  onToggleVisa,
   onAdd,
   onRemove,
 }) {
-  const passportChips = traveler.passportServiceIds
-    .map((id) => passportServices.find((service) => service.id === id))
-    .filter(Boolean)
-    .map((service) => ({ id: service.id, label: service.label }))
-  const visaChips = visaIdsOf(traveler)
-    .map((id) => visaServices.find((service) => service.id === id))
-    .filter(Boolean)
-    .map((service) => ({ id: service.id, label: service.label }))
-
   const action =
     count > 1 ? (
       <Button type="Link danger" label="Remove" showLeadingIcon leadingIcon="x" onClick={onRemove} />
@@ -44,7 +29,7 @@ export function TravelerDetailsSection({
 
   return (
     <FormSection
-      title={count === 1 ? "Traveller's details" : `Traveller ${index + 1}`}
+      title={count === 1 ? "Applicant's details" : `Applicant ${index + 1}`}
       action={action}
       showDivider={index > 0}
     >
@@ -115,33 +100,11 @@ export function TravelerDetailsSection({
           />
         </>
       ) : null}
-      <InputField
-        type="Multi-select"
-        label="Passport Services"
-        required
-        options={passportServices}
-        chips={passportChips}
-        placeholder="Select"
-        errorMessage={fieldError(showErrors, traveler, 'passportServiceIds')}
-        onToggleOption={onTogglePassport}
-        onRemoveChip={(chip) => onTogglePassport(chip)}
-      />
-      <InputField
-        type="Multi-select"
-        label="Visa Services by Country"
-        required
-        options={visaServices}
-        chips={visaChips}
-        placeholder="Select"
-        errorMessage={fieldError(showErrors, traveler, 'visaServiceIds')}
-        onToggleOption={onToggleVisa}
-        onRemoveChip={(chip) => onToggleVisa(chip)}
-      />
       {index === count - 1 ? (
         <Button
           className="traveler-details__add"
           type="Link accent"
-          label="Add traveller"
+          label="Add Applicant"
           showTrailingIcon
           trailingIcon="plus"
           onClick={onAdd}

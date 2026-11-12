@@ -1,5 +1,6 @@
 import { useId } from 'react'
 import { Icon } from '../../assets/icons/Icons.jsx'
+import { Popover } from './Popover.jsx'
 import './Checkbox.css'
 
 export function Checkbox({
@@ -12,6 +13,8 @@ export function Checkbox({
   showTitle = false,
   titleRequired = false,
   titleInfoIcon = false,
+  infoText = '',
+  infoLabel = '',
   errorMessage,
   disabled = false,
   className = '',
@@ -81,6 +84,13 @@ export function Checkbox({
           <label className="checkbox__label" htmlFor={inputId}>
             {label}
           </label>
+        ) : null}
+        {infoText ? (
+          <Popover
+            label={infoLabel || (label ? `About ${label}` : 'More information')}
+            text={infoText}
+            id={`${inputId}-info`}
+          />
         ) : null}
       </div>
 

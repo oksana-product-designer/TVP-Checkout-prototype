@@ -1,0 +1,6 @@
+[
+  { "id": "document-precheck", "label": "Document pre-check" },
+  { "id": "passport-photo", "label": "Passport photo service" },
+  { "id": "form-fill", "label": "Form-fill" },
+  { "id": "resubmissions", "label": "Resubmissions" }
+]

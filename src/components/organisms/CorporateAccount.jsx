@@ -1,6 +1,6 @@
 import { Button } from '../atoms/Button.jsx'
+import { Checkbox } from '../atoms/Checkbox.jsx'
 import { InputField } from '../atoms/InputField.jsx'
-import { TextLink } from '../atoms/TextLink.jsx'
 import { ButtonGroup } from '../molecules/ButtonGroup.jsx'
 import { ButtonGroupItem } from '../molecules/ButtonGroupItem.jsx'
 import { FormSection } from './FormSection.jsx'
@@ -14,7 +14,8 @@ export function CorporateAccount({
   onHasAccountChange,
   onAccountNumberChange,
   onValidate,
-  onLearnMore,
+  learnMore = false,
+  onLearnMoreChange,
   className = '',
 }) {
   const trimmed = accountNumber.trim()
@@ -63,10 +64,15 @@ export function CorporateAccount({
           </div>
         ) : null}
 
-        <TextLink
-          label="I'd like to learn more about Business Accounts or Membership"
-          onClick={onLearnMore}
-        />
+        {hasAccount ? null : (
+          <Checkbox
+            checked={learnMore}
+            label="I'd like to learn more about Business Accounts or Membership"
+            infoLabel="About Business Accounts"
+            infoText="A Business Account is a company membership with Travel Visa Pro. It applies your company discount and can fill in your usual delivery details."
+            onChange={(event) => onLearnMoreChange?.(event.target.checked)}
+          />
+        )}
       </FormSection>
     </div>
   )
