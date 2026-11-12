@@ -1,8 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
+import { Checkbox } from '../../components/atoms/Checkbox.jsx'
 import { Card } from '../../components/organisms/Card.jsx'
 import { FormSection } from '../../components/organisms/FormSection.jsx'
 import { PricingCard } from '../../components/organisms/PricingCard.jsx'
 import packages from '../../mocks/packages.json'
+import { additionalServiceList, isAdditionalServiceChecked } from '../../state/additionalServices.js'
 import { useOrder } from '../../state/useOrder.js'
 import './VipStep.css'
 
@@ -13,16 +15,24 @@ export function VipStep() {
   const [expanded, setExpanded] = useState(false)
   const selectedId = packageOrder.some((item) => item.id === order.vipPackageId)
     ? order.vipPackageId
-    : 'lite'
-
-  useEffect(() => {
-    if (selectedId !== order.vipPackageId) {
-      setOrder((current) => ({ ...current, vipPackageId: selectedId }))
-    }
-  }, [order.vipPackageId, selectedId, setOrder])
+    : ''
+  const servicesLocked = Boolean(selectedId)
 
   function selectPackage(id) {
-    setOrder((current) => ({ ...current, vipPackageId: id }))
+    setOrder((current) => ({
+      ...current,
+      vipPackageId: current.vipPackageId === id ? '' : id,
+    }))
+  }
+
+  function toggleAdditionalService(id, checked) {
+    setOrder((current) => ({
+      ...current,
+      additionalServices: {
+        ...current.additionalServices,
+        [id]: checked,
+      },
+    }))
   }
 
   function toggleExpanded() {
@@ -59,6 +69,7 @@ export function VipStep() {
                 key={item.id}
                 item={item}
                 active={selectedId === item.id}
+                tabbable={selectedId ? selectedId === item.id : item.id === packageOrder[0]?.id}
                 expanded={expanded}
                 onSelect={() => selectPackage(item.id)}
                 onMore={toggleExpanded}
@@ -67,11 +78,24 @@ export function VipStep() {
           </div>
         </div>
       </FormSection>
+      <FormSection title="Additional services" showDivider>
+        <fieldset className="vip-step__additional" disabled={servicesLocked}>
+          {additionalServiceList.map((service) => (
+            <Checkbox
+              key={service.id}
+              label={service.label}
+              checked={isAdditionalServiceChecked(order, service.id)}
+              disabled={servicesLocked}
+              onChange={(event) => toggleAdditionalService(service.id, event.target.checked)}
+            />
+          ))}
+        </fieldset>
+      </FormSection>
     </Card>
   )
 }
 
-function PackageChoice({ item, active, expanded, onSelect, onMore }) {
+function PackageChoice({ item, active, tabbable, expanded, onSelect, onMore }) {
   const hiddenCount = Math.max(0, item.fullFeatures.length - item.features.length)
   const open = expanded && hiddenCount > 0
   return (
@@ -97,7 +121,7 @@ function PackageChoice({ item, active, expanded, onSelect, onMore }) {
         id: `vip-package-${item.id}`,
         role: 'radio',
         'aria-checked': active,
-        tabIndex: active ? 0 : -1,
+        tabIndex: tabbable ? 0 : -1,
       }}
     />
   )

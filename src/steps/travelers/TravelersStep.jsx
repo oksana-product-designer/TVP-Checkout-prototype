@@ -100,6 +100,13 @@ export function TravelersStep({ attempted = false }) {
               corporate: { ...current.corporate, accountNumber, status: 'idle' },
             }))
           }}
+          learnMore={order.corporate.learnMore}
+          onLearnMoreChange={(learnMore) => {
+            setOrder((current) => ({
+              ...current,
+              corporate: { ...current.corporate, learnMore },
+            }))
+          }}
           onValidate={(accountNumber) => {
             const match = corporateAccounts.find((account) => account.accountNumber === accountNumber)
             setOrder((current) => ({

@@ -277,7 +277,7 @@ export function isStepValid(order, step = 1) {
     return order.travelers.every((traveler) => travelerServiceErrorCount(order, traveler) === 0)
   }
 
-  if (step === 3) return packages.some((item) => item.id === order.vipPackageId)
+  if (step === 3) return !order.vipPackageId || packages.some((item) => item.id === order.vipPackageId)
 
   if (step === 4) {
     if (!deliveryRequired(order)) return true

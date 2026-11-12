@@ -133,6 +133,11 @@
   letter-spacing: var(--letter-spacing-label);
   color: var(--color-text-secondary);
   cursor: pointer;
+  min-width: 0;
+}
+
+.checkbox__row .popover {
+  flex-shrink: 0;
 }
 
 .checkbox--disabled .checkbox__label,

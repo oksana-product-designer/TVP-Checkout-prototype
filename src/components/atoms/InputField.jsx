@@ -446,6 +446,21 @@ export function InputField({
                 ]
                   .filter(Boolean)
                   .join(' ')
+                const badges = option.badges || (option.badge ? [{ label: option.badge, tone: 'brand' }] : [])
+                const badgeNode = badges.length > 0 ? (
+                  <span className="input-field__option-badges">
+                    {badges.map((badge) => (
+                      <Badge
+                        key={badge.label}
+                        type="Success"
+                        label={badge.label}
+                        showIcon={false}
+                        className={badge.tone === 'success' ? 'input-field__option-badge--success' : 'input-field__option-badge'}
+                      />
+                    ))}
+                  </span>
+                ) : null
+                const labelNode = <span className="input-field__option-label">{option.label}</span>
 
                 return (
                   <li key={optionId} role="presentation">
@@ -460,16 +475,20 @@ export function InputField({
                       onClick={() => chooseOption(option)}
                     >
                       {selected ? <Icon name="check" /> : <span className="input-field__option-mark" aria-hidden="true" />}
-                      {option.label}
-                      {(option.badges || (option.badge ? [{ label: option.badge, tone: 'brand' }] : [])).map((badge) => (
-                        <Badge
-                          key={badge.label}
-                          type="Success"
-                          label={badge.label}
-                          showIcon={false}
-                          className={badge.tone === 'success' ? 'input-field__option-badge--success' : 'input-field__option-badge'}
-                        />
-                      ))}
+                      {option.priceLabel ? (
+                        <span className="input-field__option-main">
+                          {labelNode}
+                          {badgeNode}
+                        </span>
+                      ) : (
+                        <>
+                          {labelNode}
+                          {badgeNode}
+                        </>
+                      )}
+                      {option.priceLabel ? (
+                        <span className="input-field__option-price">{option.priceLabel}</span>
+                      ) : null}
                     </button>
                   </li>
                 )

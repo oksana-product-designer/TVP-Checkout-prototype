@@ -1,3 +1,5 @@
+import { additionalServiceList } from './additionalServices.js'
+
 export function createTraveler(id) {
   return {
     id,
@@ -56,6 +58,7 @@ export const initialOrder = {
     hasAccount: false,
     accountNumber: '',
     status: 'idle',
+    learnMore: false,
   },
   travelers: [createTraveler('t1')],
   trip: {
@@ -65,7 +68,8 @@ export const initialOrder = {
   servicesByTraveler: {
     t1: emptyServices(),
   },
-  vipPackageId: 'lite',
+  vipPackageId: '',
+  additionalServices: Object.fromEntries(additionalServiceList.map((service) => [service.id, true])),
   delivery: {
     inboundShippingId: '',
     returnShippingId: '',

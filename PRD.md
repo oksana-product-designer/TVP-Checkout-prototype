@@ -37,7 +37,7 @@ General context for building a working prototype. It covers what the product doe
 ### 3.1 Step 1: Trip and applicants
 **Affiliate banner:** the first section on the step, above the corporate account question. A Card with the affiliate's logo and a short description. Display only: no input, nothing in the order. Logo, name and copy are **[placeholder]** and live in `src/mocks/affiliate.json`.
 
-**Corporate account:** "Do you have a corporate account?" with No (default) and Yes, plus a learn-more link about Business Accounts or Membership.
+**Corporate account:** "Do you have a corporate account?" with No (default) and Yes. When No is selected, a checkbox reads "I'd like to learn more about Business Accounts or Membership", with an info tooltip describing a Business Account **[placeholder]**. The checkbox is hidden when Yes is selected. Checking it does not change the price.
 - Yes shows an **Account number*** field and a **Validate** button (enabled only when the field has a value).
 - Valid: success state, "Account number verified", button reads "Validated". Invalid: "Account number not found. Check the number and try again." **[placeholder]**. Empty on continue: "Enter your account number to continue".
 - Next needs a validated number when Yes is chosen.
@@ -48,7 +48,7 @@ General context for building a working prototype. It covers what the product doe
 **Applicant's details** (an "Add Applicant" action adds an Applicant; what follows is not designed): First name*, Last name*, Nationality* (select), State of residence* (select), Email address*, Phone number*, SMS consent (optional checkbox: "I consent to receive SMS updates about my order status"). Passport and visa services are chosen on Step 2.
 
 ### 3.2 Step 2: Service
-- **Service choice** is made here, per Applicant and per service. Each service block has its own Button group, Passport service (default) or Visa service. The passport dropdown lists every passport service. The visa dropdown lists every country. Choosing one reveals its detail fields. A passport has **Number of pages***, **Processing speed***, and an optional **Passport Card** add-on (+$30). A visa has **Visa type*** and **Processing speed*** on the first row, and **Number of entries*** and **Validity period*** on the second. Processing speed uses the same choices for both. The choices adjust to the "Date you need the documents back" from Step 1: a speed whose days exceed the days left until that date is not shown (the fastest is always shown). Badges: **Fastest** (shortest) and **Cheapest** (slowest) on the shown options, and **Recommended** on the slowest speed that still meets the date. With no date, every speed is shown and nothing is recommended. Changing the date clears any chosen speed that no longer fits, so it must be picked again. Days per speed are **[placeholder]** in `src/mocks/processing-speeds.json`.
+- **Service choice** is made here, per Applicant and per service. Each service block has its own Button group, Passport service (default) or Visa service. The passport dropdown lists every passport service. The visa dropdown lists every country. Choosing one reveals its detail fields. A passport has **Number of pages***, **Processing speed***, and an optional **Passport Card** add-on (+$30). A visa has **Visa type*** and **Processing speed*** on the first row, and **Number of entries*** and **Validity period*** on the second. Processing speed uses the same choices for both. The choices adjust to the "Date you need the documents back" from Step 1: a speed whose days exceed the days left until that date is not shown (the fastest is always shown). Badges: each option shows at most one. **Fastest** (shortest) and **Cheapest** (slowest) mark those speeds. **Recommended** marks the slowest speed that still meets the date, and replaces Fastest or Cheapest on that option. With no date, every speed is shown and nothing is recommended. Changing the date clears any chosen speed that no longer fits, so it must be picked again. Days per speed are **[placeholder]** in `src/mocks/processing-speeds.json`. Each option also shows a starting price, such as "from $20", from `fromPrice` in that file **[placeholder]**. The price is display only and does not change the order total.
 - **Add another service** adds another block, also defaulting to Passport service, with its own Button group. Switching a block's Button group changes only that block and clears its previous choice. Each block can be removed, and at least one remains. The same service or country cannot be added twice for one Applicant.
 - Next stays unavailable until every Applicant has each added service filled in. An empty added block must be completed or removed.
 - **One Applicant:** the card has no accordion.
@@ -56,7 +56,7 @@ General context for building a working prototype. It covers what the product doe
 - The order summary updates with services, add-ons, and totals.
 
 ### 3.3 Step 3: VIP Service
-Choose exactly one of three packages. **VIP Lite** is selected by default, so Next is enabled at once. There is no separate Free option.
+Choose one of three packages, or none. Nothing is selected by default, and Next is enabled either way. Choosing a package adds it; choosing that same package again clears it. There is no separate Free option.
 
 | Option | Price **[placeholder]** | Includes |
 |---|---|---|
@@ -64,8 +64,9 @@ Choose exactly one of three packages. **VIP Lite** is selected by default, so Ne
 | VIP Concierge ("Most popular") | $770 | Lite plus adult US passport renewal (DS-82), consular appointment booking, dedicated VIP team, shipping protection inbound and return (up to $500), free 2nd day shipping both ways |
 | Executive Club ("Premium") | $499 | Concierge plus on-demand mobile service, free overnight shipping both ways, dedicated personal assistant, 1-on-1 video support, letter and invitation help, FedEx signature, protection up to $3000, trip registration, passport replacement coverage |
 
-- The price is once per order, not per Applicant. The summary line is the package name and that price, including VIP Lite at $0.00. The selected package's button is the orange Primary button and reads "Selected".
+- The price is once per order, not per Applicant. A chosen package adds a summary line with its name and price, including VIP Lite at $0.00. With none chosen, there is no VIP row. The selected package's button is the orange Primary button and reads "Selected".
 - Each option shows a short feature list with "N more". Legacy lists have 6 (Lite), 13 (Concierge), 23 (Executive Club) items.
+- **Additional services** sits under the packages: Document pre-check, Passport photo service, Form-fill, and Resubmissions. All four are checked by default and do not appear in the order summary. Choosing a package disables the section and shows all four checked; clearing the package restores the customer's earlier choices. The list is **[placeholder]** in `src/mocks/additional-services.json`.
 
 ### 3.4 Step 4: Delivery
 - **Shipping methods:** Inbound Shipping*, Return Shipping* (selects, carrier options such as FedEx 2nd Day or Overnight **[placeholder]**) and **On my own** ($0, the customer handles that leg). When both are On my own, the Delivery address fields are disabled, keep their values, and are not validated; the Note to the order stays available. If only one is On my own, the address is still required.

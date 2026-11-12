@@ -39,8 +39,8 @@ export function SummaryContents({ summary, openGroups, onToggle }) {
     }
 
     const previous = summary[index - 1]?.kind
-    const startsSection = (group.kind === 'order' && previous === 'applicant')
-      || (group.kind === 'discount' && previous !== 'discount')
+    const afterApplicants = group.kind === 'order' && previous === 'applicant'
+    const startsSection = afterApplicants || (group.kind === 'discount' && previous !== 'discount')
 
     return (
       <SummaryRow
@@ -49,7 +49,8 @@ export function SummaryContents({ summary, openGroups, onToggle }) {
         label={group.label}
         price={group.price}
         className={[
-          startsSection ? 'summary-row--section-start' : '',
+          afterApplicants ? 'summary-row--after-applicants' : '',
+          startsSection && !afterApplicants ? 'summary-row--section-start' : '',
           group.kind === 'discount' ? 'summary-row--discount' : '',
         ].filter(Boolean).join(' ')}
       />

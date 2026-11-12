@@ -32,6 +32,10 @@
   margin-top: var(--space-4);
 }
 
+.order-summary__rows .summary-row--after-applicants {
+  margin-top: var(--space-12);
+}
+
 @media (max-width: 639px) {
   .order-summary.order-summary--embedded {
     padding: 0;

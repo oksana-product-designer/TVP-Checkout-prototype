@@ -25,9 +25,14 @@ export function getSpeedOptions(passportBackDate, today = new Date()) {
 
   return available.map((speed) => {
     const badges = []
-    if (speed.badge) badges.push({ label: speed.badge, tone: 'brand' })
     if (speed.days === recommendedDays) badges.push({ label: 'Recommended', tone: 'success' })
-    return { id: speed.id, label: speed.label, badges }
+    else if (speed.badge) badges.push({ label: speed.badge, tone: 'brand' })
+    return {
+      id: speed.id,
+      label: speed.label,
+      priceLabel: Number.isFinite(speed.fromPrice) ? `from $${speed.fromPrice}` : '',
+      badges,
+    }
   })
 }
 
