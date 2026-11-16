@@ -1,7 +1,7 @@
 [
   {
     "id": "lost-stolen",
-    "label": "Passport replace lost or stolen passport",
+    "label": "Replace a lost or stolen passport",
     "price": 259
   },
   {
@@ -11,7 +11,7 @@
   },
   {
     "id": "damaged",
-    "label": "Passport replace damaged passport",
+    "label": "Replace a damaged passport",
     "price": 199
   },
   {

@@ -99,7 +99,7 @@ function FieldControl({
           type="text"
           name={name}
           value={value}
-          placeholder={placeholder || 'DD/MM/YYYY'}
+          placeholder={placeholder || 'Day/month/year'}
           disabled={disabled}
           required={required}
           aria-invalid={invalid || undefined}

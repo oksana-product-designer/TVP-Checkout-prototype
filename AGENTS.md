@@ -5,7 +5,7 @@ Instructions for the coding agent working on the TVP checkout prototype. Keep th
 ## Project
 A desktop checkout wizard for Travel Visa Pro (TVP): customers order passport and visa services for one or more Applicants, optionally add a VIP package, enter delivery details, and pay. This repo is a working front-end prototype with mocked data, not a production backend.
 
-Steps: 1 Trip and applicants, 2 Service, 3 VIP Service, 4 Delivery, 5 Payment. A persistent order summary sits next to the form on desktop. At 639px and below, `MobileTotalBar` replaces that sidebar and the step buttons.
+Steps: 1 Trip and applicants, 2 Services, 3 VIP Services, 4 Delivery, 5 Review, 6 Payment. A persistent order summary sits next to the form on desktop. At 639px and below, `MobileTotalBar` replaces that sidebar and the step buttons.
 
 ## Read these first
 - `docs/prd.md`: what to build, the flow, requirements per step, validation and behavior rules, open questions.
@@ -61,7 +61,7 @@ src/
 - When something in the docs is unclear or missing, ask instead of guessing.
 
 ## Known gotchas
-- Use the **5-step** stepper (Trip and applicants, Service, VIP Service, Delivery, Payment). Some early Step 1 and Step 2 screens still show an older 6-step version.
+- Use the **6-step** stepper (Trip and applicants, Services, VIP Services, Delivery, Review, Payment). Some early Step 1 and Step 2 screens still show an older 6-step version with a separate Speed step and no Review.
 - The Payment screens still show "Delivery details" as the page title and "Delivery address" as the first section title. Use proper payment wording.
 - Copy typos in the design ("State of residense", "No I'don't") should be corrected in code.
 - Executive Club ($499) is cheaper than VIP Concierge ($770) in the current data. This is an open question; keep the values in the mock file.

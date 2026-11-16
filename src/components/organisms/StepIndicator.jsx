@@ -3,9 +3,10 @@ import './StepIndicator.css'
 
 const CHECKOUT_STEPS = [
   'Trip and applicants',
-  'Service',
-  'VIP Service',
+  'Services',
+  'VIP Services',
   'Delivery',
+  'Review',
   'Payment',
 ]
 

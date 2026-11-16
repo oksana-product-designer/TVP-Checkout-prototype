@@ -1,3 +1,7 @@
+.delivery-step__method .input-field__label {
+  text-transform: none;
+}
+
 .delivery-step__empty {
   margin: 0;
   color: var(--color-text-primary);

@@ -13,16 +13,18 @@ import { DeliveryStep } from './steps/delivery/DeliveryStep.jsx'
 import { PaymentStep } from './steps/payment/PaymentStep.jsx'
 import { OrderPlaced } from './steps/placed/OrderPlaced.jsx'
 import { paymentActionLabel } from './steps/payment/paymentMethods.js'
+import { ReviewStep } from './steps/review/ReviewStep.jsx'
 import { ServiceStep } from './steps/service/ServiceStep.jsx'
 import { TravelersStep } from './steps/travelers/TravelersStep.jsx'
 import { VipStep } from './steps/vip/VipStep.jsx'
 
 const STEP_TITLES = {
-  1: 'Kick off your order',
-  2: 'Trip and service details',
-  3: 'Choose service package',
-  4: 'Delivery details',
-  5: 'Payment method',
+  1: 'Trip and applicants',
+  2: 'Services',
+  3: 'Service package',
+  4: 'Delivery',
+  5: 'Review your order',
+  6: 'Payment',
   placed: 'Your order has been placed',
 }
 
@@ -72,8 +74,8 @@ function App() {
       return
     }
     if (step === 3 && !deliveryRequired(order)) leaveStep(5)
-    else if (step < 5) leaveStep(step + 1)
-    else if (step === 5) leaveStep('placed')
+    else if (step < 6) leaveStep(step + 1)
+    else if (step === 6) leaveStep('placed')
   }
 
   function handleHome() {
@@ -86,12 +88,15 @@ function App() {
   }
 
   function handleBack() {
-    if (step === 'placed') leaveStep(5)
-    else if (step === 5 && !deliveryRequired(order)) leaveStep(3)
+    if (step === 'placed') leaveStep(6)
     else if (step > 1) leaveStep(step - 1)
   }
 
-  const nextLabel = step === 5 ? paymentActionLabel(order.payment.method) : 'Next step'
+  const nextLabel = step === 5
+    ? 'Continue to payment'
+    : step === 6
+      ? paymentActionLabel(order.payment.method)
+      : 'Next step'
 
   return (
     <CheckoutLayout
@@ -100,6 +105,7 @@ function App() {
         checkingOut && mobile ? 'checkout-layout--with-mobile-bar' : '',
       ].filter(Boolean).join(' ')}
       title={STEP_TITLES[step] || STEP_TITLES[2]}
+      subtitle={step === 5 ? 'Check your details before you pay.' : ''}
       currentStep={step}
       reachedStep={reachedStep}
       onStepSelect={step === 'placed' ? undefined : handleStep}
@@ -129,7 +135,8 @@ function App() {
       {step === 2 ? <ServiceStep attempted={attempted} revealToken={revealToken} /> : null}
       {step === 3 ? <VipStep /> : null}
       {step === 4 ? <DeliveryStep attempted={attempted} /> : null}
-      {step === 5 ? <PaymentStep attempted={attempted} /> : null}
+      {step === 5 ? <ReviewStep onEdit={leaveStep} /> : null}
+      {step === 6 ? <PaymentStep attempted={attempted} /> : null}
       {step === 'placed' ? <OrderPlaced onHome={handleHome} /> : null}
     </CheckoutLayout>
   )

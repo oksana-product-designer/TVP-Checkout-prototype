@@ -74,6 +74,7 @@
 }
 
 .pricing-card__amount {
+  flex-shrink: 0;
   font-family: var(--font-family);
   font-weight: var(--font-weight-regular);
   font-size: var(--font-size-amount);
@@ -83,6 +84,8 @@
 }
 
 .pricing-card__note {
+  min-width: 0;
+  text-align: left;
   font-family: var(--font-family);
   font-size: var(--font-size-caption);
   line-height: var(--line-height-caption);
@@ -197,4 +200,9 @@
 
 .pricing-card--horizontal .feature-item {
   width: 200px;
+}
+
+/* Info tooltip sits vertically centered on the price */
+.pricing-card__price .popover {
+  align-self: center;
 }

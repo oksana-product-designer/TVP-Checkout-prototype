@@ -87,14 +87,14 @@ export function TravelerDetailsSection({
               label="Phone number"
               required
               infoIcon
-              infoText="We use your phone number to reach you quickly if there is a problem with your documents or your delivery. We send text updates only if you tick the SMS box below."
+              infoText="We use your phone number to reach you quickly if there is a problem with your documents or your delivery. We text you only if you check the box below."
               value={traveler.phone}
               errorMessage={fieldError(showErrors, traveler, 'phone')}
               onChange={(event) => onChange('phone', formatPhone(event.target.value))}
             />
           </FormRow>
           <Checkbox
-            label="I consent to receive SMS updates about my order status"
+            label="Text me order updates"
             checked={traveler.smsConsent}
             onChange={(event) => onChange('smsConsent', event.target.checked)}
           />
@@ -104,7 +104,7 @@ export function TravelerDetailsSection({
         <Button
           className="traveler-details__add"
           type="Link accent"
-          label="Add Applicant"
+          label="Add an applicant"
           showTrailingIcon
           trailingIcon="plus"
           onClick={onAdd}

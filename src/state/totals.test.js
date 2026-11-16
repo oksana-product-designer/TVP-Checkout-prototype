@@ -15,17 +15,17 @@ describe('corporate account discount', () => {
   it('takes 20% off the whole order at once when the account is validated', () => {
     const order = orderWith({ hasAccount: true, accountNumber: '123456789', status: 'valid' })
 
-    expect(getOrderTotal(order)).toBeCloseTo(47.2)
+    expect(getOrderTotal(order)).toBeCloseTo(58.4)
     const row = getSummaryTree(order).find((item) => item.id === 'corporate-discount')
-    expect(row).toMatchObject({ label: 'Corporate account (20% off)', price: '-$11.80' })
+    expect(row).toMatchObject({ label: 'Corporate account (20% off)', price: '-$14.60' })
   })
 
   it('gives no discount before validation or when the account is switched off', () => {
     const idle = orderWith({ hasAccount: true, accountNumber: '123456789', status: 'idle' })
     const off = orderWith({ hasAccount: false, accountNumber: '123456789', status: 'valid' })
 
-    expect(getOrderTotal(idle)).toBe(59)
-    expect(getOrderTotal(off)).toBe(59)
+    expect(getOrderTotal(idle)).toBe(73)
+    expect(getOrderTotal(off)).toBe(73)
     expect(getSummaryTree(idle).some((item) => item.id === 'corporate-discount')).toBe(false)
   })
 })
@@ -41,3 +41,21 @@ describe('promo discount row', () => {
   })
 })
 
+
+describe('VIP package pricing', () => {
+  function withPackage(id, applicants) {
+    const order = structuredClone(initialOrder)
+    order.travelers = Array.from({ length: applicants }, (_, i) => ({ ...order.travelers[0], id: `t${i + 1}` }))
+    order.vipPackageId = id
+    return getSummaryTree(order).find((item) => item.id === `vip-${id}`)
+  }
+
+  it('charges VIP Concierge once per Applicant', () => {
+    expect(withPackage('concierge', 1)).toMatchObject({ label: 'VIP Concierge', price: '$770.00' })
+    expect(withPackage('concierge', 3)).toMatchObject({ label: 'VIP Concierge (3 Applicants)', price: '$2,310.00' })
+  })
+
+  it('charges Executive Club once per order', () => {
+    expect(withPackage('executive', 3)).toMatchObject({ label: 'Executive Club', price: '$499.00' })
+  })
+})

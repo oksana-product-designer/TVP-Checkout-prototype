@@ -34,7 +34,7 @@ export function CorporateAccount({
           value={hasAccount ? 'yes' : 'no'}
           onChange={(value) => onHasAccountChange?.(value === 'yes')}
         >
-          <ButtonGroupItem value="no" label="No I don't" />
+          <ButtonGroupItem value="no" label="No, I don't" />
           <ButtonGroupItem value="yes" label="Yes, I have" />
         </ButtonGroup>
 
@@ -48,13 +48,13 @@ export function CorporateAccount({
               placeholder="Enter your account number"
               errorMessage={errorMessage}
               success={status === 'valid'}
-              successMessage={status === 'valid' ? 'Account number verified' : ''}
+              successMessage={status === 'valid' ? 'Account verified' : ''}
               onChange={(event) => onAccountNumberChange?.(event.target.value)}
             />
             <div className="corporate-account__validate">
               <Button
                 type="Secondary"
-                label={status === 'valid' ? 'Validated' : 'Validate'}
+                label={status === 'valid' ? 'Account verified' : 'Check account'}
                 showLeadingIcon={status === 'valid'}
                 leadingIcon="check"
                 disabled={!canValidate}
@@ -67,9 +67,9 @@ export function CorporateAccount({
         {hasAccount ? null : (
           <Checkbox
             checked={learnMore}
-            label="I'd like to learn more about Business Accounts or Membership"
-            infoLabel="About Business Accounts"
-            infoText="A Business Account is a company membership with Travel Visa Pro. It applies your company discount and can fill in your usual delivery details."
+            label="Email me about business accounts"
+            infoLabel="About business accounts"
+            infoText="A business account is a company plan. It applies your company discount and can fill in your usual delivery address."
             onChange={(event) => onLearnMoreChange?.(event.target.checked)}
           />
         )}

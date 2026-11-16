@@ -66,24 +66,26 @@ export function DeliveryStep({ attempted = false }) {
   return (
     <>
       <Card>
-        <FormSection title="Shipping methods">
+        <FormSection title="Documents delivery">
           <FormRow>
             <InputField
+              className="delivery-step__method"
               type="Select"
-              label="Inbound Shipping"
+              label="How will you send your documents?"
               required
               value={delivery.inboundShippingId}
-              options={shippingMethods}
+              options={shippingMethods.inbound}
               placeholder="Select"
               errorMessage={errors.inboundShippingId || ''}
               onChange={(event) => patchDelivery({ inboundShippingId: event.target.value })}
             />
             <InputField
+              className="delivery-step__method"
               type="Select"
-              label="Return Shipping"
+              label="How should we return them?"
               required
               value={delivery.returnShippingId}
-              options={shippingMethods}
+              options={shippingMethods.return}
               placeholder="Select"
               errorMessage={errors.returnShippingId || ''}
               onChange={(event) => patchDelivery({ returnShippingId: event.target.value })}
@@ -91,12 +93,12 @@ export function DeliveryStep({ attempted = false }) {
           </FormRow>
         </FormSection>
       </Card>
+      {addressActive ? (
       <Card>
         <FormSection title="Delivery address">
           <FormRow>
             <InputField
               label="Full name"
-              disabled={!addressActive}
               required
               value={address.fullName}
               errorMessage={nameError}
@@ -104,7 +106,6 @@ export function DeliveryStep({ attempted = false }) {
             />
             <InputField
               label="Phone number"
-              disabled={!addressActive}
               required
               value={address.phone}
               errorMessage={phoneError}
@@ -113,13 +114,11 @@ export function DeliveryStep({ attempted = false }) {
           </FormRow>
           <InputField
             label="Company"
-            disabled={!addressActive}
             value={address.company}
             onChange={(event) => patchAddress({ company: event.target.value })}
           />
           <InputField
             label="Street address"
-            disabled={!addressActive}
             required
             value={address.street}
             errorMessage={errors.street || ''}
@@ -128,7 +127,6 @@ export function DeliveryStep({ attempted = false }) {
           <FormRow>
             <InputField
               label="City"
-              disabled={!addressActive}
               required
               value={address.city}
               options={cities}
@@ -143,7 +141,6 @@ export function DeliveryStep({ attempted = false }) {
             <InputField
               type="Select"
               label="State"
-              disabled={!addressActive}
               required
               value={address.state}
               options={states}
@@ -156,7 +153,6 @@ export function DeliveryStep({ attempted = false }) {
             <InputField label="Country" required value="United States" disabled />
             <InputField
               label="Zip code"
-              disabled={!addressActive}
               required
               value={address.zip}
               errorMessage={errors.zip || ''}
@@ -187,6 +183,7 @@ export function DeliveryStep({ attempted = false }) {
           )}
         </FormSection>
       </Card>
+      ) : null}
     </>
   )
 }

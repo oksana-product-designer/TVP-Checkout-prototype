@@ -48,7 +48,7 @@ describe('step gating', () => {
     const next = screen.getByRole('button', { name: 'Next step' })
     expect(next).toHaveAttribute('aria-disabled', 'true')
     await user.click(next)
-    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Kick off your order')
+    expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Trip and applicants')
     expect(screen.getByText('Enter your first name')).toBeInTheDocument()
 
     view.unmount()

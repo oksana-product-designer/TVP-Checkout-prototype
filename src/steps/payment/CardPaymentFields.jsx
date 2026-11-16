@@ -45,7 +45,7 @@ export function CardPaymentFields({
         />
       </FormRow>
       <p className="payment-step__copy">
-        * By paying with my card, I agree to the PayPal Privacy Statement.
+        * By paying with my card, I agree to the Travel Visa Pro privacy policy.
       </p>
     </>
   )
