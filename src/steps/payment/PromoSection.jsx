@@ -26,7 +26,7 @@ export function PromoSection() {
 
   return (
     <Card>
-      <FormSection title="Discount code">
+      <FormSection title="Promo code">
         <div className="promo-section__row">
           <InputField
             label="Promo code"

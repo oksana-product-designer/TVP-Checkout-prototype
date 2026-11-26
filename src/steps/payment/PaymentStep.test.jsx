@@ -17,7 +17,7 @@ function PaymentWithNext() {
       <button
         type="button"
         onClick={() => {
-          if (!isStepValid(order, 5)) setAttempted(true)
+          if (!isStepValid(order, 6)) setAttempted(true)
         }}
       >
         Next step

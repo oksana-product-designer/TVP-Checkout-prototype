@@ -1,5 +1,17 @@
-[
-  { "id": "fedex-2nd-day", "label": "FedEx 2nd Day", "price": 20 },
-  { "id": "fedex-overnight", "label": "FedEx Overnight", "price": 39 },
-  { "id": "on-my-own", "label": "On my own", "price": 0 }
-]
+{
+  "inbound": [
+    { "id": "fedex-2nd-day", "label": "Fedex 2nd Day Shipping ($24)", "price": 24, "needsAddress": true },
+    { "id": "fedex-overnight", "label": "FedEx Priority (morning) Overnight ($49)", "price": 49, "needsAddress": true },
+    { "id": "ship-on-my-own", "label": "I will ship on my own", "price": 0, "needsAddress": true },
+    { "id": "vip-office", "label": "Personal Delivery To TVP VIP Office", "price": 0, "needsAddress": false },
+    { "id": "authorized-location", "label": "Personal Delivery To TVP Authorized Location", "price": 0, "needsAddress": true }
+  ],
+  "return": [
+    { "id": "fedex-2nd-day", "label": "FedEx 2nd Day Shipping ($24)", "price": 24, "needsAddress": true },
+    { "id": "fedex-overnight", "label": "FedEx Priority (morning) Overnight ($49)", "price": 49, "needsAddress": true },
+    { "id": "fedex-saturday", "label": "FedEx Saturday Priority Overnight ($79)", "price": 79, "needsAddress": true },
+    { "id": "return-vip-office", "label": "Personal Pickup From TVP VIP Office", "price": 0, "needsAddress": false },
+    { "id": "return-authorized-location", "label": "Personal Pickup From TVP Authorized Location", "price": 0, "needsAddress": true },
+    { "id": "prepaid-label", "label": "I will provide a pre-paid, pre-addressed return label", "price": 0, "needsAddress": true }
+  ]
+}

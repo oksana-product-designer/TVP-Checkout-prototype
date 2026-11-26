@@ -1,11 +1,12 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { emptyServices, nextSelectionId, selectionsOf } from '../../state/initialOrder.js'
 import { useOrder } from '../../state/useOrder.js'
-import { travelerServiceErrorCount } from '../../state/validation.js'
+import { DEFAULT_PASSPORT_PAGES, travelerServiceErrorCount } from '../../state/validation.js'
+import { MAX_SERVICES } from './serviceChoices.js'
 import { TravelerServiceCard } from './TravelerServiceCard.jsx'
 
 function blankPassport(serviceId) {
-  return { serviceId, pages: '', processingSpeed: '', passportCard: false }
+  return { serviceId, pages: DEFAULT_PASSPORT_PAGES, processingSpeed: '', passportCard: false }
 }
 
 function blankVisa(serviceId) {
@@ -42,9 +43,11 @@ function applySelections(current, travelerId, selections, serviceKind) {
     servicesByTraveler: {
       ...current.servicesByTraveler,
       [travelerId]: {
-        passport: passportServiceIds.map((serviceId) => (
-          passportStored.find((row) => row.serviceId === serviceId) || blankPassport(serviceId)
-        )),
+        passport: passportServiceIds.map((serviceId) => {
+          const stored = passportStored.find((row) => row.serviceId === serviceId)
+          if (!stored) return blankPassport(serviceId)
+          return stored.pages ? stored : { ...stored, pages: DEFAULT_PASSPORT_PAGES }
+        }),
         visa: visaServiceIds.map((serviceId) => (
           visaStored.find((row) => row.serviceId === serviceId) || blankVisa(serviceId)
         )),
@@ -55,6 +58,25 @@ function applySelections(current, travelerId, selections, serviceKind) {
 
 export function ServiceStep({ attempted = false, revealToken = 0 }) {
   const { order, setOrder } = useOrder()
+
+  useEffect(() => {
+    setOrder((current) => {
+      let changed = false
+      const servicesByTraveler = { ...current.servicesByTraveler }
+      Object.entries(servicesByTraveler).forEach(([travelerId, services]) => {
+        const passport = services?.passport
+        if (!Array.isArray(passport) || passport.every((row) => row.pages)) return
+        changed = true
+        servicesByTraveler[travelerId] = {
+          ...services,
+          passport: passport.map((row) => (
+            row.pages ? row : { ...row, pages: DEFAULT_PASSPORT_PAGES }
+          )),
+        }
+      })
+      return changed ? { ...current, servicesByTraveler } : current
+    })
+  }, [setOrder])
   const [openId, setOpenId] = useState(() => order.travelers[0]?.id ?? null)
   const [seenReveal, setSeenReveal] = useState(revealToken)
   const multiple = order.travelers.length > 1
@@ -71,15 +93,31 @@ export function ServiceStep({ attempted = false, revealToken = 0 }) {
     }
   }
 
-  function changeSelectionKind(travelerId, selectionId, kind) {
+  function toggleService(travelerId, choice) {
     setOrder((current) => {
       const traveler = current.travelers.find((item) => item.id === travelerId)
       if (!traveler) return current
-      const selections = selectionsOf(traveler).map((item) => {
-        if (item.id !== selectionId || item.kind === kind) return item
-        return { ...item, kind, serviceId: '' }
-      })
-      return applySelections(current, travelerId, selections, traveler.serviceKind || 'passport')
+      const selections = selectionsOf(traveler)
+      const index = selections.findIndex((item) => item.kind === choice.kind)
+      if (index >= 0) {
+        return applySelections(
+          current,
+          travelerId,
+          selections.filter((_, itemIndex) => itemIndex !== index),
+          traveler.serviceKind || 'passport',
+        )
+      }
+      if (selections.length >= MAX_SERVICES) return current
+      return applySelections(
+        current,
+        travelerId,
+        [...selections, {
+          id: nextSelectionId(selections),
+          kind: choice.kind,
+          serviceId: '',
+        }],
+        traveler.serviceKind || 'passport',
+      )
     })
   }
 
@@ -91,35 +129,6 @@ export function ServiceStep({ attempted = false, revealToken = 0 }) {
         item.id === selectionId ? { ...item, serviceId } : item
       ))
       return applySelections(current, travelerId, selections, traveler.serviceKind || 'passport')
-    })
-  }
-
-  function addService(travelerId) {
-    setOrder((current) => {
-      const traveler = current.travelers.find((item) => item.id === travelerId)
-      if (!traveler) return current
-      const selections = selectionsOf(traveler)
-      return applySelections(
-        current,
-        travelerId,
-        [...selections, { id: nextSelectionId(selections), kind: 'passport', serviceId: '' }],
-        traveler.serviceKind || 'passport',
-      )
-    })
-  }
-
-  function removeService(travelerId, selectionId) {
-    setOrder((current) => {
-      const traveler = current.travelers.find((item) => item.id === travelerId)
-      if (!traveler) return current
-      const selections = selectionsOf(traveler)
-      if (selections.length <= 1) return current
-      return applySelections(
-        current,
-        travelerId,
-        selections.filter((item) => item.id !== selectionId),
-        traveler.serviceKind || 'passport',
-      )
     })
   }
 
@@ -160,10 +169,8 @@ export function ServiceStep({ attempted = false, revealToken = 0 }) {
           onToggle={() => {
             setOpenId((current) => (current === traveler.id ? null : traveler.id))
           }}
-          onKindChange={changeSelectionKind}
+          onToggleService={toggleService}
           onChoose={chooseService}
-          onAdd={addService}
-          onRemove={removeService}
           onPassportChange={(travelerId, serviceId, patch) => {
             patchService(travelerId, 'passport', serviceId, patch)
           }}

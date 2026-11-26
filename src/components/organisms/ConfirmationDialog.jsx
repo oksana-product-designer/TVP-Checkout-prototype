@@ -70,7 +70,7 @@ export function ConfirmationDialog({
       <button
         type="button"
         className="confirmation-dialog__scrim"
-        aria-label="Close dialog"
+        aria-label="Close"
         tabIndex={-1}
         onClick={onCancel}
       />

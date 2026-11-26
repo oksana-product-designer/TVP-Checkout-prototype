@@ -11,7 +11,7 @@ export function createTraveler(id) {
     phone: '',
     smsConsent: false,
     serviceKind: 'passport',
-    serviceSelections: [{ id: 's1', kind: 'passport', serviceId: '' }],
+    serviceSelections: [],
     passportServiceIds: [],
     visaServiceIds: [],
   }

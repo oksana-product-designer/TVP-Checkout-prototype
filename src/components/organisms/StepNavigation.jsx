@@ -14,7 +14,7 @@ export function StepNavigation({
       {first ? <span /> : (
         <Button
           type="Secondary"
-          label="Previous step"
+          label="Back"
           onClick={onPrevious}
         />
       )}

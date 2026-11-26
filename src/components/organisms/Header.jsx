@@ -20,7 +20,7 @@ export function Header({
           <Button
             className="header__back"
             type="Link"
-            label="Go back"
+            label="Back"
             showLeadingIcon
             leadingIcon="arrow-left"
             onClick={onBack}

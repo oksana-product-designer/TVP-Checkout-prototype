@@ -11,6 +11,7 @@ export function VisaServiceSection({
   showDivider = false,
   showHeader = true,
   showErrors = false,
+  className = '',
   onChange,
 }) {
   const { order } = useOrder()
@@ -21,7 +22,12 @@ export function VisaServiceSection({
   const validityError = showErrors ? visaFieldError(service, 'validityPeriod') : null
 
   return (
-    <FormSection title={visa.sectionTitle} showDivider={showDivider} showHeader={showHeader}>
+    <FormSection
+      title={visa.sectionTitle}
+      showDivider={showDivider}
+      showHeader={showHeader}
+      className={className}
+    >
       <FormRow>
         <InputField
           type="Select"

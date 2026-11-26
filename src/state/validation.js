@@ -14,8 +14,8 @@ const MESSAGES = {
   lastName: 'Enter your last name',
   nationality: 'Select your nationality',
   stateOfResidence: 'Select your state of residence',
-  email: 'Enter an email in the format name@domain',
-  phone: 'Enter a phone number in the format (000) 000 00 00',
+  email: 'Enter an email address like name@example.com',
+  phone: 'Enter a 10-digit US phone number.',
 }
 
 const ZIP = /^\d{5}$/
@@ -92,19 +92,25 @@ export function validateTravelDate(value) {
   return isUsableDate(text) ? null : 'Enter a valid travel date'
 }
 
+export const DEFAULT_PASSPORT_PAGES = '28'
+
+function withDefaultPages(row) {
+  return row.pages ? row : { ...row, pages: DEFAULT_PASSPORT_PAGES }
+}
+
 export function serviceRows(order, traveler) {
   const stored = order.servicesByTraveler?.[traveler.id] || {}
   const passportStored = Array.isArray(stored.passport) ? stored.passport : []
   const visaStored = Array.isArray(stored.visa) ? stored.visa : []
 
   return {
-    passport: (traveler.passportServiceIds || []).map((serviceId) => (
+    passport: (traveler.passportServiceIds || []).map((serviceId) => withDefaultPages(
       passportStored.find((item) => item.serviceId === serviceId) || {
         serviceId,
-        pages: '',
+        pages: DEFAULT_PASSPORT_PAGES,
         processingSpeed: '',
         passportCard: false,
-      }
+      },
     )),
     visa: visaIdsOf(traveler).map((serviceId) => (
       visaStored.find((item) => item.serviceId === serviceId) || {
@@ -119,7 +125,7 @@ export function serviceRows(order, traveler) {
 }
 
 export function passportFieldError(row, field) {
-  if (field === 'pages') return row?.pages ? null : 'Select number of pages'
+  if (field === 'pages') return row?.pages ? null : 'Select the number of pages'
   if (field === 'processingSpeed') return row?.processingSpeed ? null : 'Select processing speed'
   return null
 }
@@ -127,7 +133,7 @@ export function passportFieldError(row, field) {
 export function visaFieldError(row, field) {
   if (field === 'visaType') return row?.visaType ? null : 'Select a visa type'
   if (field === 'processingSpeed') return row?.processingSpeed ? null : 'Select processing speed'
-  if (field === 'entries') return row?.entries ? null : 'Select number of entries'
+  if (field === 'entries') return row?.entries ? null : 'Select the number of entries'
   if (field === 'validityPeriod') return row?.validityPeriod ? null : 'Select a validity period'
   return null
 }
@@ -138,6 +144,7 @@ export function travelerServiceErrorCount(order, traveler) {
   let count = selections.length ? 0 : 1
 
   selections.forEach((selection) => {
+    if (selection.kind !== 'passport' && selection.kind !== 'visa') return
     if (!selection.serviceId) {
       count += 1
       return
@@ -177,11 +184,25 @@ export function validateField(field, value) {
   return null
 }
 
-export const SHIPPING_ON_MY_OWN = 'on-my-own'
+const ADDRESS_METHOD_IDS = new Set(
+  [...shippingMethods.inbound, ...shippingMethods.return]
+    .filter((method) => method.needsAddress)
+    .map((method) => method.id),
+)
 
-// The address is only needed when TVP ships at least one way.
+const OWN_SHIPPING_ID = 'ship-on-my-own'
+const PICKUP_RETURN_IDS = new Set(['return-vip-office', 'return-authorized-location'])
+
+// The address is shown once either leg is FedEx, shipping on your own, or an authorized location.
+// Shipping on your own plus a pickup from a TVP office or authorized location does not need one.
 export function addressRequired(delivery = {}) {
-  return !(delivery.inboundShippingId === SHIPPING_ON_MY_OWN && delivery.returnShippingId === SHIPPING_ON_MY_OWN)
+  if (
+    delivery.inboundShippingId === OWN_SHIPPING_ID
+    && PICKUP_RETURN_IDS.has(delivery.returnShippingId)
+  ) {
+    return false
+  }
+  return [delivery.inboundShippingId, delivery.returnShippingId].some((id) => ADDRESS_METHOD_IDS.has(id))
 }
 
 export function deliveryErrors(order) {
@@ -189,11 +210,11 @@ export function deliveryErrors(order) {
   const address = delivery.address || {}
   const errors = {}
 
-  if (!shippingMethods.some((item) => item.id === delivery.inboundShippingId)) {
-    errors.inboundShippingId = 'Select an inbound shipping method'
+  if (!shippingMethods.inbound.some((item) => item.id === delivery.inboundShippingId)) {
+    errors.inboundShippingId = 'Select how to ship this to us'
   }
-  if (!shippingMethods.some((item) => item.id === delivery.returnShippingId)) {
-    errors.returnShippingId = 'Select a return shipping method'
+  if (!shippingMethods.return.some((item) => item.id === delivery.returnShippingId)) {
+    errors.returnShippingId = 'Select how to ship this back to you'
   }
   if (!addressRequired(delivery)) return errors
   const nameMessage = validateFullName(address.fullName)
@@ -249,20 +270,30 @@ function joinServiceLabels(labels) {
 }
 
 export function deliverySkippedMessage(order) {
-  const labels = []
+  const phrases = []
   ;(order.travelers || []).forEach((traveler) => {
     selectionsOf(traveler).forEach((selection) => {
       if (selection.kind !== 'visa' || !selection.serviceId) return
       const type = visaTypeOf(order, traveler, selection)
       if (!isOnlineVisaType(type)) return
       const country = visaById[selection.serviceId]?.label
-      const label = country ? `${type.label} (${country})` : type.label
-      if (!labels.includes(label)) labels.push(label)
+      const phrase = onlineVisaPhrase(type?.label, country)
+      if (!phrases.includes(phrase)) phrases.push(phrase)
     })
   })
-  if (!labels.length) return 'No delivery is required for the Visa service you chose.'
-  const service = labels.length === 1 ? 'Visa service' : 'Visa services'
-  return `No delivery is required for the ${service} ${joinServiceLabels(labels)}.`
+  if (!phrases.length) return 'No shipping is needed for the visa you chose.'
+  return `No shipping is needed for ${joinServiceLabels(phrases)}.`
+}
+
+function onlineVisaPhrase(typeLabel, country) {
+  const kind = String(typeLabel || '')
+    .replace(/\bonline\b/gi, '')
+    .replace(/\bvisa\b/gi, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase()
+  const visa = kind ? `${kind} visa` : 'visa'
+  return country ? `the ${country} ${visa} (online)` : `the ${visa} (online)`
 }
 
 export function isStepValid(order, step = 1) {
@@ -284,7 +315,9 @@ export function isStepValid(order, step = 1) {
     return Object.keys(deliveryErrors(order)).length === 0
   }
 
-  if (step === 5) return Object.keys(paymentErrors(order)).length === 0
+  if (step === 5) return true
+
+  if (step === 6) return Object.keys(paymentErrors(order)).length === 0
 
   return false
 }

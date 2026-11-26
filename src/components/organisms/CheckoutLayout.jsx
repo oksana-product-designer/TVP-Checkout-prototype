@@ -6,6 +6,7 @@ import './CheckoutLayout.css'
 
 export function CheckoutLayout({
   title,
+  subtitle = '',
   currentStep = 1,
   reachedStep = 1,
   showBackLink = true,
@@ -35,7 +36,12 @@ export function CheckoutLayout({
       />
       <div className="checkout-layout__hero">
         <TrustBadge />
-        {title ? <h1 className="checkout-layout__title">{title}</h1> : null}
+        {title || subtitle ? (
+          <div className="checkout-layout__heading">
+            {title ? <h1 className="checkout-layout__title">{title}</h1> : null}
+            {subtitle ? <p className="checkout-layout__subtitle">{subtitle}</p> : null}
+          </div>
+        ) : null}
       </div>
       <div className="checkout-layout__grid">
         <div className="checkout-layout__main">

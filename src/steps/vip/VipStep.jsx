@@ -56,11 +56,11 @@ export function VipStep() {
 
   return (
     <Card>
-      <FormSection title="Choose a package.">
+      <FormSection title="Select a package">
         <div
           className="vip-step__choices"
           role="radiogroup"
-          aria-label="Choose a package."
+          aria-label="Select a package"
           onKeyDown={onPackageKeyDown}
         >
           <div className={expanded ? 'vip-step__packages vip-step__packages--open' : 'vip-step__packages'}>
@@ -106,6 +106,9 @@ function PackageChoice({ item, active, tabbable, expanded, onSelect, onMore }) {
       tagline={item.tagline}
       price={`$${item.price}`}
       comparePrice={item.compareAt != null ? `$${item.compareAt}` : ''}
+      priceNote={item.priceNote || ''}
+      priceTooltip={item.priceTooltip || ''}
+      tooltipId={`vip-package-${item.id}-tooltip`}
       showPrice
       lead={item.lead || ''}
       showLead={Boolean(item.lead)}

@@ -1,6 +1,6 @@
 [
-  { "id": "2-days", "label": "2 Days", "days": 2, "badge": "Fastest", "fromPrice": 99 },
-  { "id": "1-week", "label": "1 Weeks", "days": 7, "fromPrice": 59 },
-  { "id": "2-weeks", "label": "2 Weeks", "days": 14, "fromPrice": 39 },
-  { "id": "4-weeks", "label": "4 Weeks", "days": 28, "badge": "Cheapest", "fromPrice": 20 }
+  { "id": "2-days", "label": "2 days", "days": 2, "badge": "Fastest", "fromPrice": 99 },
+  { "id": "1-week", "label": "1 week", "days": 7, "fromPrice": 59 },
+  { "id": "2-weeks", "label": "2 weeks", "days": 14, "fromPrice": 39 },
+  { "id": "4-weeks", "label": "4 weeks", "days": 28, "badge": "Cheapest", "fromPrice": 20 }
 ]

@@ -72,10 +72,12 @@ export function getServiceSubtotal(order) {
 export function getPackageLine(order) {
   const pkg = packages.find((item) => item.id === order.vipPackageId)
   if (!pkg) return null
+  // Per-applicant packages (VIP Concierge) are charged once for every Applicant.
+  const count = pkg.perApplicant ? Math.max(1, order.travelers.length) : 1
   return {
     id: `vip-${pkg.id}`,
-    label: pkg.name,
-    amount: pkg.price,
+    label: count > 1 ? `${pkg.name} (${count} Applicants)` : pkg.name,
+    amount: pkg.price * count,
   }
 }
 
@@ -96,12 +98,13 @@ export function getShippingLines(order) {
   if (!deliveryRequired(order)) return []
   const delivery = order.delivery || {}
   const choices = [
-    ['inboundShippingId', 'Inbound Shipping'],
-    ['returnShippingId', 'Return Shipping'],
+    ['inboundShippingId', 'Ship to us'],
+    ['returnShippingId', 'Ship back to you'],
   ]
 
   return choices.flatMap(([field, title]) => {
-    const method = shippingMethods.find((item) => item.id === delivery[field])
+    const methods = field === 'inboundShippingId' ? shippingMethods.inbound : shippingMethods.return
+    const method = methods.find((item) => item.id === delivery[field])
     if (!method) return []
     return [{
       id: `shipping-${field}`,

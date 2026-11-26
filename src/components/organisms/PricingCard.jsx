@@ -1,5 +1,6 @@
 import { Button } from '../atoms/Button.jsx'
 import { TextLink } from '../atoms/TextLink.jsx'
+import { Popover } from '../atoms/Popover.jsx'
 import { FeatureItem } from '../molecules/FeatureItem.jsx'
 import './PricingCard.css'
 
@@ -11,6 +12,8 @@ export function PricingCard({
   price,
   comparePrice = '',
   priceNote = '',
+  priceTooltip = '',
+  tooltipId = '',
   showPrice = true,
   lead,
   showLead = true,
@@ -74,6 +77,7 @@ export function PricingCard({
               {comparePrice ? <span className="pricing-card__compare">{comparePrice}</span> : null}
               <span className="pricing-card__amount">{price}</span>
               {priceNote ? <span className="pricing-card__note">{priceNote}</span> : null}
+              {priceTooltip ? <Popover label={`${name} availability`} text={priceTooltip} id={tooltipId} /> : null}
             </p>
           ) : null}
           {selectButton}
@@ -100,6 +104,7 @@ export function PricingCard({
             {comparePrice ? <span className="pricing-card__compare">{comparePrice}</span> : null}
             <span className="pricing-card__amount">{price}</span>
             {priceNote ? <span className="pricing-card__note">{priceNote}</span> : null}
+              {priceTooltip ? <Popover label={`${name} availability`} text={priceTooltip} id={tooltipId} /> : null}
           </p>
         ) : null}
         {selectButton}

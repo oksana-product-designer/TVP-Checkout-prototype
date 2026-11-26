@@ -17,6 +17,7 @@ export function PassportServiceSection({
   showDivider = false,
   showHeader = true,
   showErrors = false,
+  className = '',
   onChange,
 }) {
   const { order } = useOrder()
@@ -25,7 +26,7 @@ export function PassportServiceSection({
   const speedError = showErrors ? passportFieldError(service, 'processingSpeed') : null
 
   return (
-    <FormSection title={title} showDivider={showDivider} showHeader={showHeader}>
+    <FormSection title={title} showDivider={showDivider} showHeader={showHeader} className={className}>
       <FormRow>
         <InputField
           type="Select"
@@ -50,7 +51,7 @@ export function PassportServiceSection({
         <Checkbox
           className="passport-service__addon"
           showTitle
-          title="Additional Options"
+          title="Additional services"
           label={passportCard.label}
           description={passportCard.description}
           showDescription

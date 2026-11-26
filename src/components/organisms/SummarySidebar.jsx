@@ -7,8 +7,8 @@ export function SummarySidebar({ className = '', ...summaryProps }) {
     <aside className={['summary-sidebar', className].filter(Boolean).join(' ')}>
       <OrderSummary {...summaryProps} />
       <div className="summary-sidebar__assurances">
-        <AssuranceItem icon="verified-shield" label="Safe & Secure Payment" />
-        <AssuranceItem icon="money-back" label="14 Day Money Back Guarantee" />
+        <AssuranceItem icon="verified-shield" label="Safe and secure payment" />
+        <AssuranceItem icon="money-back" label="14-day money-back guarantee" />
       </div>
     </aside>
   )
