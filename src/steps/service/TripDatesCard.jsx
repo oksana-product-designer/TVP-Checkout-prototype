@@ -1,5 +1,5 @@
 import { useRef, useState } from 'react'
-import { InputField } from '../../components/atoms/InputField.jsx'
+import { InputFieldV2 } from '../../components/atoms/InputFieldV2.jsx'
 import { Calendar } from '../../components/molecules/Calendar.jsx'
 import { FormRow } from '../../components/molecules/FormRow.jsx'
 import { Card } from '../../components/organisms/Card.jsx'
@@ -45,7 +45,7 @@ function DateField({
         if (event.key === 'Escape') onClose()
       }}
     >
-      <InputField
+      <InputFieldV2
         id={id}
         type="Date"
         label={label}
